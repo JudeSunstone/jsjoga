@@ -35,9 +35,9 @@ window.addEventListener('DOMcontentLoaded', function () {
     //timer
     let deadline = '2018-10-21';
 
-    fuction getTimerRemaingin(endTime) {
-        let t = Date.parse(ednTime) - Date.parse(new Date()),
-            seconds = math.floor((t/1000));
+    function getTimeRemaining(endTime) {
+        let t = Date.parse(endTime) - Date.parse(new Date()), // парс превращает дату в милисекунды, новая дата - конструкция для получения времени в данный момент
+            seconds = math.floor((t/1000)); //округление до целых чисел
     }
 
 });
