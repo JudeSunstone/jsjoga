@@ -41,7 +41,36 @@ window.addEventListener('DOMcontentLoaded', function () {
             minutes = math.floor((t/1000/60) % 60),
             hours = math.floor((t/(1000*60*60))), // equals math.floor((t/1000/60/60) % 24)
             // days = math.floor((t/(1000*60*60*24)))
-            
+
+            return {
+                "total" : t, // для остановки таймера, как достигнет нуля 
+                "hours" : hours,
+                "minutes" : minutes,
+                "seconds" : seconds // эта функция вычленяет нужные данные в массив
+            }
+
     }
+
+    function setClock(id, endTime) {
+        let timer = document.getElementById(id),
+            hours = timer.querySelector(".hours"),
+            minutes = timer.querySelector(".seconds"),
+            timeInterval = setInterval(updateClock, 1000);
+
+        function updateClock() {
+            let t = getTimeRemaining(endTime); // t - techincal var we can use
+            hours.textContent = t.hours; //comes from array 
+            minutes.textContent = t.minutes; 
+            seconds.textContent = t.seconds; 
+            
+            if (t.total <= 0) {
+                crealInterval(timeInterval);
+            }
+        }
+    }
+
+
+    setClock ("timer", deadLine); //указывая здесь, моно сделать и другой блок-таймер с другими дедлайнами/датами
+
 
 });
