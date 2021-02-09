@@ -37,7 +37,11 @@ window.addEventListener('DOMcontentLoaded', function () {
 
     function getTimeRemaining(endTime) {
         let t = Date.parse(endTime) - Date.parse(new Date()), // парс превращает дату в милисекунды, новая дата - конструкция для получения времени в данный момент
-            seconds = math.floor((t/1000)); //округление до целых чисел
+            seconds = math.floor((t/1000) % 60), //округление до целых чисел
+            minutes = math.floor((t/1000/60) % 60),
+            hours = math.floor((t/(1000*60*60))), // equals math.floor((t/1000/60/60) % 24)
+            // days = math.floor((t/(1000*60*60*24)))
+            
     }
 
 });
