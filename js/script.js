@@ -211,5 +211,26 @@ btn.addEventListener('click', function() {
         console.log(this);
     }
     showThis(); //- здесь опять window т.к. функция в фунцкии, тем и отличается от event target
-    
+
 });
+
+// модальное окно при клике на кнопку "узнать больше"
+
+let more = document.querySelector(".more"),
+    overlay = document.querySelector(".overlay"),
+    close = document.querySelector(".popup-close");
+
+    more.addEventListener('click', function () {
+        overlay.style.display = "block";
+        this.classList.add("more-splash");
+        document.body.style.overflow = "hidden";  // без промотки во время открытого модального окна
+    });
+
+    close.addEventListener('click', function () {
+        overlay.style.display = "none";
+        more.classList.remove("more-splash"); //здесь уже не this нужен
+        document.body.style.overflow = ""; 
+    });
+
+  
+
