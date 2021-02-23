@@ -126,3 +126,90 @@ function User(name, id) {
     
         ivan.hello();
 
+
+        // контекст вызова и как он работает
+
+function showThis(a, b) {
+    console.log(this); // window, т.к не знает, к чеуму обратиться. В стрикт версии - undefined. 
+    function sum() {
+        console.log(this); // window
+        return this.a + this.b; //Nan - не находит т.к. внутри
+    }
+    console.log(sum());
+}
+
+showThis(5, 9);
+
+function showThis(a, b) {
+    console.log(this); // window, т.к не знает, к чеуму обратиться. В стрикт версии - undefined. 
+    function sum() {
+        console.log(this); // window
+        return a + b; //ищет в себе, не находит, идет выше и видит параметры снизу
+    }
+    console.log(sum());
+}
+
+showThis(5, 9);
+
+let obj = {
+    a : 20,
+    b : 15,
+    sum: function() {
+        console.log(this); // выдает объект, потому что контекст выполнения и есть объект 
+    }
+};
+
+
+let obj = {
+    a : 20,
+    b : 15,
+    sum: function() {
+        console.log(this); // выдает объект, потому что контекст выполнения и есть объект 
+        function shout() {
+            console.log(this); // внутри уже потеряла объект и снова находит window - не метод обекта, а функция внутри функции
+        }
+    }
+};
+
+
+
+// 1) Просто вызов функции - window или undefined (strict use)
+// 2) Метод объекта - this будет объектом
+// 3) Фукнция конструктор (new) или класс - this ссылается на вызов функции - новый созданный объекст. см.функцию User - ivan 
+ // 4) Назначение самому контекст вызова cм ниже  // call apply bind
+
+
+let user = {
+
+    name: "John"
+};
+//эти две вещи надо насильно связать
+function sayName(surname) {
+    console.log(this);
+    console.log(this.name + surname);
+};
+
+console.log(sayName.call(user, "Смит")); // выводится в обох случаях объект Джон и потом имя. 
+console.log(sayName.apply(user, ['Snow'])); // по сравннеиею с пред.методом здесь можно передать массив данных
+
+// функцикя байнд
+
+function count(number) {
+
+    return this * number; // window
+}
+
+let double = count.bind(2); // привязываем двойку и делаем контекстом вызова
+console.log(double(3)); // 6 
+
+let btn = document.querySelector('button');
+
+btn.addEventListener('click', function() {
+    console.log(this); // здесь мы получаем в консоли тег кнопки 
+    this.style.backgroundColor = "red"; // здесь названием найденному тегу стиль после нажатия
+    function showThis() {
+        console.log(this);
+    }
+    showThis(); //- здесь опять window т.к. функция в фунцкии, тем и отличается от event target
+    
+});
