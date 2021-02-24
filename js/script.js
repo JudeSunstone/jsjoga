@@ -228,9 +228,29 @@ let more = document.querySelector(".more"),
 
     close.addEventListener('click', function () {
         overlay.style.display = "none";
-        more.classList.remove("more-splash"); //здесь уже не this нужен
+        more.classList.remove("more-splash"); //здесь уже не this нужен а more
         document.body.style.overflow = ""; 
     });
 
-  
+//var - let diff
+
+function makeArray() {
+    var items = [];
+
+    for (var i = 0; i <10; i++) {
+
+        var item = function() {
+            console.log(i);
+        };
+        items.push(item); // запушить в объект результаты
+    }
+    return items;
+
+}
+
+var arr = makeArray();
+
+arr[1]();
+arr[7](); // в результате будет 10, т.к в теле цикла вар дойдет до конца и будет десяткой - создается одна на весь цикл! в каждой итоериции не создается заново
+// если в теле цикла var i = 0 поменять на let, то будут разные числа из оюъекта, а не итоговый результат - это отличие поведения в функциях и циклах вар и лет
 
