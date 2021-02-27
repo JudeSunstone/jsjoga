@@ -291,3 +291,19 @@ btn.addEventListener ("click", function() {
     //это всегда эоемент, на который мы повесили этот обработчик
     
 });
+
+
+// default parameters
+
+//ES5
+function calcOrDouble(number, basis) {
+    basis = basis || 2;
+    console.log(number*basis);
+};
+//ES6
+function calcOrDouble(number, basis = 2) {
+    console.log(number*basis);
+};
+
+calcOrDouble(3,5); //15
+calcOrDouble(6); //12 
