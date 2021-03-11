@@ -342,3 +342,25 @@ var sayHi = function(name) {
 //Время создания 	До выполнения первой строчки кода. 	Когда управление достигает строки с функцией.
 //Можно вызвать до объявления 	Да (т.к. создаётся заранее) 	Нет
 //Условное объявление в if 	Не работает 	Работает
+
+//SPREAD - разворачивае тмассив данных
+
+
+let video = ["youtube", "vimeo"],
+    blogs = ["wordress", "lj"],
+    internet = [video, blogs, "vk", "fb"]; //в таком виде передаются не данные из массива
+let video = ["youtube", "vimeo"],
+    blogs = ["wordress", "lj"],
+    internet = [...video, ...blogs, "vk", "fb"]; //здесь разворачивает данные массива
+
+function log (a, b, c) {
+    console.log(a);
+    console.log(b);
+    console.log(c);
+    console.log(a + b + c);
+};
+
+let numbers = [2, 5, 7];
+log(...munbers); // 2 5 7
+
+
