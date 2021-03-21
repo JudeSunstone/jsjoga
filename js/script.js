@@ -367,3 +367,8 @@ log(...munbers); // 2 5 7
 //сервер 
 
 // get - получить, post - отдать данные
+// mamp / open server - если занят порт, то поискать, как поменять
+
+//JSON - javascrpt object notation - обмен данными
+
+
