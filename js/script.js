@@ -384,6 +384,7 @@ let options = {
 //эти данные отправить на сервер в виде объекта мы не можем, потому нужны методы jsonа - это сами методы
 // джаваскрипта встроенные. превращает данные в строку, их ужн можно передать
 
-console.log(JSON.stringify);
+console.log(JSON.stringify(options)); 
+/// bgbhsdfkskfmgdkjjfsdfsdfsdfsdgsdg
 
 
