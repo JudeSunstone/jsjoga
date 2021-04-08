@@ -393,6 +393,27 @@ console.log (JSON.parse(JSON.stringify(options))); // превращаем в о
 
 // AJAX
 // быстрее, без перезагрузки страницы - асинхронность
-// конвертер
+// конвертер - отдельный файл для сервера (имитация) current.json
 
+let inputRub = document.getElementById('rub'),
+    inputUsd = document.getElementById('usd');
 
+inputRub.addEventListener('input', () => {
+    let request = new XMLHttpRequest(); // это объект, у него есть свои методы - для работы в асинхронностью
+
+    //request.open(method, url, async, login, pass); // method get / post, url - put k nashemu serveru - nevazno, gde on. asynk - по умолчанию тру. при фалси - пока сервер не ответит, не  может взаимодействовать с сервером
+    request.open("GET", "js/current.json"); // login/pass not needed
+    request.setRequestHeader('content-type', 'application/json; charset=utf-8') //настройка хттп запросов. метод. натсройки запросов. тип контента. тут указывает, что это джсон в кодировке
+    //request.send(body); //хттп запрос состоит из заголовка и тела. данные с формы, которые отпр.на сервер
+    request.send(body);
+
+    // status - http код - отвечает в каком состоянии находится сервер (магаз закрыт)
+    //statusText - ok/not found - текстовый ответ
+    //responseText или response - текст ответа сервера (те товары, котоыре можно купить в магазы)
+    // readyState - текущее состоянии запроса. содержит запрос неск эапов в работе. всего 5. можно найти список
+
+    request.addEventListener('readystatechange', function() {
+        
+    });
+
+})
