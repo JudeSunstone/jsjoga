@@ -412,8 +412,14 @@ inputRub.addEventListener('input', () => {
     //responseText или response - текст ответа сервера (те товары, котоыре можно купить в магазы)
     // readyState - текущее состоянии запроса. содержит запрос неск эапов в работе. всего 5. можно найти список
 
-    request.addEventListener('readystatechange', function() {
-        
+    request.addEventListener('readystatechange', function() { // событие "лоад" не такое гибкое, а вреади можно смотреть, как запрос реагирует и можно отправить уведомления
+        if (request.readyState === 4 && request.status == 200) {
+            let data = JSON.parse(request.response);
+
+            inputUsd.value = inputRub.value / data.usd;
+        } else {
+            inputUsd.value = "Что-то пошло не так.."
+        }
     });
 
 })
