@@ -309,7 +309,7 @@ calcOrDouble(3,5); //15
 calcOrDouble(6); //12 
 
 
-// Основное отличие между ними: функции, объявленные как Function Declaration, создаются интерпретатором до выполнения кода.
+// Основное отличие между ними: функции, объявленные как Function Declaration, создаются интерпретатором до выполнения кода. метод работает после выполнения запроса
 
 //Поэтому их можно вызвать до объявления, например:
 
@@ -398,23 +398,24 @@ console.log (JSON.parse(JSON.stringify(options))); // превращаем в о
 let inputRub = document.getElementById('rub'),
     inputUsd = document.getElementById('usd');
 
-inputRub.addEventListener('input', () => {
+inputRub.addEventListener('input', () => { //контекст здесь не нужен, потому стрелочка функция
     let request = new XMLHttpRequest(); // это объект, у него есть свои методы - для работы в асинхронностью
 
-    //request.open(method, url, async, login, pass); // method get / post, url - put k nashemu serveru - nevazno, gde on. asynk - по умолчанию тру. при фалси - пока сервер не ответит, не  может взаимодействовать с сервером
-    request.open("GET", "js/current.json"); // login/pass not needed
-    request.setRequestHeader('content-type', 'application/json; charset=utf-8') //настройка хттп запросов. метод. натсройки запросов. тип контента. тут указывает, что это джсон в кодировке
+    //request.open(method, url, async, login, pass); // method get / post, url - put' k nashemu serveru - nevazno, gde on. async - по умолчанию тру. при фалс - пока сервер не ответит, не  может взаимодействовать с сервером , логин-пароль если надо только
+    request.open("GET", "js/current.json"); // login/pass not needed настройка что и зачем мы делаем
+    request.setRequestHeader('content-type', 'application/json: charset=utf-8') //настройка хттп запросов. метод. натсройки запросов. тип контента. тут указывает, что это джсон в кодировке
     //request.send(body); //хттп запрос состоит из заголовка и тела. данные с формы, которые отпр.на сервер
-    request.send(body);
+    request.send(); // тело запроса, например форма - данные в бади и отправляем на сервер, не в заголовоках
 
+    // методы XMLHttpReques - самые частые
     // status - http код - отвечает в каком состоянии находится сервер (магаз закрыт)
     //statusText - ok/not found - текстовый ответ
-    //responseText или response - текст ответа сервера (те товары, котоыре можно купить в магазы)
+    //responseText или response - текст ответа сервера (те товары, котоыре можно купить в магазе)
     // readyState - текущее состоянии запроса. содержит запрос неск эапов в работе. всего 5. можно найти список
 
-    request.addEventListener('readystatechange', function() { // событие "лоад" не такое гибкое, а вреади можно смотреть, как запрос реагирует и можно отправить уведомления
-        if (request.readyState === 4 && request.status == 200) {
-            let data = JSON.parse(request.response);
+    request.addEventListener('readystatechange', function() { // событие "лоад" не такое гибкое, а вреади можно смотреть, как запрос реагирует и можно отправить уведомления, метод работает с резльатотм реаст стейта
+        if (request.readyState === 4 && request.status == 200) { // 4 запрос - все получено и готово
+            let data = JSON.parse(request.response); //делает ответ сервера в данные
 
             inputUsd.value = inputRub.value / data.usd;
         } else {
