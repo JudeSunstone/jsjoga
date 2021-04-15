@@ -423,4 +423,68 @@ inputRub.addEventListener('input', () => { //контекст здесь не н
         }
     });
 
-})
+});
+
+// работа с сервером. Встроенный в Вс код позволяет работать только с методом ГЕТ. Мамп или опен сервер - с методом пост
+
+// работа с формой, чтобы отправить данные:
+
+let message = { // это для оповщениея пользователя, можно и картинки, не только словами. 
+    loading: "Загрузка =)"
+    success: "Спасибо, скоро мы с Вами свяжемся!"
+    failure: "Что-то пошло не так .. "
+};
+
+let form = document.querySelector(".main-form"), // получаем элементы, с которыми будем работать
+    input = form.getElementsByTagName("input"),
+    statusMessage = document.createElement("div"); // оповещение пользователя. создаем класс и добавляем, в цсс офоормлен стиль по классу (статус)
+
+    statusMesaage.classList.add("status");
+
+// NB! вешают обработчик не на кнопку, а на форму! нам нужно отследивать, когда форма отправляется на сервер.
+form.addEventListener("submit", function(event) { //не забыть про ивент, мы с ним работаем
+    //чтобы отменить стандартоное повдеение браузера - перезагрузку когда нажимаешь кнопку отправки формы даже при Аязке  - т.к модальное окно?
+    event.preventDefault();
+    form.appendChild(statusMessage);
+
+    let request = new XMLHttpRequest();
+    request.open("POST", server.php) // отправляем данные на сервер, поэтому такой метод
+    request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded') // урлл для формы
+    // не всегда нужен джсон, можно и форм-дата
+
+    // чтобы отправлять данные, нужно, чтобы в фаорме стояли атрибуты ИМЯ - этобудет ключ, а значение введет пользователь
+    let formData = new FormData(form);
+    request.send(formData); // те данные, что отправил пользователь с виде body запрос
+
+    request.addEventListener("readystatechange", function() {
+        if (request.readyState < 4) {
+            statusMessage.innerHTML = message.loading; //вывод сообщения пользователю
+
+        } else if (request.readyState = 4 && request.status == 200) {
+            // здесь можно делать уже при загрузке всего - что угодно! прогремс бар?
+            statusMessage.innerHTML = message.success; 
+        } else {
+            statusMessage.innerHTML = message.failure; 
+        }
+
+    });
+
+    for (let i = 0; i < input.length; i++) {
+        input[i].value = ""; // очистка полей  после отправки инпутов
+    }
+    
+    
+    // JSON вариант
+
+
+ // это отправили для пхп данные, но если сервер на ДЖ или спец.азадча, то надо джсон
+ // request.setRequestHeader('content-type', 'application/json: charset=utf-8') надо это и 
+ // let obj = {
+ //   formData.forEach(function(value, key) {
+ //       obj[key] = value; // это не толкько для превращения в джсон объект
+    });
+    //let json = JSON.stringify(obj);
+ };
+});
+
+
