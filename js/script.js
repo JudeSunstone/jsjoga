@@ -525,10 +525,49 @@ function giveMoney() {
 shoot({}, 
     function(mark) {
         console.log("You got it");
-        win(mark, buyBeer, giveMoney); // цепочка, если 1 события, то еще два 
+        win(mark, buyBeer, giveMoney); // цепочка, если 1 события, то еще два происходят - оба коллбэк, кол-во может увеличиваться, это неудобно
     }, 
     function(miss) {
         console.error(miss);
         loose();
     };
-    )
+    );
+
+    /// переделываем в промисы
+
+    let drink = 1;
+
+function shoot(arrow) {
+    console.log("You are doing it..");
+    let promise = new Promise(function(resolve, reject){ // созздание промиса через конструктор
+        setTimeout(function(){
+            Math.random() > .5 ? resolve({}) : reject("You missed");
+    
+        }, 300);
+    });
+    return promise;
+};
+
+function(win) {
+    console.log("You won!");
+    (drink == 1) ? buyBeer() : giveMoney();
+} //; в примере у автора нет точки с запятой после эой и еще след двух функций. Почему?
+
+function(loose) {
+    console.log("Play again!")
+}
+
+function buyBeer() {
+    console.log("Вам купили пиво")
+}
+
+function giveMoney() {
+    console.log("you got money!")
+}
+
+shoot({})
+        .then(mark => console.log("Вы попали в цель!"))
+        .then(win)
+        .catch(loose) //это все методы и точки с запятыми не нужны
+        
+         
