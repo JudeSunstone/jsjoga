@@ -491,5 +491,44 @@ form.addEventListener("submit", function(event) { //не забыть про и�
 
 //чтобы работало везде, нужно найти polyfill  на сайет babel docs устновить
 
+// чтобы промис работал, надо много условий, которые будут выполняться только после чего-то определнного (см. callback функция, но если их будет много - будет коллюэк-хелл :) )
+//
 
+let drink = 1;
 
+function shoot(arrow, headshot, fail) {
+    console.log("You are doing it..");
+
+    setTimeout(function(){
+        Math.random() > .5 ? headshot({}) : fail("You missed");
+
+    }, 300)
+};
+
+function(win) {
+    console.log("You won!");
+    (drink == 1) ? buyBeer() : giveMoney();
+} //; в примере у автора нет точки с запятой после эой и еще след двух функций. Почему?
+
+function(loose) {
+    console.log("Play again!")
+}
+
+function buyBeer() {
+    console.log("Вам купили пиво")
+}
+
+function giveMoney() {
+    console.log("you got money!")
+}
+
+shoot({}, 
+    function(mark) {
+        console.log("You got it");
+        win(mark, buyBeer, giveMoney); // цепочка, если 1 события, то еще два 
+    }, 
+    function(miss) {
+        console.error(miss);
+        loose();
+    };
+    )
