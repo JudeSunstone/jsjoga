@@ -568,6 +568,78 @@ function giveMoney() {
 shoot({})
         .then(mark => console.log("Вы попали в цель!"))
         .then(win)
-        .catch(loose) //это все методы и точки с запятыми не нужны
+        .catch(loose) //это все методы и точки с запятыми не нужны, можно в 1 строку, then может быть много
         
-      //завтра второй урок   
+
+
+
+
+
+
+
+        
+      //суть ПРОСМИСОВ - во заимодействии с свервером и ajax запросах
+// пример взаимодействия с предыдущей работы с формой
+// NB!!!!! Разобраться с этим, потому что много неясных моментов
+
+let message = { // это для оповщениея пользователя, можно и картинки, не только словами. 
+    loading: "Загрузка =)"
+    success: "Спасибо, скоро мы с Вами свяжемся!"
+    failure: "Что-то пошло не так .. "
+};
+
+let form = document.querySelector(".main-form"), // получаем элементы, с которыми будем работать
+    input = form.getElementsByTagName("input"),
+    statusMessage = document.createElement("div"); // оповещение пользователя. создаем класс и добавляем, в цсс офоормлен стиль по классу (статус)
+    statusMesaage.classList.add("status");
+
+// NB! вешают обработчик не на кнопку, а на форму! нам нужно отследивать, когда форма отправляется на сервер.
+function sendForm(elem) {
+    elem.addEventListener("submit", function(e) { //не забыть про ивент, мы с ним работаем
+    //чтобы отменить стандартоное повдеение браузера - перезагрузку когда нажимаешь кнопку отправки формы даже при Аязке  - т.к модальное окно?
+         e.preventDefault();
+             elem.appendChild(statusMessage);
+             let formData = new FormData(elem);
+
+             function postData(data) {
+                 return new Promise(function(resolve, reject) {
+                    let request = new XMLHttpRequest();
+                        request.open("POST", server.php) // отправляем данные на сервер, поэтому такой метод
+                        request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded') // урлл для формы
+    // не всегда нужен джсон, можно и форм-дата 
+                        request.onreadystatechange = function(){
+                        if (request.readyState < 4) {
+                            resolve() //вывод сообщения пользователю
+
+                        } else if (request.readyState = 4) {
+                            if (request.status == 200 && request.status <3)
+                            resolve()
+                        } else {
+                            reject()
+                        }
+                                
+                            }
+}
+request.send(data)
+})
+    
+function clearInput() {
+    for (let i = 0; i < input.length; i++) {
+        input[i].value = ""; // очистка полей  после отправки инпутов
+}
+    }
+    
+postData(formData)  
+    .then(() =>   statusMessage.innerHTML = message.loading) //вывод сообщения пользователю
+    .then(() => {
+        thanksModal.style.display = "block"; //в цсс должно быть
+        mainModal.stule.display = "none";
+        statusMessage.innerHTML = " ";
+    })
+    .catch(() => statusMessage.innerHTML = message.failure )
+    .then(clearInput) // then после catch выполняет ВСЕГДА
+});
+
+sendForm(form);
+sendForm(formBottom);
+    
