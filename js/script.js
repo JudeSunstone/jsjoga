@@ -643,3 +643,8 @@ postData(formData)
 sendForm(form);
 sendForm(formBottom);
     
+
+// Слайдер на сайте
+
+let slideIndex = 1,
+    slisdes = document.querySelectorAll(".slider-iteam"),
