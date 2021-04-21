@@ -644,7 +644,46 @@ sendForm(form);
 sendForm(formBottom);
     
 
-// Слайдер на сайте
 
-let slideIndex = 1,
-    slisdes = document.querySelectorAll(".slider-iteam"),
+
+
+
+
+
+
+
+
+ 
+
+// Слайдер на сайте
+//его суть - жкономия места на странице. оформление может быть разное. говорят, что каждый разработчик должен написать свой слайдер :)
+// слайдер должен подстарвиться под кол=во слайдов, что есть внутри + под адаптивность (с конкретными величинами - не универсален)
+let slideIndex = 1, // переменная, которая отвечает за тот слайд, который показывают в текущий момент - это будет меняться
+    slides = document.querySelectorAll(".slider-item"),
+    prev =  document.querySelector(".prev"),
+    next = document.querySelector(".next),
+    dotsWrap =  document.querySelector(".slider-dots"),
+    dots =  document.querySelectorAll(".dot");
+
+    // функция, которая скрывает все, кроме первого слайда. принимает аргумент, который показывает тот слайд, который мы хотим
+
+    showSlides(slideIndex); //ее млэно и до вызвать
+
+    function showSlides(n) { //один агрумент, чтобы в будущем нам было возможно переключить слайды
+        
+        if (n > slides.length) {
+            slideIndex = 1;
+        }
+        if (n <1) {
+            slideIndex = slides.length;
+        }
+
+        slides.forEach((item) => item.style.display = "none"); //перебираем. передаем один агрумент в фунцкию
+        // 2 способ  - делаем то же самое! но чуть менее современно
+        // for (let i = 0; i < lides.lenght; i++) {slides[i].style.display = "none";    } 
+        dots.forEach((item) => item.classList.remove("dot-active")) //когда переберем, то будет названчать точкам класс "актив" только тем, что нужны и соотвествует текущему слайду // remove уже класс, потому точку не надо
+        
+
+        slides[slideIndex - 1].style.display = "block"; // нумерация начинается в объектах с нуля, потому мы пишем минут, чтобы slideIndex = 1 работало
+        dots[slideIndex - 1].classList.add ("dot-active"); 
+    };
