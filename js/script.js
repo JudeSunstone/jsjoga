@@ -879,4 +879,26 @@ try {
     console.log("а я выполнюсь всегда-всегда)
 
 }
-console.log("A я буду работать дальше")
+console.log("A я буду работать дальше");
+
+
+
+
+
+
+
+//frameworks
+
+/// J-query
+
+
+//сначала пожключаем локально, скачав или через облако, скопировав ссылку с сайта
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+//нативный вариант и бибилотека
+// нативный 
+document.getElementByID("btn");
+// j-query 
+$("#btn");
+
+
