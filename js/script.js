@@ -995,5 +995,78 @@ export class AppComponent {
 
 
 
+// Инкапсуляция, геттеры и сеттеры
+
+// инкапсуляция - отделение кода программы от интерфецса ? чтобы пользователь не видел. защита от вмешательства пользователя, чтобы ничего не мог поменять
+
+function User (name, age) {
+    this.name = name;
+    this.age = age;
+
+    this.say = function () {
+        console.log(`имя пользователя ${this.name}, возраст: ${this.age}`); //this для конкретного пользователя!
+    };
+};
+
+let user = new User ("Rei", 25);
+console.log(user.name);
+console.log(user.age);
+user.say();
+ 
+user.age = 30; //если добавим это здесь, то выходные данные поменяются, потмоу код не идеальный. как будто двигатель в салоен, что кажды может деталь поменять, а нельзя
+user.name = "alex";
+user.say(); 
+
+
+//новый вариант
+
+function User (name, age) {
+    this.name = name;
+    let userAge = age; 
+
+    this.say = function () {
+        console.log(`имя пользователя ${this.name}, возраст: ${this.userAge}`); //this для конкретного пользователя!
+    };
+};
+
+let user = new User ("Rei", 25);
+console.log(user.name);
+console.log(user.userAge); //в этом варианте мы получим undefined. именно для этоно - чтобы работать с данными - нужны геттеры и сеттеры и чтбы пользователь ничего не мог менять
+
+user.say();
+ 
+// делаем правильно:
+
+function User (name, age) {
+    this.name = name;
+    let userAge = age; 
+
+    this.getAge = function() { // так мы получаем возраст, записанный в объекте и ничего снаружи его поменять тоже не может. геттер.
+
+        return userAge;
+    };
+
+    this.setAge = function(age) { //mетод устанавливает значение. в него помещается какая-то переменная 
+// преимущество сеттеров. когда устанавливает user.age = 30, то мы не можем менять значение и проверять, цифры ли тут
+        if (typeOf age === "number" && age > 0 && age < 110) {
+            userAge = age;
+        } else {
+            console.log("error");
+        }
+};
+    this.say = function () {
+        console.log(`имя пользователя ${this.name}, возраст: ${this.userAge}`); //this для конкретного пользователя!
+    }; 
+};
+
+let user = new User ("Rei", 25);
+console.log(user.name);
+console.log(user.userAge); //в этом варианте мы получим undefined. именно для этоно - чтобы работать с данными - нужны геттеры и сеттеры и чтбы пользователь ничего не мог менять
+user.say(); // здеьс имя Иван. а возраст undefined
+console.log(user.getAge()); // здесь 25
+user.setAge(30);
+console.log(user.getAge()); // проверяем, что теперь меняется на 30 
+
+
 
 
