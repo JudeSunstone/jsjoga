@@ -1781,6 +1781,56 @@ https://www.freecodecamp.org/news/what-is-web3/
 // после установки надо войти в папку приложения cd my-app и npm start
 // потом запускаем, открывается страница, там уже встроен бабель, вебпак и т.д
 // надо поставить в срабочей среде плагин сокращения jsx, jsxhint?
+// в папке: node modules - все зависимости  проекта,  public - index и неск доп файлов  src - все-все нужные файлы в работе. источники - цсс и прочее  gitignore - файлы, которые не хотим пушить на гитхаб, например здесь - node modules т.к она много весит, около 200мб
+// package-json - тоже все плагины и зависимости содержит , readme - описание проекта, если вместо npm - yarn, то появится ярн лок
+//в public index.html смотрим на id=root в него и будет помещать рект приложение, в src index.js - главный файл, где будут собираться модули и картинки и прочее со всех мест
+// в нем главная функция - ReactDOM.render - встраивает на страницу наше приложение в казанный блок, т.е в ИД-root 
+// import React from "react" - главное, где сождержатся все скрипты, с которыми работать 
+// reactDOM - jотвечает за создание дом-элементов на странице
+
+// JSX
+
+/* это и есть нативный js по факту. в реакте ВСЕ функции и классы  нужно писать с Большой буквы
+
+function Greet() {
+    return( 
+        <h1>Hello World!</h1>
+    )
+}
+подставить функцию на страницу - заменив в строке app ReactDOM.render (<App /> document.getElementById('root'));
+registerServiceWorker();
+
+ReactDOM.render (<Greet /> document.getElementById('root')); - так просто в странице теперь один заголовок
+registerServiceWorker();
+---
+далее можно 
+function Greet() {
+
+    let phrase = "World!"
+    return( 
+        <h1>Hello {phrase} </h1> - в жти фиигурные скобки можно записать что угодно, выражения, функции и т.д 4+4 - hello 8
+    )
+}
+ReactDOM.render (<Greet /> document.getElementById('root')); - так просто в странице теперь один заголовок
+registerServiceWorker();
+
+при запущенном npm страница обновляется автоматически!
+
+можем использовать и присваивать атрибуты верстки
+
+function Greet(props) {
+    return( 
+        <h1>Hello {props.phrase}! My name is </h1> - в жти фиигурные скобки можно записать что угодно, выражения, функции и т.д 4+4 - hello 8
+    )
+}
+ReactDOM.render (<Greet phrase="World"/> document.getElementById('root')); - так просто в странице теперь один заголовок
+registerServiceWorker();
+
+props - это объект со всеми атрибутами, который мы передаем дальше 
+
+ */
+
+
 
 
 
