@@ -1834,8 +1834,44 @@ props - это объект со всеми атрибутами, который
 
  сonst element = <Greet phrase="World" name ="Reiji" - подставвляем атрибут - />
   
-ReactDOM.render (element, document.getElementById('root')); - так просто в странице теперь один заголовок
+ReactDOM.render (element, document.getElementById('root'));
 registerServiceWorker();
+
+
+
+функция грит и есть наш независимый компонент в реакте. она независима и может использоваться несколько раз, можно так объединить части интерфейса в одну конструкцию. в один большой вызов
+
+
+
+function GreetAll() {
+    return (
+        <div>
+        <Greet phrase="World" name ="Reiji"/>
+        <Greet phrase="World" name ="Rei"/>
+        <Greet phrase="World" name ="Ji"/>
+        </div>
+    )
+}
+ReactDOM.render (<GreetAll/>, document.getElementById('root')); 
+registerServiceWorker();
+
+это всё фуцнкицонально, создавали функции, но на ходу - динамчисеки менять мы их не можем, но в реакте можно делать ооп, обектиный тип
+
+
+class App extends (от чего наследуется) React.Component {
+
+    render() (метод! \то функция потому должен быть return) {
+            return (
+
+                <div className="wrapper" - прописаь класса, камелкейс>
+                
+                </div>
+            )
+    }
+}
+ReactDOM.render (<App /> - вызываем самое главное приложение, document.getElementById('root')); 
+registerServiceWorker();
+
 
 
  */
