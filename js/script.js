@@ -1820,13 +1820,23 @@ registerServiceWorker();
 
 function Greet(props) {
     return( 
-        <h1>Hello {props.phrase}! My name is </h1> - в жти фиигурные скобки можно записать что угодно, выражения, функции и т.д 4+4 - hello 8
+        <h1>Hello {props.phrase}! My name is {props.name}</h1> - в эти фиигурные скобки можно записать что угодно, выражения, функции и т.д 4+4 - hello 8
     )
 }
-ReactDOM.render (<Greet phrase="World"/> document.getElementById('root')); - так просто в странице теперь один заголовок
+ReactDOM.render (<Greet phrase="World" name ="Reiji" - подставвляем атрибут - /> document.getElementById('root')); - так просто в странице теперь один заголовок
 registerServiceWorker();
 
 props - это объект со всеми атрибутами, который мы передаем дальше 
+
+элемент - h1, после помещения на страницу поменять уже нельзя. один раз создали и всё.  
+чтобы обновлять элемент можно использовать сетинтервал и сеттаймер. причем реакт обновляет именнно то, что было изменено.
+для этого используется внутренний кэш. также можно передать вызов в пемеренную или функцию и рендерить ей уже там
+
+ сonst element = <Greet phrase="World" name ="Reiji" - подставвляем атрибут - />
+  
+ReactDOM.render (element, document.getElementById('root')); - так просто в странице теперь один заголовок
+registerServiceWorker();
+
 
  */
 
