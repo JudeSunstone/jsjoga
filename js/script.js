@@ -1860,11 +1860,11 @@ registerServiceWorker();
 
 class App extends (от чего наследуется) React.Component {
 
-    render() (метод! \то функция потому должен быть return) {
+    render() (метод! это функция потому должен быть return) {
             return (
 
-                <div className="wrapper" - прописаь класса, камелкейс>
-                
+                <div className="wrapper" - прописать класс, камелкейс>
+                <Clock />
                 </div>
             )
     }
@@ -1872,7 +1872,148 @@ class App extends (от чего наследуется) React.Component {
 ReactDOM.render (<App /> - вызываем самое главное приложение, document.getElementById('root')); 
 registerServiceWorker();
 
+в src/app.css прописываем все стили нужные
+в app.js прописаны свои параметры. а мы будем писать свои
 
+import Rect. { Component } from  "react";
+import logo from "./logo.svg";
+
+- здесь пишем своё
+class Clock extends React.Component {
+
+    constructor(props) {
+        super(props); - супер говорит. что все пропсы, что были у React.Component будут наследоваться и у класса Clock
+    }
+рендер нужен везде 
+    render() {
+        return (
+            <div>
+                <h1> Текущее время </h1>
+            </div>
+        )
+    }
+}
+
+export deafault Сlock;
+
+
+в файле src/index.js - import Clock from "./App"; 
+в scr index.js во враппер дописываем  <Clock />
+class App extends (от чего наследуется) React.Component {
+
+    render() (метод! это функция потому должен быть return) {
+            return (
+
+                <div className="wrapper" - прописать класс, камелкейс>
+                <Clock /> !!!
+                </div>
+            )
+    }
+}
+ReactDOM.render (<App /> - вызываем самое главное приложение, document.getElementById('root')); 
+registerServiceWorker();
+
+для того, чтобы сделать постоянно обновляющееся время, то через пропс тут ничего не получится. динамически менять их нельзя
+так мы должнызадать свойство собственное, как в нативном дж
+
+class Clock extends React.Component { // когда рект рендерит домструктура, он создает жлемент Клок
+    в нес сразу иниализируется положение с датой
+    потом происходит рендер и таймер появляется на странице с текущим временем из самого рендера
+    после того как таймер появился на странице вызывается метод ДидМоунт и бразуер говорить, что надо вызывать метод Тик каждую секунжду
+    когда вызывается метод тик, положение - state - с датой обновляется
+    если таймер исчезнет со страницы, то вызовется ВиллАнмаунт, который очистит интервал и таймер остановится
+
+    constructor(props) {
+        super(props);
+        this.state = {date: new Date()} 
+    }
+
+    componentDidMount() {
+        this.timerId = setInterval(
+            () => this.tick(),
+            1000
+        )
+    }
+
+    compenentWillUnmount() {
+        clearInterval(this.timerId)     
+
+    }
+
+    tick () {
+
+    this.setState({  // setState вызовет рендер снова для обновляения на странице, рендер сам помнит какую часть надо обновить
+
+        date: new Date()  то же самое, что и ранее, будет выполняться каждый секунду
+    })
+
+    render() {
+        return (
+            <div>
+                <h1> Текущее время {this.state.date.toLocaleTimeString() * время в текущем часовом поясе} </h1>
+                **после это время отобратися, но не динамически. оно один раз появилось и всё
+
+            </div>
+        )
+    }
+}
+
+у компонентов реакта есть два неглавных метода - методы жизненного цикла компонентов. их называют хуками - hooks?
+
+первый производит дейтсвие. когда компонент появляется на странице - mounting
+второй - когда жлемент исчезает со страницы - unmounting?
+
+когда компонент отрендерлся, таймер должен запуститься
+P.S. после методов класс и конструктора точка с запятой не нужны, иначе будет ошибка 
+ 
+
+
+
+
+сделаем основу будущего приложения, чтобы, например, следить за тренировками и следить за временем
+
+внутри конструкторов классов мы можем применять только тернарные  условия
+напишем функиональный конструктор, которй будет следить за текущим временем
+
+до кода ранее надо добавить:
+function ShowBanner(props) {
+
+}
+
+class Clock extends React.Component { 
+    constructor(props) {
+        super(props);
+        this.state = {date: new Date()} 
+    }
+
+    componentDidMount() {
+        this.timerId = setInterval(
+            () => this.tick(),
+            1000
+        )
+    }
+
+    compenentWillUnmount() {
+        clearInterval(this.timerId)     
+
+    }
+
+    tick () {
+
+    this.setState({  
+
+        date: new Date() 
+    })
+
+    render() {
+        return (
+            <div>
+                <ShowBanner time="this.state.date.getSeconds" />
+                <h1> Текущее время {this.state.date.toLocaleTimeString()} </h1>
+            </div>
+        )
+    }
+}
 
  */
 
