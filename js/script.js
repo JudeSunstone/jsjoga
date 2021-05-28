@@ -1977,7 +1977,15 @@ P.S. после методов класс и конструктора точка
 
 до кода ранее надо добавить:
 function ShowBanner(props) {
-
+    if (props.time > 45) { если больше 45 секунд, то показать след.класс
+        return (
+            <div className="rest_block">Отдых</div>
+        )
+    } else {
+        return(
+            <div className="work_block">Время рабоать!</div>
+        )
+    }
 }
 
 class Clock extends React.Component { 
@@ -2014,6 +2022,44 @@ class Clock extends React.Component {
         )
     }
 }
+
+готов компонент таймера. после 45 секунд надпись меняется над часами. не забываем импортировать
+
+
+новый компонент - новый файл
+джаваскрипт. например, button.js
+
+не забываем ипорты и экспорты этих частей
+
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css" 
+
+class Button extends React.Component {
+
+    constructor(props) {
+        super(props) 
+        this.myClick = this.myClick.bind(this);
+    }
+
+    myClick() {
+        documnet.getElementByClassName("wrapper")[0].style.backgroundColor="blue";
+    }
+//чтоьы использовать обработчики событий их надо привязать к классу, контексту, bind - пишем в конструкторе
+есть еще варианты, как привязать, но не рекомендуются
+чтобы использовать надо в return добавить onClick
+
+    render() {
+        return (
+            <button onClick{this.myClick} className="clicker"> Изменить дизайн </button>
+        )
+    }
+}
+ export deafault Button;
+затем в src index.js надо импортировать import Button from "./Button.js" //js писать не обязательно, babel сам понимает
+потом его надо использовать в App - самом главном классе, после Clock добавляем Button 
+//появилась кнопка, при нажатии на неё изменяется цвет объекта/фона
+
 
  */
 
