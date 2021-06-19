@@ -1640,6 +1640,7 @@ export function sayHello() { //экзпортировать можно толь�
 
 // index.js
 import {one, two} from ".script"; //в той же папке src находится, потому только точка перед назанием пути
+import { Linter } from "eslint";
 
 console.log("$(one) and $(two)");
 
@@ -2297,6 +2298,18 @@ https://browsersync.io/
 есть  jest 
  */
 
+
+REACT 
+
+ES Linter
+
+
+/*
+
+
+
+
+*/
 
 
 
