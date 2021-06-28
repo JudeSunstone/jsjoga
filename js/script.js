@@ -2426,6 +2426,8 @@ function showAllQueue() {
 
 REACT
 
+
+
 библиотека. для упрощени пользовательских интерфейсов.
 содание отзывчивых одностраничных приложений. выглядят ка программы.
 взаимодействуют с пользователем. реагируют на изменения интерсейса, действия пользователя.
@@ -2442,6 +2444,11 @@ virtual DOM  - вирутальный ДОМ - реакт работает с н
 REACT NATIVE - для мобильных телефонов приложения писать
 
 есть reac VR для виртуальной реальности
+
+
+
+
+
 
 в реакте используются самые современные возможности js - ES6, 7, 8, 8
 
@@ -2462,14 +2469,17 @@ let/const - станрадты для ЕС 6, var уже не актуально
     В контексте выполнения функции значение this зависит от того, как именно была вызвана функция. Если она вызвана в виде метода объекта, тогда значение this привязано к этому объекту. В других случаях this привязывается к глобальному объекту или устанавливается в undefined (в строгом режиме). 
 
 
+
+
+
 методы MAP , FILTER
 
-метод перебора массивов, перебираубт и взовращают нлвый массив так, как указано в коллбеке
+метод перебора массивов, перебирауют и взовращают новый массив так, как указано в коллбеке
 
 let names = ["ivan", "reiji", "kreaaaaa"];
 
 let shortNames = names.filter((name) => {
-    return name.lenght <5  --- возвращает только те желементы, что меньше 5 симвовлов 
+    return name.lenght < 5  --- возвращает только те желементы, что меньше 5 симвовлов 
 });
 
 map для того чтобы транформировать каждый элемнент массива и сформирировать новый с соотв. с методом прописанным
@@ -2481,7 +2491,11 @@ answers = answers.map((item) => item.toLowerCase());
 INTERPOLATION
 
 интерполяция `` нужны именно backtick
-"User ${name}, ${age} years old" + полезно для формирования димнамических url путей
+`User ${name}, ${age} years old` + полезно для формирования димнамических url путей
+
+
+
+
 
 если мы хотим, чтоыб в функциях были какие-то параметры по умолчанию (когда юзер свои не пишет?)
 
@@ -2493,7 +2507,6 @@ fetchData("something"); - если так ввести, то будет самф
 раньше были проверки типа чтобы каунт был не индефайнд и прочее
 в ЕС6 можно параметры по умолчанию записывать сразу при объявлении функции 
 
-ф-я получает данные с свервера
 functions fetchData(data, count = 0) {
     console.log(`данные: ${data}  в количестве ${}`)
 }
@@ -2505,20 +2518,20 @@ fetchData("something");
 
 REST параметр группирует в массив аргументы, которые не были переданы в аргументы функции
 
-функция будет передавать значение максимльное, но мы не знаем, сколько будет значений 
+функция будет передавать значение максимальное, но мы не знаем, сколько будет значений 
 function max (... numbers) {
     console.log(numbers);
 }
 
 max (3, 4, 57 - здесь можно добавлять сколько угодно);
 
-также можно комбинировать с обычным оьвлением аругементов функций
+также можно комбинировать с обычным объявлением аргументов функций
 function max (a, b, ... numbers) {
     console.log(numbers);
 }
 
 max (3, 4, 67, 97);
-в масисив попало только 37 и 97 - потому что что а и б записали в себя первые два 3 т 4 - значения
+в массив попало только 37 и 97 - потому что что а и б записали в себя первые два 3 т 4 - значения
 rest оператор должен быть всегда в конце и только один!! 
 
 
@@ -2540,14 +2553,14 @@ const user = {
     rights" "user"
 };
 
-consat admin = {
+const admin = {
     name: "admin",
     pass: "root"
 }
 
-const res = Object.assign(user, admin);  -- так мы объединяем два объекта и записывам в первый все свойства второго  и перезаписали бы
-если выведем в консаоль, но перезаписали данные второго в первый объект
-обычно мы не ъъотим перезаписывать юзера, потому можно поставить пустой объект {} до записываемых и все бужет объединено в новом пустом
+const res = Object.assign(user, admin);  -- так мы объединяем два объекта и записываем в первый все свойства второго  и перезаписали бы
+если выведем в консоль, но перезаписали данные второго в первый объект
+обычно мы не хотим перезаписывать юзера, потому можно поставить пустой объект {} до записываемых и все бужет объединено в новом пустом
 это ES6
 
 ES8 -  const res = {...user, ...admin);
@@ -2566,8 +2579,8 @@ const coordinats = {
 ---
 сonst coordinats = { x, y}; можно и так теперь
 ----
-сonst coordinats = { x, yб
-    calcSq() { - посчитать плозадь 
+сonst coordinats = { x, y, 
+    calcSq() { - посчитать площадь 
         console.log(this.x*this.y);
     }
 
@@ -2576,7 +2589,9 @@ coordinats.caclSq();
 
 
 
-ЕСЛИ КАКАЯ-ТО ЧАСТЬ ПОВТОРЯЕТСЯ, СТАРАЙТЕСБ ЕЁ ОПТИМИЗИРОВАТЬ 
+ЕСЛИ КАКАЯ-ТО ЧАСТЬ ПОВТОРЯЕТСЯ, СТАРАЙТЕСЬ ЕЁ ОПТИМИЗИРОВАТЬ 
+
+
 
 
 
@@ -2590,7 +2605,7 @@ const user = {
 };
 
 const {name, pass, rights} = user;  - вытаскиваем из объекта нжные ключи и данные, в конце показываем, из какого объекта именно.
-это скоращает код, чтобы не писать три раза user.name, user.pass, user.rights
+это сокращает код, чтобы не писать три раза user.name, user.pass, user.rights
 
 
 если есть объект в объекте, то 
@@ -2618,21 +2633,23 @@ connect({
     host: "local", - ЗДЕСЬ ЮЗЕР СТАВИТ СВОИ
     port: 232,
     user: "default"
-}) - здесь даже можно оставить пустой объъект и будут дефолтные значения, если вообще ничего не записать - тлько скобки - то тогда будет ошибка 
+}) - здесь даже можно оставить пустой объъект и будут дефолтные значения, если вообще ничего не записать - только скобки - то тогда будет ошибка 
 
 это можно исправить 
-   user = "default" }  = {}    ) { -можно тут по умолчанию поставить дефолтный пустой обхект, тогда ошибки не будет
+   user = "default"}  = {}) { -можно тут по умолчанию поставить дефолтный пустой объект, тогда ошибки не будет
          console.log(`host: ${host}`) - будет локалхост 
           console.log(`port: ${port}`) - будет 232
 
 }
+
+
 
 деструктуризация для массивов тоже
 
 const numbers = [3, 5, 6, 6];
 
 чтобы вынести отдельно в какую-то переменную
-для дестр.массива уже квадратные скобки
+для дестр.массива уже квадратные скобки надо
 
 const [a, b, c] = num; ---- в консоли (3, 5, 6)
 если хотим получать не все, то можно пропускать какие-то элементы 
@@ -2665,6 +2682,127 @@ const {gender: {male: [maleUnder18, maleAdult], female: [femaleUnder18, femaleAd
 
 
 console.log(maleUnder18, femaleAdult); -- 15, 29
+
+
+
+
+
+
+
+
+
+
+
+
+HOMEWORK change to newer standarts
+
+var employers = ['Alex', '', 'ludmila', 'Viktor', '', 'oleg', 'iNna', 'Ivan', 'Alex', 'Olga', ' Ann'];
+
+var employersNames = [];
+for (var i = 0; i < employers.length; i++) {
+	if (employers[i].length > 0 && employers[i].length != '') {
+		employersNames.push(employers[i]);
+	}
+}
+for (var i = 0; i < employersNames.length; i++) {
+	employersNames[i] = employersNames[i].toLowerCase().trim();
+}
+
+var sponsors = {
+    cash: [40000, 5000, 30400, 12000],
+    eu: ['SRL', 'PLO', 'J&K'],
+    rus: ['RusAuto', 'SBO']
+};
+
+function calcCash(own) {
+    own = own || 0;
+    var everyCash = Array.prototype.slice.call(arguments);
+    var total = own;
+    for (var i = 0; i < everyCash[1].length; i++) {
+        total += +everyCash[1][i];
+    }
+    return total;
+}
+
+var money = calcCash(null, sponsors.cash);
+
+function makeBusiness(owner, director, cash, emp) {
+    director = director || 'Victor';
+    var sumSponsors = sponsors.eu.concat(sponsors.rus, 'unexpected sponsor');
+    console.log('We have a business. Owner: ' + owner + ', director: ' + director + '. Our budget: ' + cash + '. And our employers: ' +
+    emp);
+    console.log('And we have a sponsors: ');
+    console.log.apply(null, sumSponsors);
+    console.log('Note. Be careful with ' + sponsors.eu[0] + ". It's a huge risk.");
+}
+makeBusiness.apply(null, ['Sam', null, money, employersNames]);
+
+
+
+
+*****
+const employers = ['Alex', '', 'ludmila', 'Viktor', '', 'oleg', 'iNna', 'Ivan', 'Alex', 'Olga', ' Ann'];
+
+
+const employersNames = employers.filter(employer => employer).map((item) => item.toLowerCase().trim());
+
+https://medium.com/@stasonmars/%D0%BF%D0%BE%D0%B4%D1%80%D0%BE%D0%B1%D0%BD%D0%BE-%D0%BF%D1%80%D0%BE-%D0%BC%D0%B5%D1%82%D0%BE%D0%B4-filter-%D0%B2-javascript-1fcb239a0d74
+
+
+let sponsors = {
+    cash: [40000, 5000, 30400, 12000],
+    eu: ['SRL', 'PLO', 'J&K'],
+    rus: ['RusAuto', 'SBO']
+};
+
+----
+c этого момента ничего уже не понимаю как это поменялось на другое !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+function calcCash(own = 0) {
+
+    var everyCash = Array.prototype.slice.call(arguments);
+    var total = own;
+    for (var i = 0; i < everyCash[1].length; i++) {
+        total += +everyCash[1][i];
+    }
+    return total;
+}
+
+
+var money = calcCash(null, sponsors.cash);
+
+function makeBusiness(owner, director, cash, emp) {
+    director = director || 'Victor';
+    var sumSponsors = sponsors.eu.concat(sponsors.rus, 'unexpected sponsor');
+    console.log('We have a business. Owner: ' + owner + ', director: ' + director + '. Our budget: ' + cash + '. And our employers: ' +
+    emp);
+    console.log('And we have a sponsors: ');
+    console.log.apply(null, sumSponsors);
+    console.log('Note. Be careful with ' + sponsors.eu[0] + ". It's a huge risk.");
+}
+makeBusiness.apply(null, ['Sam', null, money, employersNames]);
+
+------
+const {cash, eu, rus} = sponsors;
+
+const sumSponsors = [...eu, ...rus, 'unexpected sponsor'];
+
+const calcCash = (cash = 0) => cash.reduce((a, b) => a + b);  ---- https://www.w3schools.creducem/jsref/jsref_reduce.asp 
+
+const money = calcCash(cash);
+
+const makeBusiness = ({cash, emp, owner = 'Sam', director = 'Victor'}) => {
+    console.log(`We have a business. Owner: ${owner} , director: ${director} . Our budget: ${cash} . And our employers: ${emp}
+And we have a sponsors: ${sumSponsors}
+Note. Be careful with ${eu[0]}. It's a huge risk.`);
+};
+makeBusiness({cash: money, emp: employersNames});
+
+
+
+
+
 
 
 */
