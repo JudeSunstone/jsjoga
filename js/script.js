@@ -3021,6 +3021,52 @@ public  -- здесь будут все статичные файлы favicon.ic
 
 
 
+JSX
+
+в файле index.html видим довольной пустой факл. есть один блок. id-root
+именно туда мы будем помещать и рендерить приложение 
+
+в index.js видим импорты 
+раекта, рект-дома (виртуальный), стили цсс, еще App from ./App
+seviceworker - он вместе в manifest.json необходимы для создания progressive applictaion 
+https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+
+для начала это не оосбоенно важно, можно и удалить 
+ReactDOM - с методом render которй помещает на нашу страницу все, что надо 
+
+идём  в App.js
+тут испорты (реакт, {component} лого, app.css)
+
+class App extends **наследует* Component **так можно написать потому что было деструктуризовано {} ранее в импорте компонента
+дальше начинается вся верстка и структура
+
+в конце по дефолту экспортируется приложение 
+именно отсюда оно переходит  в index.js 
+
+в index.js  здесь будет знакомиться с jsx
+cперва - самые маленькие структуры и блоки реакта  - рект-элементы
+импорт App можно закомментировать, чтоыб не мешал 
+
+**
+052 Emmet-React-
+https://medium.com/front-end-weekly/emmet-for-react-vue-in-vs-code-acb9abb3ed5f
+
+052 Bootstrap
+https://www.bootstrapcdn.com/
+
+052 Font-Awesome
+https://www.bootstrapcdn.com/fontawesome/
+
+052 PWA
+https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+
+052 React-DevTools
+https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi
+**
+
+дальше пишем const elem = <h2>Hello World!</h2>
+
+
 */ 
 
 
