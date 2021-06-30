@@ -3064,7 +3064,11 @@ https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi
 **
 
-дальше пишем const elem = <h2>Hello World!</h2>
+дальше пишем 
+const elem = <h2>Hello World!</h2> - эта строка проходит преобразование через babel и получается то,
+что надо - та олжно было бы юыть  const elem = React.createElement("h2", nullm "hello world")
+
+и заменяет App на elem ReactDOM.render(elem, document.getElementById("root"));
 
 
 */ 
