@@ -3129,7 +3129,7 @@ const Field = ()  => {
             returp <input
              ...
              style={styledField} - применили стили.. но такое используется редко, есть олее програмессивные методики и сss классы
-             
+
             />
     />
 }
@@ -3184,6 +3184,136 @@ const Header = ()  => {
     return <h2>{scr}</h2> 
     в итоге скрипт простоы выведтся строкой и никакой вредоносной программы не будет
 }
+
+
+
+
+
+JSX PRACTICE
+
+делаем что-то twitter like
+
+1. надо разбить приложения на логические компоненты
+2. подумать над структорой проекта
+3. работать
+
+чтобы сильно не заморачиватья подключим bootstrap
+иконки из набора fontawesome
+
+https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css покдлючить в public index.html 
+<lynk rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+<lynk rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
+в хеад
+удаляем автоматически там уже бывшие meta - theme color, mainfest (и meta и сам файд из этой же папки 
+    и остальные комментарии)
+
+    тег noscript можно оставить
+
+из папки src можно удалить serviceworker/logo/ app test / yarn lock  и App.js (его мы сделаем в компонентах) + App.css
+
+внутри index.js тоже сервис воркер удаляем
+
+
+компоненты:
+шапка с именно пользователся и стастика
+компонентд seacrр panel и фильтрации
+
+post list + post list item отдельные комоненты 
+
+и панель для создания новых твитов плюс кнопка для добавления
+
+работаем далее в папке src
+создаем папку components в ней 
+в этой папе oponents создаем папку app - будет содержать большую часть приложения и будет передаваться в индекс  (внутри app.css, app.js и index.js)
+еще создаем параррльно с app  app-header
+search-panel
+post-status-filter
+post-list
+post-list-item
+post-add-form
+
+в одной папке с компонентом будет и компонент и его стили  
+
+
+src index.js import  App from "./components/app/app" второй app не обзяательно, встроенное свойтво вебпака - если оставить только первое app 
+и не сказать какую папку искать дальше , то по умолчанию он будет искать index.js 
+
+app.js 
+
+import React from 'react'; - чтоыб перевести jsx в обычный js
+
+будем делать сперва по-простому, потом делать путь логических преобразований 
+
+ const App = () => {
+     return (
+        <h1>hello</h2>
+
+     )
+ }
+ export default App;
+
+ переходим в src index.js
+
+ import App from  "./app" (; надо вежб)
+ export default App; (все что в app.js - components перенаправляем в components index.js )
+
+далее идем в компоненты и app-header
+создаем  app-header.js
+index.js (можно и app-header.js импортировать, а моэжно по схеме автора с созданием индекса джс и не указанием второй паки в главноем пути )
+app-header.css
+
+тут тоже испортим 
+
+import rect from "react";
+
+const AppHeader = () => {
+
+    return (
+        <div className="app-header d-flex">  -- в класспейме прописываем наш класс в начале (к уроку приложены файлы цс со стилями) и из бутстрава дисплей флекс 
+
+            <h1>Regina</h1>
+            <h2>5 записей, из них понравилось 0 </h2>
+
+        </div>
+    )
+}
+
+export default AppHeader;
+
+в index.js (эта же папка app header)
+ import AppHEader from "./app-header";
+ export deafult AppHeader;
+
+ переходим в src components app.js 
+
+ import AppHeader from "../app-header"; - две точки выход выше 
+  const App = () => {
+     return (
+        <AppHeader/>
+
+     )
+ }
+
+
+
+ дальше панель для поиска, папка
+ search-panel
+ в нем 
+ search-panel.js
+ index.js
+
+ в серч панел js 
+
+import Reac
+
+const SearchPanel = () => {
+
+    return 
+
+}
+
+
+
 
 
 */ 
