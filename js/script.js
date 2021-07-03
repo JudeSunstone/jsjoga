@@ -3308,11 +3308,193 @@ import Reac
 
 const SearchPanel = () => {
 
-    return 
+    return (
+        <input 
+            className="form-control search-input" -- bootstrap
+            type="text"
+            placeholder="поиск по записям"
+        />
+
+    )
 
 }
 
+export default SearchPanel;
+в
+этой эе папке search panel index.js  import SearchPanel from './search-panel';
+export default SearchPanel;
 
+app > app.js
+import SearchPanel from '../search-panel';
+и добавляем
+  const App = () => {
+     return (
+        <div className="app"> - обертка
+                <AppHeader/>
+                <div className="search-nale d-flex">
+                    <SearchPanel/>
+                </div>
+        </div>
+
+     )
+ }
+
+
+ папка post-status-filter
+ создадим post-status-filter.js  + index.js
+ иппорт реакта 
+ const PostStatusFilter = () => {
+     return (
+         <div className="btn-group">
+            <button/>
+            <button/>
+
+         </div>
+     )
+ }
+export default PostStatusFilter;
+
+в index.js - 
+import PostStatusFilter from ".post-status-filter";
+ export default PostStatusFilter;
+
+в app app.js
+import PostStatusFilter from '../post-status-filter';
+  const App = () => {
+     return (
+        <div className="app"> - обертка
+                <AppHeader/>
+                <div className="search-nale d-flex">
+                    <SearchPanel/>
+                    <PostStatusFilter/>
+                </div>
+        </div>
+
+     )
+ }
+
+папка post-list добавляем post-list.js + index.js
+импортим в пост=лист.джс реакт
+import PostListItem from '../post-list-item'; - будем добавлять записи так новые 
+const PostList = () => {
+     return (
+
+           <ul className="app-list list-group">
+                <PostListItem/>
+                <PostListItem/>
+                <PostListItem/>
+           </ul>
+    
+     )
+ }
+export default PostList;
+ 
+ index.ja -- import PostList from './post-list';
+ export deafault PostList; 
+
+ папка post-list-item  >> post-list-item.js 
++  index.js
+
+ post-list-item.js 
+ >
+ import React ....
+const PostListItem = () => {
+     return (
+
+          <li className="app-list-item d-flex justify-content-between">  
+                <span className="app-list-item-label">
+                    Hello!!
+                </span>
+                <div className="d-flex justify-content-center align-items-center"> 
+                    <button 
+                    type="button" 
+                    className="btn-star btn-sm"> -- помещаем звездочку
+                        <i className="fa fa-star"></i> - это из фонтавесома 
+                     </button>
+                      <button  
+                      type="button" 
+                      className="btn-trash btn-sm"> -- помещаем корзинку
+                        <i className="fa fa-trash-o"></i> - это из фонтавесома 
+                     </button>
+                      
+                        <i className="fa fa-heart"></i> - это из фонтавесома  сердечко
+                      
+                </div>
+          </li>
+    
+     )
+ }
+ export default PostListItem;
+ в index.js import PostListItem from './post-list-item';
+ export deafult PostListItem;
+ теперь надо импортировать пост лист в app.js
+
+ import PostList from '../post-list';
+   const App = () => {
+     return (
+        <div className="app"> - обертка
+                <AppHeader/>
+                <div className="search-nale d-flex">
+                    <SearchPanel/>
+                    <PostStatusFilter/>
+                </div>
+                <PostList/>
+        </div>
+
+     )
+ }
+
+
+ последний компонент post-add-form
+ > post-add-form.js
+ + index.js
+
+post-add-form.js
+inport React
+
+const PostAddForm = () => {
+     return (
+
+           <form className="bottom-pael d-flex">
+                <input
+                    type="text"
+                    placeholder="О чем вы думаете сейчас?"
+                    className="form-control new-post-label"
+                />
+                <button
+                     type="submit"
+                     className="btn btn-outline-secondary"
+                /> Добавить </button>
+           </form>
+    
+     )
+ }
+export default PostAddForm;
+
+index.js < import PostAddForm from './post-add-form'
+export default PostAddForm;
+ 
+app app.js
+
+ import PostAddForm from '../post-add-form';
+
+ import './app.css'; - cSS !!! 
+   const App = () => {
+     return (
+        <div className="app"> - обертка
+                <AppHeader/>
+                <div className="search-nale d-flex">
+                    <SearchPanel/>
+                    <PostStatusFilter/>
+                </div>
+                <PostList/>
+                <PostAddForm/>
+        </div>
+
+     )
+ }
+
+структура готова, надо импортитровать css файлы см выше 
 
 
 
