@@ -3496,7 +3496,84 @@ app app.js
 
 структура готова, надо импортитровать css файлы см выше 
 
+папка css - надо разбитые на компоненты файлы тоже надо сделать такое же 
 
+https://www.freecodecamp.org/news/how-to-set-up-a-front-end-development-project/
+
+
+СВОЙСТВА И СОСТОЯНИЯ КОМПОНЕНТОВ REAC / COMPONENTS
+
+чтобы создать нескколько компонентов функции не обязательно использовать всегда div
+
+function WhoAmI() {
+
+    return (
+        <React.Fragment> -- !!! вместо дива  или обернуть ПУСТЫМИ КАВЫЧКАМИ <> .. </>!!!
+            <h1>My name is , surname - </h1>
+            <a href="">Profile is mine</a>
+        </React.Fragment>
+
+    )
+}
+
+ReactDOM.render(<WhoAmI />, document.getElmentById('root'));
+
+
+чтобы передать данные в компоненты надо использовать props
+
+function WhoAmI(props) {
+
+    return (
+        <> 
+            <h1>My name is {props.name}, surname - {props.surname} </h1>
+            <a href="{props.link}">Profile is mine</a>
+        </>
+
+    )
+}
+
+ReactDOM.render(<WhoAmI name="Sam" surname="Lee" link="wwww.google.com"/>, document.getElmentById('root'));
+
+так мы управляем компонентом, не сразу прописываем значения, я добавляем после  
+props - это объект со всеми атрибутами, котоырй будет создан когда передаем и даже если неп редеадим, но тольда не сможем использовать
+значения, что мы установили больше изменить нельзя. как делать динамически  это позже 
+блоки состоят из элементов. и после того, как они были помещены на страницу их поменять нельзя 
+!!!
+чтобы его поменять, надо всю функцию в нашем случае/компонент отрендерить заново 
+
+
+
+при помощи деструктуризации можно сделать проще 
+
+function WhoAmI({name, surname, link}) {
+
+    return (
+        <> 
+            <h1>My name is {name}, surname - {surname} </h1>
+            <a href="{link}">Profile is mine</a>
+        </>
+
+    )
+}
+
+ReactDOM.render(<WhoAmI name="Sam" surname="Lee" link="wwww.google.com"/>, document.getElmentById('root'));
+
+const All () => {
+    return (
+        <>
+            <WhoAmI name="Sam" surname="Lee" link="wwww.google.com"/>
+            <WhoAmI name="Lea" surname="Wow" link="wwww.google.com"/>
+            <WhoAmI name="Kath" surname="Lath" link="wwww.google.com"/>
+        </>
+
+    )
+}
+ReactDOM.render(<All/>, document.getElmentById('root'));
+
+мы создали много разных объектов/людей, но объединили в одну структуру
+один и тот же компонент, но разные свойства
+
+мы на страницу сразу получаем три разных конмтрукции
 
 */ 
 
