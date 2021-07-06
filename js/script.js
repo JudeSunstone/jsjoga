@@ -3575,6 +3575,161 @@ ReactDOM.render(<All/>, document.getElmentById('root'));
 
 мы на страницу сразу получаем три разных конмтрукции
 
+
+ИСПОЛЬЗУЯ ФУНЦКИИ МЫ НЕ МОЖЕМ ХРАНИТЬ РАЗНЫЕ СОСТОЯНИЯ КОМПОНЕНТОВ (динамическое)
+а вот в Классах можем
+
+import React, {Component} from 'react';
+сlass WhoAmI extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {  - задает свойство в контрукторе. state в виде объекта. вытаскивает только то. что нужно
+            years: 26
+
+
+        }   
+        
+    }
+    render() { - ренлерим структура на странице и будет возвращать верстку
+
+        const {name, surnale, link} = this.props; - деструктуризация, данные
+        const{years} = this.state;
+        return (
+            <> 
+                <h1>My name is {name}, surname - {surname} years {this.state.years} </h1>
+                <a href="{link}">Profile is mine</a>
+            </>
+
+         )
+
+    }
+}; 
+
+функция больше не нужна
+
+const All () => {
+    return (
+        <>
+            <WhoAmI name="Sam" surname="Lee" link="wwww.google.com"/>
+            <WhoAmI name="Lea" surname="Wow" link="wwww.google.com"/>
+            <WhoAmI name="Kath" surname="Lath" link="wwww.google.com"/>
+        </>
+
+    )
+}
+ReactDOM.render(<All/>, document.getElmentById('root'));
+
+как же динамически менять данные в компонентах
+props - атрибуты только для чтения и меня динамически не получится 
+при помощи state см выше можно хранит разные текущие компоненты (слайд, время)
+сложно менять state. обработчик события.
+чтобы использовать в реакте, надо в элементе в качестве атрибута записать его в формате камелскейс 
+
+
+
+
+import React, {Component} from 'react';
+сlass WhoAmI extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {  - задает свойство в контрукторе. state в виде объекта. вытаскивает только то. что нужно
+            years: 26
+        } 
+        1 -- this.nextYear = this.nextYear.bind(this); - привязака жесткая контекста к событию  
+        
+    }
+   1--  способ сзвязывания котекста с обработчиком событий
+   
+   nextYear() {
+        console.log(1); КАК ПРАВИЛЬНО МЕНЯТЬ STATE !!!! !!!!!! 
+        this.state.years++ - будет ошибка! прямым образом поменять не получится
+        правильно -- this.setState(state => ({
+            years: ++state.years    ++ префикс чтобы сразу получить результат
+        }))    -- команда setState перезаписывает объект с нашими состояниями, выполняется АСИНХРОННО
+   1--  }
+
+   2 --- 
+   this.nextYear = () => {  стрелочная функция потому что сохрянет контекст родителя
+        this.setState(state => ({
+            years: ++state.years  
+        }))  
+   }
+   3 ---
+   экспериментальная возможность
+   classFields?
+   state = {  - задает свойство в контрукторе. state в виде объекта. вытаскивает только то. что нужно
+            years: 26
+        } 
+
+   теперь можно функцию (и state!) записывать не только в объект при помощи конструктора в вполне отдельно 
+        nextYear = () => {  стрелочная функция потому что сохрянет контекст родителя
+                this.setState(state => ({
+                    years: ++state.years  
+                }))  
+        }
+
+
+   render() { - рендерим структура на странице и будет возвращать верстку
+
+        const {name, surnale, link} = this.props;
+        const{years} = this.state;
+        return (
+            <> 
+                <button onClick={this.nextYear}>++<button/> -- создаем кнопку и добавляем обработчик потом создаем нужную функцию,т.е this то нужен метод класса
+                в этом виде не будет работать, т.к. this надо привязать конткретно к обработчику события компонента !!!!!!!!!!!
+                !!!!!!!!!!!!
+                !!!!!!!!
+                . есть 3 способа. 1 -  bind.  2 - использовать в контрукторе
+                <h1>My name is {name}, surname - {surname} years {this.state.years}  </h1>
+                <a href="{link}">Profile is mine</a>
+            </>
+
+         )
+
+    }
+}; 
+
+
+const All () => {
+    return (
+        <>
+            <WhoAmI name="Sam" surname="Lee" link="wwww.google.com"/>
+            <WhoAmI name="Lea" surname="Wow" link="wwww.google.com"/>
+            <WhoAmI name="Kath" surname="Lath" link="wwww.google.com"/>
+        </>
+
+    )
+}
+ReactDOM.render(<All/>, document.getElmentById('root'));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+056 Свойства и состояния компонентов. События в React _ Практика
+
+
+в предыдущий проект добавляем доработки
+ const PostStatusFilter = () => {
+     return (
+         <div className="btn-group">
+            <button type="button" className='btn btn-info'> Все </button>  - добавляем кнопку и классы
+            <button type="button" className='btn btn-outline-secondary'> Понравилось </button> 
+
+         </div>
+     )
+ }
+export default PostStatusFilter;
+
 */ 
 
 
