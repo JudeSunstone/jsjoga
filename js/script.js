@@ -3730,12 +3730,174 @@ ReactDOM.render(<All/>, document.getElmentById('root'));
  }
 export default PostStatusFilter;
 
-*/ 
+
+https://www.taniarascia.com/react-architecture-directory-structure/
 
 
 
 
 
+
+
+plugins 
+extensions vs-code
+
+JS Quick Console - сntrl shift l - console log quickly
+!!!!!!!!!!!
+!!!!!
+!
+!
+
+open in browser - opens in diff browsers when you right-click
+
+
+NODE js версия LTS и реальных проектах
+
+
+
+
+
+
+ЗАДАЧИ с СОБЕСЕДОВАНИЯ
+
+
+реализовать метод forEach в виде функции
+классическая задача
+
+const arr = [1, 2, 3, 4, 5];
+arr.forEach.(function (item) {
+
+    console.log(item); // 1, 2, 3, 4, 5
+})
+
+1. function forEach(arr, func) {
+    for (let i = 0; i < arr.length; i++) {
+        func(arr[i]);
+    }
+}
+forEach([1, 2, 3, 4], function (item) {
+    console.log(item * 2);
+});
+
+вопросы - что будет в первый аргумент, 
+надо задавать вопросы, осмыслить задание, а не просто сходу решать
+
+
+
+2. Хитрая. Написать функцию sum(3) (6) // первая функция возвращает что-то и туда идет второе значение. (6) это тоже функиця
+
+function sum (num1) {
+    return function (num2) {
+        returm num1 + num2;
+    }
+}
+
+const result = sum(5) (7);
+console.log(result);
+
+это функциональное.прогр.
+
+2.2 подвид задачи
+еще хитре
+
+sum(6)(3)(7)..();
+через рекурсию решается
+
+ответа пока нет
+
+
+3. Классический problem solving
+
+написать функцию, которая принимает две строки и определяет, является ли одна тсрока 
+анаграммой другой - из букв одной строки можно сделать доугое слово mama - amma
+
+уточнять какие входные значния. всеглада ли приходятся строки. или еще какие-то вариант. числа/буквы
+
+functiom isAnagram(str1, str2) {
+    наивный способ - перебрать все что можно. берем сиволсы первой строки второй, смотрим, совпадает ли
+
+
+    if (str1.lenght !== str2.lenght) {
+        return false;
+    }
+
+ взять и посмотреть, опр.букву и посмотреть, сколько из во второй, если отчиаются -уже не анаграмма
+
+        const dict1 = {};
+        //создаем объект, где перечислены все буквы 1 строки и записано. сколько раз буква встречается
+
+        for (let i = 0; i < str1.lenght; i++) {
+            const symbol = str1[i];
+
+            if (dict[symbol]) {
+                dict1[symb] +-1;
+            } else {
+                dict1[sym] = 1;
+            }
+        }
+}
+   const dict2 = {};
+        //создаем объект, где перечислены все буквы 1 строки и записано. сколько раз буква встречается
+
+        for (let i = 0; i < str1.lenght; i++) {
+            const symbol = str1[i];
+
+            if (dict2[symbol]) {
+                dict2[symb] +-1;
+            } else {
+                dict2[sym] = 1;
+            }
+        }
+
+
+
+fuc
+
+перебирает ключи объекта и сравниваем их кол-во, если не совпадает, то фолс
+
+for (let key in dict1) {
+    if (dict1[key] !== dict2[key]) {
+        return false;
+    }
+}
+return true; - если все совпадает 
+
+
+
+isAnagram('amma', 'mama'); //true
+isAnagram('qwer', 'asda'); //false
+
+берем самый простой вариант
+это первй способ и простой и прмолинейный
+
+
+
+
+
+function isAnagram(str1, str2) {
+    if (str1.leght !== str2.lenght) {
+        return false;
+    }
+
+    const dict = createDict(str1);
+
+    for ;et i = 0; i <str2.legth; i++) {
+        const sym = str2[i];
+        dict[sym] -=1;
+    }
+
+    for (let key in dict) {
+        if (dict[key] !== 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+первый вариант более понятный, второй - меньше памяти берет - не создаем еще один объект
+
+
+*/
 
 
  
