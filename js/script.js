@@ -3928,6 +3928,13 @@ num--
 https://youtu.be/vBYSrXoXysA
 while связано с общим контекстом, а цикл for нет 
 do while - код сперва выполняется, а потмо проверяется условие 
+
+http://dmitrysoshnikov.com/2009/06/
+
+https://262.ecma-international.org/12.0/
+
+
+
 */
 
 
