@@ -3933,6 +3933,9 @@ http://dmitrysoshnikov.com/2009/06/
 
 https://262.ecma-international.org/12.0/
 
+https://habr.com/ru/post/159313/
+https://ru.hexlet.io/courses/javascript_101/lessons/javascript_num/theory_unit
+https://ru.hexlet.io/courses/introduction_to_programming/lessons/functions/theory_unit
 
 
 */
