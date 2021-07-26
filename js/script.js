@@ -3938,6 +3938,20 @@ https://ru.hexlet.io/courses/javascript_101/lessons/javascript_num/theory_unit
 https://ru.hexlet.io/courses/introduction_to_programming/lessons/functions/theory_unit
 
 
+
+figma font fascia
+https://www.figma.com/community/plugin/746097413727734148/Font-Fascia
+
+
+https://ru.bem.info/
+
+https://www.free-css.com/free-css-templates?start=108
+
+https://ru.hexlet.io/courses/javascript_101/lessons/javascript_num/theory_unit
+
+https://ru.hexlet.io/courses/introduction_to_programming/lessons/functions/theory_unit
+
+https://bootcamp.algoritmika.org/verstka_course alg.gift  
 */
 
 
