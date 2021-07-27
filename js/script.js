@@ -3952,8 +3952,17 @@ https://ru.hexlet.io/courses/javascript_101/lessons/javascript_num/theory_unit
 https://ru.hexlet.io/courses/introduction_to_programming/lessons/functions/theory_unit
 
 https://bootcamp.algoritmika.org/verstka_course alg.gift  
+
+
+
+https://css-tricks.com/a-step-by-step-process-for-turning-designs-into-code/ как оценивать дизайн, чтобы перевести его в код 
+взгляд на дизайн и что надо замечать
+
+https://css-tricks.com/how-to-get-a-pixel-perfect-linearly-scaled-ui/ - вариант пиксель перфект 
+
+https://glo-academy.org/teach/control/lesson/view/id/211390543 
 */
 
 
  
-
+! 
