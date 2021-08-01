@@ -3963,9 +3963,18 @@ https://css-tricks.com/how-to-get-a-pixel-perfect-linearly-scaled-ui/ - вари
 https://glo-academy.org/teach/control/lesson/view/id/211390543 
 
 
+<<<<<<< HEAD
 
 <!DOCTYPE html>
 <html lang="ru">
+=======
+--------------------------------------------------------------------------------------------------------
+homework
+
+
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -3973,6 +3982,7 @@ https://glo-academy.org/teach/control/lesson/view/id/211390543
     <title>Document</title>
 </head>
 <body>
+<<<<<<< HEAD
     <h1>Статистика Банка России</h1>
        <h3> Количество банков в России с 2001 по 2020 годы</h3>
     <p>
@@ -4112,7 +4122,95 @@ https://youtu.be/wm8hhQyIR9o
 
 
 
-*/
+=======
+    <main>
+        <header>
+            <img src="https://s.algoritmika.org/fiv66v" alt="mario banner" class="logo">
+        </header>
+
+        <section>
+            <h1>Mario</h1>
+            <p> Mario is a video game character created by Shigeru Miyamoto. He is Nintendo's mascot and the most famous video game character of all time. The Mario series has over 200 video games and have sold over 200 million copies making the Mario series the best selling video game franchise of all time. Starting from the arcade game Donkey Kong, Mario has gone on to be well known throughout the world and has starred in almost every video game genre from, platformer, role playing, sports, geography, history, fighting and racing games. He was created by Shigeru Miyamoto to boost Nintendo to the top of the video game industry. </p>
+            <table style="border: 1px solid black;">
+                <tr>
+                    <td style="border: 1px solid black">Created:</td>
+                    <td style="border: 1px solid black">1980</td>
+                    </tr>
+                <tr>
+                    <td style="border: 1px solid black" >Creators:</td>
+                    <td style="border: 1px solid black" >Shigeru Miyamoto</td>
+                    </tr>
+                <tr>
+                    <td style="border: 1px solid black">Series:</td>
+                    <td style="border: 1px solid black">Super Mario series </td>
+                    </tr>
+                <tr>
+                    <td style="border: 1px solid black">Genres:</td>
+                    <td style="border: 1px solid black"> Adventure </td>
+                    </tr>
+                <tr>
+                    <td style="border: 1px solid black" >Species:</td>
+                    <td style="border: 1px solid black">Human</td>
+                    </tr>
+              
+            </table>
+             
+        </section>
+        <section>
+            <h2>Conception and Creation </h2>
+            <p>When Nintendo was working on Miyamoto's game, Donkey Kong Miyamoto had to create a character to play with. So after coming up with the idea of a carpenter so that people could recognize who he is. Mario's clothes were made the way they are now because of limitations of the Donkey Kong game. Miyamoto gave Mario a mustache because he couldn't draw a mouth. He gave Mario a big nose so that he would appear human. He then gave Mario a hat because he didn't want to draw hair. The overalls were given as Mario's clothing so his arms could be seen swinging back and forth when walking. Later Miyamoto decided to change Mario's occupation to a plumber because of his overalls and showed this in the arcade game Mario Bros., and the setting being in the sewers. Before Mario Bros. Nintendo wanted to give Mario a better name then Jumpman. So they decided to name him Mario after Nintendo of America's Italian landlord Mario Segale for their similar appearances.</p>
+        </section>
+        <section>
+            <h2>Girlfriend, Ape and Construction Site</h2>
+            <p>Mario first appeared in the arcade game Donkey Kong which becomes the second best selling arcade game of all time. The ape Donkey Kong had kidnappped Mario's girlfriend, Pauline and took her to the top of a construction site. Mario had to climb the large structure to try and rescue Pauline. Donkey Kong threw barrels and other objects down the girders to try and stop the carpenter. Every time Mario got to the top, Donkey Kong took Pauline higher up of the place. Eventually Mario was able to make the girders that Donkey Kong stood on come down and he fell and got knocked unconscious. Mario took Pauline with him and they finished their date</p>
+            
+            <img src="https://s.algoritmika.org/1myfutc" alt="here must be a illustration, but developer is too lazy to deal with it without  layout">
+            <p> <font color="grey"> Mario in his first game trying to rescue Pauline from the ape, Donkey Kong. </font> </p>
+        </section>
+        <section>
+            <h2>Big Ape's Son</h2>
+            <p>Mario later took Donkey Kong to a jungle and put him in a cage for revenge for kidnapping Pauline. Donkey Kong Jr., DK's son tries to rescue his father and is the only playable character. DK Jr. climbs vines and platforms to tries to grab the keys to the cage. Mario sends enemies to attack Jr. Jr. retaliates by dropping fruits on the enemies. Every time Jr. unlocked DK's cage Mario would take him to another location. Eventually DK Jr. rescues his father from the cage and Mario leaves the two where they are.</p>
+           
+           <img src="https://s.algoritmika.org/l3e7no" alt="here must be a illustration, but developer is too lazy to deal with it without  layout">
+            <p> 
+                <font color="grey">  Donkey Kong Jr. trying to rescue his father Donkey Kong from Mario. </font> 
+                </p>
+
+        <section>
+            <h2>Mario brothers 1</h2>
+            <p>Mario's occupation is later changed from a carpenter to a plumber. He is joined by another plumber, his brother Luigi to help kill the strange creatures in the sewers of New York City. Mario and Luigi kill many Shellcreepers , Sidesteppers, and Fighter Flies, and go further into the sewers. Eventually the brothers go into a pipe leading them to a parallel universe.</p>
+                <img src="https://s.algoritmika.org/h2yt2v" alt="here must be a illustration, but developer is too lazy to deal with it without  layout">
+                <p> <font color="grey">  Donkey Kong Jr. trying to rescue his father Donkey Kong from Mario. </font> </p>
+        </section>
+        <section>
+            <h2>Saving the Mushroom</h2>
+            <p>In Super Mario Bros. Mario and Luigi arrive in a new land called the Mushroom Kingdom. Mario finds out that the land has been attacked by Koopas. The King of Koopas, Bowser has used black magic to turn the kingdom's citizens into different objects such as brick blocks or ? blocks. Mario heads across the kingdom to save Princess Peach Toadstool who was kidnapped by Bowser because she can stop the black magic. Mario and Luigi can use Super Mushrooms to become bigger and use Fire Flowers to shoot fireballs. Mario goes through the land and defeats the False Bowsers in each castle saving the Mushroom Retainers. Mario finally arrives at the last castle and faces the real Bowser in battle. He is defeated the same way by using the axe to cut the bridge knocking him into lava sending him to a fiery death. Mario then frees the princess. In the original Super Mario Bros. 2 the story, graphics and gameplay are the same. Somethings are different like Poison Mushrooms and wind and Bloopers swimming in the sky.</p>
+            <img src="https://s.algoritmika.org/fv3nnf" alt="here must be a illustration, but developer is too lazy to deal with it without  layout">
+            <p> <font color="grey">  Donkey Kong Jr. trying to rescue his father Donkey Kong from Mario. </font> </p>
+        </section>
+        <section>
+            <h2>In Subcon</h2>
+            <p>Mario had a dream of walking up a staircase. He opened the door at the top and saw a large land before him. A voice spoke to him and said it is Subcon, the land of dreams. The voice told Mario to stop the evil Wart. Mario woke up in the middle of the night wandering of this strange dream. While on a picnic with his friends Mario and friends went into a cave and appeared in the land Mario spoke of. They went on the adventure to stop Wart. When they freed the people of Subcon Mario awoke from his dream wondering if it had ever happened.</p>
+             <img src="https://s.algoritmika.org/1amu070" alt="here must be a illustration, but developer is too lazy to deal with it without  layout">
+               <p> 
+                   <font color="grey">  Donkey Kong Jr. trying to rescue his father Donkey Kong from Mario. </font>
+                   </p>
+        </section>
+        <section>
+            <h2>Saving the Mushroom World</h2>
+            <p>Bowser has sent his army led by his Koopalings to take over the seven kingdoms of the Mushroom World. Each Koopaling has stolen a king's wand and transformed him into an animal. Mario must restore peace to the lands and defeat the Koopalings. While going through all the lands Bowser uses this time to kidnap Princess Peach. Mario recieves the info from a letter sent by Bowser. Mario travels through Dark Land defeating the Koopa Army to reach Bowser's Castle and save the Princess.</p>
+            <img src="https://s.algoritmika.org/1qyt4a7" alt="here must be a illustration, but developer is too lazy to deal with it without  layout">
+            <p> 
+                <font color="grey">  Donkey Kong Jr. trying to rescue his father Donkey Kong from Mario. </font> 
+            </p>
+        </section>
+
+    </main>
+    
+
+
+</body>
+</html>
 
 
  
