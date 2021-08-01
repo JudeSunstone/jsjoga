@@ -4232,6 +4232,141 @@ $ git pull origin YOUR_BRANCH_NAME
 
 https://docs.github.com/en/get-started/using-git/dealing-with-non-fast-forward-errors
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="title">Macintosh</h1>
+    <p>The Macintosh (mainly Mac since 1998) is a family of personal computers designed, manufactured, and sold by Apple Inc. since January 1984.</p>
+    <p>The original Macintosh is the first successful mass-market personal computer to have featured a graphical user interface, built-in screen, and mouse. Apple sold the Macintosh alongside its popular Apple II family of computers for almost ten years until the latter was discontinued in 1993.</p>
+
+    <h2>Available models</h2>
+    <ul class="models">
+        <li>Desktops
+            <ul class="models-names">
+                <li>iMac</li>
+                <li>Mac mini</li>
+                <li>iMac Pro</li>
+                <li>Mac Pro</li>
+            </ul>
+        </li>
+        <li>Portables
+            <ul class="models-names">
+                <li class="list-item">MacBook Air</li>
+                <li class="list-item">MacBook Pro</li>
+            </ul>
+        </li>
+    </ul>
+
+</body>
+</html>
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+  font-family: Montserrat, Helvetica, sans-serif;
+}
+
+p:first-of-type{
+   font-style: italic;
+}
+
+h1 {
+    background-color: yellow;
+    font-weight: 900;
+    color: #2F4F4F;
+}
+
+.models {
+    font-weight: 600;
+}
+
+.models-names { 
+    font-weight: 400;
+    list-style-type: circle;
+}
+
+ .list-item   { 
+    font-style: italic;
+} /*мне кажется, добавление классов именно для выделения курсивом  последних элементов как-то неразумно что ли. 
+ Добавить псевоклассы? Но не только последний же.. Какие еще есть варианты?*/
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ol>
+        <li>black #000000</li>
+        <li>silver #C0C0C0</li>
+        <li>gray #808080</li>
+        <li>white #ffffff </li>
+        <li>maroon #800000</li>
+        <li>red #FF0000</li>
+        <li>purple #800080</li>
+        <li>fuchsia #FF00FF</li>
+        <li>green #008000</li>
+        <li>lime #00FF00 </li>
+        <li>olive #808000</li>
+        <li>yellow #FFFF00</li>
+        <li>navy #000080</li>
+        <li>blue #0000FF </li>
+        <li>teal #008080 </li>
+        <li>aqua #00FFFF</li>
+    </ol>
+</body>
+</html>
+
 
  
-! 
+! */
