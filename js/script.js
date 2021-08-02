@@ -4440,6 +4440,76 @@ li {
 </html>
 
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+  font-family: Montserrat, Helvetica, sans-serif;
+  width: 720px;
+}
+h1, h2, h3 {
+    font-weight: 900;
+}
+
+td, p, ul {
+    background-color: #f0fff8; 
+    border: 1px solid #80ced6;
+    border-radius: 10px;
+}
+Li {
+    list-style: square;
+}
+td {
+     padding: 10px;
+}
+p, ul {
+     padding: 30px;
+}
+table {
+    width: 100%;
+     border-collapse: collapse;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>ИА «Панорама» сообщает</h1>  
+  <h3>20 дек 2020</h3>
+  <p>Полиция Улан-Удэ пресекла несанкционированную игру в футбол «головой» Ленина</p>
+  <hr>
+  <h3>19 дек 2020</h3>
+  <p>Участники шоу «Дом-2» объявили себя обманутыми дольщиками</p>
+  <hr>
+  <h3>12 дек 2020</h3>
+  <p> Польская ракета-носитель взорвалась после удара о небесную твердь</p>
+  <hr>
+  <h3> 09 дек 2020</h3>
+  <p> В рамках программы по колонизации Луны «Роскосмос» построит на спутнике колонию общего режима</p>
+</body>
+</html>
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 16px;
+}
+h1 {
+    font-size:  44px;
+} 
+h3 {
+    font-size:  12px;
+}
+
+
 
 
  */
