@@ -4510,6 +4510,86 @@ h3 {
 }
 
 
+CARD
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="card">
+    <div class="card-container">
+        <div class="card-chip">
+          <img src="https://s.algoritmika.org/a70yh9" alt="chip" class="card-chip-img">
+        </div>
+        <div class="card-number">
+          <span>4500 6812 5512 6089</span>
+        </div>
+        <div class="card-name">
+          <span>ALEKSEEV IVAN</span>
+        </div>
+        <div class="card-valid">
+          <span class="card-valid-name">
+          Valid thru: <br>
+          </span>
+          <span class="card-valid-date">
+            07/22
+          </span>
+        </div>
+    </div>
+  </div>
+  
+</body>
+</html>
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+  color: white;
+}
+
+.card {
+    background-color: #833ae0;
+    border-radius: 15px;
+    width: 330px;
+    height: 200px;
+}
+.card-container {
+    margin-left: 20px;
+}
+.card-chip-img {
+    padding-top: 30px;
+    height: 50px;
+} 
+
+.card-number {
+    font-size:  25px;
+    font-family: Courier New;
+}
+
+.card-name {
+    font-size:  20px;
+    font-family: monospace; 
+    font-style: bold;
+}
+
+.card-valid {
+    margin-bottom: 10px;
+    font-family:  Tahoma, serif;
+    font-size: 15px;
+}
+.card-valid-name {
+    font-size: 10px;
+}
+
+
+
 
 
  */
