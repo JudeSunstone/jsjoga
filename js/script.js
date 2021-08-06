@@ -4509,9 +4509,6 @@ h3 {
     font-size:  12px;
 }
 
-
-CARD
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -4548,10 +4545,9 @@ CARD
 </body>
 </html>
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 body {
   color: white;
+  padding-left: 10px;
 }
 
 .card {
@@ -4561,10 +4557,13 @@ body {
     height: 200px;
 }
 .card-container {
-    margin-left: 20px;
+    margin-left: 15px;
 }
+.card-chip {
+    padding-top: 35px; 
+}
+
 .card-chip-img {
-    padding-top: 30px;
     height: 50px;
 } 
 
@@ -4576,18 +4575,18 @@ body {
 .card-name {
     font-size:  20px;
     font-family: monospace; 
-    font-style: bold;
+    font-weight: bold;
+    padding-bottom: 5px;
 }
 
 .card-valid {
-    margin-bottom: 10px;
+    padding-bottom: 30px;
     font-family:  Tahoma, serif;
     font-size: 15px;
 }
 .card-valid-name {
     font-size: 10px;
 }
-
 
 
 
