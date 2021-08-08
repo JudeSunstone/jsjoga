@@ -4591,6 +4591,378 @@ body {
 
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <div class="main">
+    <main>
+      <p class="date">yesterday, 20:20</p>
+      <h1>What are HTML color codes?</h1>
+      <p class="author">Kate Olsen</p>
+      <p>Color codes are ways of representing the colors we see everyday in a format that a computer can interpret and display. Commonly used in websites and other software applications, there are a variety of formats, including Hex color codes, RGB and HSL values, and HTML color names, amongst others.</p>
+      <h2>RGB COLOR CODES</h2>
+
+      <p>
+        Red Green Blue (RGB) is a color model that represents colors as mixtures of three underlying components (or channels), namely, red, green, and blue. Each color is described by a sequence of three numbers (typically between 0.0 and 1.0, or between 0 and 255) that represent the different intensities (or contributions) of red, green, and blue, in determining the final color.
+
+      </p>
+      <p>
+        For example, rgb(255, 0, 0) is displayed as red, because red is set to its highest value (255) and the others are set to 0. rgb(0, 0, 0) is displayed as black, all color parameters must be set to 0. rgb(255, 255, 255) is displayed as white, all color parameters must be set to 255
+
+      </p>
+
+      <h2>HEX COLOR CODES</h2>
+      <p>
+        Hex color codes are represented by three byte hexadecimal numbers (meaning they consist of six digits), with each byte, or pair of characters in the Hex code, representing the intensity of red, green and blue in the color respectively
+
+      </p>
+      <p>
+        Hex code byte values range from 00, which is the lowest intensity of a color, to FF which represents the highest intensity. The color white, for example, is made by mixing each of the three primary colors at their full intensity, resulting in the Hex color code of #FFFFFF.
+      </p>
+      <p>
+        Black, the absence of any color on a screen display, is the complete opposite, with each color displayed at their lowest possible intensity and a Hex color code of #000000.
+      </p>
+      <p>
+        The three primary colors, red, green and blue, are made by mixing the highest intensity of the desired color with the lowest intensities of the other two: #FF0000 - red, #00FF00 - green, #0000FF - blue.
+      </p>
+      <p>
+        With modern browsers supporting the full spectrum of 24-bit color, there are 16,777,216 different color possibilities. Use our color picker to explore all 16.7 million of them, or if that’s too many, check out our color charts for a selection of palettes focused on flat design, Material design and web safe colors.
+      </p>
+    </main>
+  </div>
+  <div class="aside">
+    <aside>
+      <div class="ref">
+        <h4>References</h4>
+        <hr>
+        <ul>
+          <li>
+            <a href="https://www.w3schools.com/colors/colors_hexadecimal.asp">
+              The HEX Calculator
+            </a>
+          </li>
+          <li>
+            <a href="https://www.w3schools.com/html/html_colors.asp"> 
+            HTML Colors</a>
+          </li>
+          <li>
+            <a href="https://www.w3schools.com/colors/colors_names.asp"> 
+              HTML Color Names</a>
+            </li>
+          <li>
+            <a href="
+            https://www.w3schools.com/html/html_colors_rgb.asp">
+              Try RGB Color Values
+            </a>
+            </li>
+          <li>
+            <a href="
+            https://www.w3schools.com/html/html_colors_hex.asp">
+              Try HEX Color Values
+            </a>
+            </li>
+        </ul>
+      </div>
+
+      <table class="table">
+          <tr>Color keywords</tr>
+          <hr>
+          <thead>
+            <tr>
+              <th>COLOR NAME		</th>
+              <th>HEX COLOR CODE</th>
+              <th>RGB COLOR CODE</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>WHITE	</td>
+              <td>#FFFFFF</td>
+              <td>RGB(255, 255, 255)</td>
+            </tr>
+            <tr>
+              <td>SILVER		</td>
+              <td>#C0C0C0</td>
+              <td>RGB(192, 192, 192)</td>
+            </tr>
+            <tr>
+              <td>GRAY</td>
+              <td>#808080	</td>
+              <td>RGB(128, 128, 128)</td>
+            </tr>
+            <tr>
+              <td>BLACK		</td>
+              <td>#000000</td>
+              <td>RGB(0, 0, 0)</td>
+            </tr>
+            <tr>
+              <td>RED</td>
+              <td>#FF0000	</td>
+              <td>RGB(255, 0, 0)</td>
+            </tr>
+            <tr>
+              <td>MAROON</td>
+              <td>#800000</td>
+              <td>	RGB(128, 0, 0)</td>
+            </tr>
+            <tr>
+              <td>YELLOW</td>
+              <td>#FFFF00	</td>
+              <td>RGB(255, 255, 0)</td>
+            </tr>
+            <tr>
+              <td>OLIVE</td>
+              <td>#808000	</td>
+              <td>RGB(128, 128, 0)</td>
+            </tr>
+            <tr>
+              <td> LIME	</td>
+              <td>#00FF00</td>
+              <td>RGB(0, 255, 0)</td>
+            </tr>
+            <tr>
+              <td>GREEN</td>
+              <td>#008000	</td>
+              <td>RGB(0, 128, 0)</td>
+            </tr>
+            <tr>
+              <td>AQUA</td>
+              <td>#00FFFF	</td>
+              <td>RGB(0, 255, 255)</td>
+            </tr>
+            <tr>
+              <td>TEAL		</td>
+              <td>#008080</td>
+              <td>RGB(0, 128, 128)</td>
+            </tr>
+            <tr>
+              <td> BLUE		</td>
+              <td> #0000FF</td>
+              <td>RGB(0, 0, 255)</td>
+            </tr>
+            <tr>
+              <tr>
+                <td>NAVY</td>
+                <td>#000080</td>
+                <td>RGB(0, 0, 128)</td>
+              </tr>
+              <td>FUCHSIA </td>
+              <td>#FF00FF</td>
+              <td>RGB(255, 0, 255)</td>
+            </tr>
+            <tr>
+              <td> PURPLE	</td>
+              <td>#800080</td>
+              <td>RGB(128, 0, 128)</td>
+            </tr>
+        </tbody>
+      </table>
+    </aside>
+  </div>
+</div>
+</body>
+</html>
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif; 
+    font-size: 12px;
+}
+.container {
+    display: flex;
+}
+
+main {
+    width: 600px;
+    padding: 20px;
+}
+p {
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.date {
+    font-size: 10px;
+}
+.author {
+    font-size: 12px;
+    background-color: azure;
+}
+h1 {
+    font-size: 36px;
+}
+h2 {
+    font-size: 24px;
+}
+
+.ref, .table {
+    color: #333;
+    background-color: #EEE;
+    padding: 20px;
+}
+a {
+    color: #833ae0;
+}
+li {
+    list-style: none;
+    padding: 0px;
+}
+
+**не доделано еще
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="logo">
+        Бюрократ
+      </div>
+      <nav class="nav">
+        <ul>
+          <li><a href="#">Статьи</a></li>
+          <li><a href="#">Советы</a></li>
+          <li><a href="#">О журнале</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="banner">
+          <h1>
+            Валютный контроль на практике
+          </h1>
+          <h2>
+            Как получать деньги за услуги от иностранных клиентов
+          </h2>
+      </div>
+        <p>
+          Я программист, разрабатываю сайты. В ноябре 2018 года ко мне обратился один немецкий стартап. Мы обсудили условия и договорились, что они переведут оплату в долларах мне на счёт. До этого я никогда не работал с иностранной валютой.
+        Я думал, что клиент просто сделает обычный банковский перевод на мою карту. Оказалось, прежде чем начать деньги можно будет использовать, они должны пройти валютный контроль.
+      </p>
+      <h2> Что такое валютный контроль</h2>
+      <p>В России все валютные операции подчиняются закону «О валютном регулировании и валютном контроле». От покупки валюты в обменнике до расчётов с иностранными компаниями — всё это валютные операции, и они должны учитываться государством.
+      </p>
+      <p>
+        Когда платёж приходит из-за границы, Правительство и Центральный банк должны быть уверены, что деньги получены законным путём. Они запрашивают у получателя документы, которые подтвердят, что он получил оплату за легальный товар или услугу, а не за продажу оружия, организацию теракта или незаконную сделку. Процесс проверки законности полученных денег называется валютным контролем.</p>
+      <p>
+        Чтобы валютный контроль проходил быстрее, Центральный банк разрешает коммерческим банкам самим проверять законность платежей. Сотрудники банка, в который пришёл платёж, проверяют все подтверждающие документы, и затем передают всю информацию в Центральный банк РФ.
+      </p>
+      <img src="https://s.algoritmika.org/5t0403" alt="illustration">
+      <p class="img-comment">Чтобы принимать платежи в валюте, нужно открыть валютный счёт. В Тинькофф-банке счёт можно открыть в личном кабинете. Валютные счета банк обслуживает бесплатно.
+      </p>
+    </main>
+  </div>
+
+</body>
+</html>
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+body {
+    font-family: Georgia, sans-serif;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+.container {
+    width: 1000px;
+    margin: 20px;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+}
+.logo {
+    font-size: 25px;
+    font-weight: 900;
+}
+nav {
+    margin: 0  0 10px 0;
+}
+nav ul {
+    list-style: none;
+}
+li {
+    display: inline-block;
+    margin-left: 20px;
+}
+a {
+    color: black;
+}
+main {
+    width: 700px;
+}
+.banner {
+    background-color: #0000ff;
+    color: white;
+    width: 1000px;
+    font-family: 'Roboto', sans-serif;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-bottom: 30px;
+    margin-bottom: 50px;
+   
+}
+.banner h2 {
+    font-size: 33px;
+    margin: 30px 0;
+    /*display: inline-block;*/
+    font-weight: 400;
+    width: 500px;
+}
+
+h1 {
+    font-size: 65px;
+    margin: 44px 0;
+    width: 700px;
+}
+
+p {
+    margin: 20px 0;
+    font-size: 20px;
+}
+
+h2 {
+    font-size: 40px;
+    margin: 33px 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+img {
+   width: 1000px; 
+}
+.img-comment {
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    margin: 14px 0;
+    font-weight: 600;
+}
+
+
+
+
+
 
 
  */
