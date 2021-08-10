@@ -5295,6 +5295,180 @@ table tr:hover td, thead:hover {
 
 
 
+article - sovial network соцсеть статья
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <header>
+    <nav class="nav">
+      <img src="https://mars.algoritmika.org/uploads/2020/06/oZKohI2BXbg_0_1591710903.jpg" alt="logo" class="nav-logo">
+      <ul class="nav-links">
+        <li>Main</li>
+        <li>Projects</li>
+        <li>Articles</li>
+        <li>About</li>
+        <li>Contacts</li>
+      </ul>
+      <p class="avatar">
+        РГ
+      </p>
+    </nav>
+  </header>
+
+  <main>
+    <section> 
+      <h1>JavaScript</h1>
+    <p class="author">Sam Rubik</p>
+     
+    <p>  
+      JavaScript is a programming language that conforms to the ECMAScript specification. JavaScript is high-level, often just-in-time compiled, and multi-paradigm. It has curly-bracket syntax, dynamic typing, prototype-based object-orientation, and first-class functions.
+    </p>
+    <p>
+    Alongside HTML and CSS, JavaScript is one of the core technologies of the World Wide Web. JavaScript enables interactive web pages and is an essential part of web applications. The vast majority of websites use it for client-side page behavior, and all major web browsers have a dedicated JavaScript engine to execute it.
+    </p>
+    <p>
+    As a multi-paradigm language, JavaScript supports event-driven, functional, and imperative programming styles. It has application programming interfaces (APIs) for working with text, dates, regular expressions, standard data structures, and the Document Object Model (DOM). However, the language itself does not include any input/output (I/O), such as networking, storage, or graphics facilities, as the host environment (usually a web browser) provides those APIs.
+    </p>
+    <p>
+    JavaScript engines were originally used only in web browsers, but they are now embedded in some servers, usually via Node.js. They are also embedded in a variety of applications created with frameworks such as Electron and Cordova.
+    </p>
+    <p>
+    Although there are similarities between JavaScript and Java, including language name, syntax, and respective standard libraries, the two languages are distinct and differ greatly in design.
+    </p>
+    </section>
+
+    <aside class="aside"> 
+    <p>Frameworks:</p>
+    <ul class="aside-frameworks">
+      <li>Angular</li>
+      <li>AngularJS</li>
+      <li>Apache Royale</li>
+      <li>Backbone.js</li>
+      <li>Dojo</li>
+      <li>Ember.js</li>
+      <li>Enyo</li>
+      <li>Express.js</li>
+      <li>Google Web Toolkit</li>
+      <li> jQuery (library)</li>
+      <li>Knockout</li>
+      <li>JavaScript</li>
+      <li>MooTools</li>
+      <li>Node.js</li>
+      <li>React (JavaScript library)</li>
+      <li> SAP OpenUI5</li>
+      <li>Prototype & script. aculo.us</li>
+      <li>qooxdoo</li>
+      <li>SproutCore</li>
+      <li>Svelte</li>
+      <li> Vue.js</li>
+    </ul>    
+    </aside>
+  </main>
+
+</div>
+</body>
+</html>
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif; 
+    font-size: 20px;
+}
+
+.container {
+    width: 780px;
+    margin: auto;
+}
+.nav {
+    display: flex;  
+     position: relative;
+}
+.nav-links {
+    display: flex;
+    padding: 0; /*Почему-то не совпадает с наложением немного*/
+}
+.nav-links li:hover {
+    position: relative;
+    left: 5px;
+    bottom: 5px;
+    color: #833ae0;;
+}
+li {
+    list-style: none;
+    padding: 0 25px 0 25px;
+}
+.nav-logo {
+    display: block;
+    width: 50px;
+    height: 50px;
+}
+.avatar {
+    background-color:#833ae0;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    color: white;
+    margin: 0;
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+}
+
+main {
+    display: flex;
+}
+section {
+    width: 80%;
+}
+h1 {
+    font-size: 30px;
+}
+.author {
+    font-size: 12px;
+    padding: 5px;
+    background-color: Lavender; 
+    width: 200px;
+}
+
+aside {
+    width: 20%;
+    background-color: Lavender;
+    padding: 20px;
+}
+
+aside ul {
+    display: flex;
+    padding: 0;
+}
+
+.aside-frameworks {
+    flex-direction: column;
+}
+.aside li {
+    padding: 0;
+    margin-left: 0;
+
+}
+aside p {
+    margin: 0;
+}
+
 
 
 
