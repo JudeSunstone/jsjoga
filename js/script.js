@@ -5111,6 +5111,191 @@ aside ul {
     margin-left: 0;
 }
 
+---------------------------------------
+	таблица, инормация при наведении на строку
+	наведение 
+	
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Голубые фишки</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="my.css">
+</head>
+
+<body>
+  <table>
+    <thead>
+        <tr>
+        <th>Голубые фишки</th>
+        <th>Цена на 14.10.2020</th>
+        <th>Число акций в 1 лоте</th>
+        <th>Размер покупки</th>
+        </tr> 
+        </thead>
+        <tbody>
+            <tr>
+            <td>АЛРОСА ао</td> 
+            <td>91,89</td>
+            <td>10</td> 
+            <td>918,9</td>
+            </tr>
+            <tr>
+            <td>СевСт-ао</td> 
+            <td>960,2</td>
+            <td>10</td> 
+            <td>9602</td>
+            </tr>
+            <tr>
+            <td>FIVE-гдр</td> 
+            <td>2009,5</td>
+            <td>1</td> 
+            <td>2009,5</td>
+            </tr>
+            <tr>
+            <td>ГАЗПРОМ ао</td> 
+            <td>251,5</td>
+            <td>10</td> 
+            <td>2515</td>
+            </tr>
+            <tr>
+            <td>ГМКНорНик</td> 
+            <td>20362</td>
+            <td>1</td> 
+            <td>20362</td>
+            </tr>
+            <tr>
+            <td>ЛУКОЙЛ</td> 
+            <td>6530</td>
+            <td>1</td> 
+            <td>6530</td>
+            </tr>
+            <tr>
+            <td>Магнит ао</td> 
+            <td>3345</td>
+            <td>1</td> 
+            <td>3345</td>
+            </tr>
+            <tr>
+            <td>МТС-ао</td> 
+            <td>319,45</td>
+            <td>10</td> 
+            <td>3194,5</td>
+            </tr>
+            <tr>
+            <td>НЛМК ао</td> 
+            <td>146,84</td>
+            <td>10</td> 
+            <td> 146,84</td>
+            </tr>
+            <tr>
+            <td>Новатэк ао</td> 
+            <td>1305,6</td>
+            <td>10</td> 
+            <td>13056</td>
+            </tr>
+            <tr>
+            <td>Роснефть</td> 
+            <td>481,15</td>
+            <td>10</td> 
+            <td>4811,5</td>
+            </tr>
+            <tr>
+            <td>Сбербанк</td> 
+            <td>262,4</td>
+            <td>10</td> 
+            <td>2624</td>
+            </tr>
+            <tr>
+            <td>Сургнфгз</td> 
+            <td>53,805</td>
+            <td>100</td> 
+            <td>5380,5</td>
+            </tr>
+            <tr>
+            <td>Татнфт ао</td> 
+            <td>806</td>
+            <td>10</td> 
+            <td>8060</td>
+            </tr>
+            <tr>
+            <td class="yandex-info">YandexclA
+                <p class="yandex-info add">
+                    HИИ блаблабла
+                </p>    
+            </td> 
+            <td>2703,4</td>
+            <td>1</td> 
+            <td>2703,4</td>
+            </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+      <td colspan="3"> Итого</td>
+      <td>86780,7</td>
+    </tr> 
+    </tfoot>
+  </table>    
+
+</body>
+</html>
+
+table {
+    border-collapse:collapse;
+    }
+    
+table tbody tr:nth-child(odd){
+	background-color: #D7C8EB;
+}
+
+table tbody tr:nth-child(even){
+	background-color: #F1ECF8;
+}
+
+thead, tfoot {
+    background-color: #A84AE9;
+    color: white;
+}
+th {
+    font-weight: 400; /*если прописываю это в строке выше  - 13 - вместо thead - th, то почему-то остается жирным шрифтом. почему?*/
+}
+
+td, th {
+    padding: 5px 20px;
+}
+
+table tr:hover td, thead:hover {
+	background: grey; 
+}
+    /*это как-то лучше можно сделать? селекторы лучше сгруппировать, т.е.*/
+
+
+/*блок с инфой при наведении */
+.yandex-info {
+    position: relative; 
+}
+
+.add {
+    position: absolute;
+    left: 120px;
+    bottom: -50px;
+    background: #F1ECF8;
+    padding: 5px;
+    display: none;
+    width: 140px; 
+    /*как лучше здесь задать ширину? оно переносится почему-то на другую 
+    строчку, если не прописать ширину*/
+}
+
+.yandex-info:hover .add {
+    display: block;
+}
+
+
+
+
+
+
 
 
  */
