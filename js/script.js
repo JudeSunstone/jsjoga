@@ -5470,6 +5470,6 @@ aside p {
 }
 
 
-
+https://gnatkovsky.com.ua/poyavlenie-bloka-pri-navedenii-s-pomoshhyu-css.html
 
  */
