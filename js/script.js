@@ -5472,4 +5472,247 @@ aside p {
 
 https://gnatkovsky.com.ua/poyavlenie-bloka-pri-navedenii-s-pomoshhyu-css.html
 
+
+
+
+homework 3 cards flexbox card
+
+
+body {
+  color: white;
+  padding-left: 10px;
+  margin-top: 10px;
+}
+
+.container {
+    display: flex;
+}
+
+.card {
+    background-color: #833ae0;
+    border-radius: 10px;
+    width: 330px;
+    height: 200px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+  
+}
+.card-container {
+    margin-left: 15px; 
+    margin-right: 15px; 
+}
+.card-chip {
+   padding-top: 35px;
+    margin-left: -5px;
+    
+}
+.card-chip-img {
+    height: 50px;
+} 
+.card-number {
+    font-size:  25px;
+    font-family: Courier New;
+    margin-top: -5px;
+}
+
+.card-name {
+    font-size:  20px;
+    font-family: monospace; 
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.card-valid {
+    padding-bottom: 30px;
+    font-family:  Tahoma, serif;
+    font-size: 15px;
+}
+.card-valid-name {
+    font-size: 9px;
+}
+.card-valid-date  {
+    display: inline-block; 
+    margin-top: -1px; 
+    font-size: 20px;
+ }
+.card-pay img {
+    height: 40px;
+}
+.card-bottom, .card-chip  {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sber {
+    background-color: green;
+}
+
+.vtb {
+    background-color: blue;
+}
+
+.tinkoff {
+    background-color: black;
+}
+
+
+.bank-logo {
+    height: 35px;
+    padding-top: 0;
+}
+
+/*если картинки банков были бы по-настоящему svg, то у них можно поменять цвет текста на белый, как надо?*/
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+    <div class="container"> 
+
+        <div>
+            <div class="card">
+                <div class="card-container">
+                    <div class="card-chip">
+                    <img src="https://s.algoritmika.org/a70yh9" alt="chip"  class="card-chip-img">
+                    </div>
+                    <div class="card-number">
+                    <span>4500 6812 5512 6089</span>
+                    </div>
+                    <div class="card-name">
+                    <span>ALEKSEEV IVAN</span>
+                    </div>
+                    <div class="card-bottom"> 
+                        <div class="card-valid">
+                            <span class="card-valid-name">
+                            Valid thru: <br>
+                            </span>
+                            <span class="card-valid-date">
+                            07/22
+                            </span>
+                        </div>
+                        <div class="card-pay">
+                                <img src="https://s.algoritmika.org/19u7id9" alt="payment">
+                            </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+
+           <div class="card sber">
+                <div class="card-container">
+                    <div class="card-chip">
+                    <img src="https://s.algoritmika.org/a70yh9" alt="chip"  class="card-chip-img">
+                    <img src="https://free-png.ru/wp-content/uploads/2019/05/Logotip-Sberbank-thumb.png" alt="sberbank logo" class="card-chip bank-logo"> 
+                    </div>
+                    <div class="card-number">
+                    <span>4500 6812 5512 6089</span>
+                    </div>
+                    <div class="card-name">
+                    <span>ALEKSEEV IVAN</span>
+                    </div>
+                    <div class="card-bottom"> 
+                        <div class="card-valid">
+                            <span class="card-valid-name">
+                            Valid thru: <br>
+                            </span>
+                            <span class="card-valid-date">
+                            07/22
+                            </span>
+                        </div>
+                        <div class="card-pay">
+                                <img src="https://s.algoritmika.org/kfjlqn" alt="payment">
+                            </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+        </div>
+
+
+       <div>
+
+               <div class="card tinkoff">
+                <div class="card-container">
+                     <div class="card-chip">
+                    <img src="https://s.algoritmika.org/a70yh9" alt="chip"  class="card-chip-img">
+                    <img src="https://toplogos.ru/images/logo-tinkoff-bank.png" alt="tinkoff logo" class="card-chip bank-logo"> 
+                    </div>
+                    <div class="card-number">
+                    <span>4500 6812 5512 6089</span>
+                    </div>
+                    <div class="card-name">
+                    <span>ALEKSEEV IVAN</span>
+                    </div>
+                    <div class="card-bottom"> 
+                        <div class="card-valid">
+                            <span class="card-valid-name">
+                            Valid thru: <br>
+                            </span>
+                            <span class="card-valid-date">
+                            07/22
+                            </span>
+                        </div>
+                        <div class="card-pay">
+                                <img src="https://s.algoritmika.org/19u7id9" alt="payment">
+                            </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+
+              <div class="card vtb">
+                <div class="card-container">
+                     <div class="card-chip">
+                    <img src="https://s.algoritmika.org/a70yh9" alt="chip"  class="card-chip-img">
+                    <img src="https://upload.wikimedia.org/wikipedia/ru/thumb/c/cc/VTB24_Logo.svg/1024px-VTB24_Logo.svg.png" alt="vtb logo" class="card-chip bank-logo"> 
+                    </div>
+                    <div class="card-number">
+                    <span>4500 6812 5512 6089</span>
+                    </div>
+                    <div class="card-name">
+                    <span>ALEKSEEV IVAN</span>
+                    </div>
+                    <div class="card-bottom"> 
+                        <div class="card-valid">
+                            <span class="card-valid-name">
+                            Valid thru: <br>
+                            </span>
+                            <span class="card-valid-date">
+                            07/22
+                            </span>
+                        </div>
+                        <div class="card-pay">
+                                <img src="https://s.algoritmika.org/kfjlqn" alt="payment">
+                            </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+        </div>
+
+
+       
+
+
+        
+    <div> <!-- обертка родитель, чтобы поставить флекс -->
+
+  
+</body>
+</html>
  */
