@@ -5711,8 +5711,134 @@ body {
 
         
     <div> <!-- обертка родитель, чтобы поставить флекс -->
-
   
 </body>
 </html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="main">
+
+    <div class="container">
+        <div class="news">
+            <div class="fact"> 
+                <span>89%</span> людей не проверяют информацию в интернете
+                
+            </div>
+            <div class="news-text">
+                <h1>Польская ракета-носитель взорвалась после удара о небесную твердь</h1>
+                <p> Неудачей завершился первый космический запуск польской ракеты-носителя Bursztyn (Янтарь), проходивший на космодроме в Катовице. Как передают очевидцы, аппарат вначале успешно поднялся в небо и готов был преодолеть атмосферу, но неожиданно взорвался, после этого горящие обломки упали на землю. Жертв и разрушений удалось избежать.
+                </p>
+                <p>По результатам инцидента была созвана чрезвычайная комиссия. Изучив снимки с польского спутника Titan, и осмотрев обломки космического аппарата, учёные пришли к выводу, что ракета-носитель потерпела крушение не из-за термического воздействия слоёв атмосфера, а в результате сильного удара на скорости 10 км/с «в препятствие необъяснимого происхождения», названное в официальном отчёте небесной твердью.
+                </p>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+</body>
+</html>
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+}
+
+.container {
+   /* width: 520px;
+   если это поставить, то получается не так, как в макете, хотя просят ширину поставить 520, не понимаю..*/
+}
+
+h1 {
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.fact {
+    margin: 0 25px;
+}
+
+.fact span {
+    color: red;
+    font-size: 40px;
+    font-weight: 800;
+}
+.news {
+    display: flex;
+    align-items: center;
+}
+
+
+блок блоки
+
+
+
+при наведении блок 
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hover</title>
+</head>
+<body>
+  <div class="photo-with-tip">
+    <img class="photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Alan_Turing_Aged_16.jpg/220px-Alan_Turing_Aged_16.jpg" alt="Turing">
+    <p class="tip">Alan Turing</p>
+
+  
+  </div>
+</body>
+</html>
+
+
+.photo-with-tip {
+    position: relative;
+}
+
+.tip {
+    display: none;
+    position: absolute;
+    top: -10px;
+    left: 50px; /*почему сюда если поставить проценты, то текст не в середину left: фо;*/
+    background-color: white;
+    min-height: 30px;
+    text-align: center;
+    border-radius: 10%;
+
+}
+.photo-with-tip:hover .tip {
+    display: block;
+}
+
+
+
+
+
+
+
+новости новость блок news
+
+
+
+
  */
