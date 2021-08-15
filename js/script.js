@@ -5831,9 +5831,11 @@ h1 {
 }
 
 
+https://metanit.com/web/html5/2.6.php
 
+BIG O 0
 
-
+https://www.youtube.com/watch?v=OMnOVADHwLA git merge 
 
 
 новости новость блок news
