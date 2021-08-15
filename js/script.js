@@ -5838,7 +5838,276 @@ BIG O 0
 https://www.youtube.com/watch?v=OMnOVADHwLA git merge 
 
 
+
+
+блок при наведении
+.photo-with-tip {
+    position: relative;
+}
+
+.tip {
+    display: none;
+    position: absolute;
+    top: -10px;
+    left: 50px; 
+    background-color: white;
+    min-height: 30px;
+    text-align: center;
+    border-radius: 10%;
+
+}
+.photo-with-tip:hover .tip {
+    display: block;
+}
+
+/*.photo-with-tip  {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 200px;
+}
+.tip {
+    display: none;
+}
+
+
+.photo-with-tip:hover .tip {
+    display: block;
+}*/
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hover</title>
+</head>
+<body>
+  <div class="photo-with-tip">
+    <img class="photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Alan_Turing_Aged_16.jpg/220px-Alan_Turing_Aged_16.jpg" alt="Turing">
+    <p class="tip">Alan Turing</p>
+
+  
+  </div>
+</body>
+</html>
+
+
+
+
+
 новости новость блок news
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="main">
+
+    <div class="container">
+        <h1>ИА «Панорама» сообщает</h1>
+
+
+        <div class="news">
+            <div class="news-date">20 дек 2020</div>
+            <div class="news-text">
+                <a href="#" class="news-text-link">
+                    Полиция Улан-Удэ пресекла несанкционированную игру в футбол «головой» Ленина
+                </a>
+            </div>
+        </div>
+
+
+         <div class="news">
+            <div class="news-date">19 дек 2020</div>
+            <div class="news-text">
+                <a href="#" class="news-text-link">
+Участники шоу «Дом-2» объявили себя обманутыми дольщиками
+                </a>
+            </div>
+        </div>
+
+         <div class="news">
+            <div class="news-date">12 дек 2020</div>
+            <div class="news-text">
+                <a href="#" class="news-text-link">
+                    Польская ракета-носитель взорвалась после удара о небесную твердь
+                </a>
+            </div>
+        </div>
+
+
+         <div class="news">
+            <div class="news-date">09 дек 2020</div>
+            <div class="news-text">
+                <a href="#" class="news-text-link">
+                    В рамках программы по колонизации Луны «Роскосмос» построит на спутнике колонию общего режима
+                </a>
+            </div>
+        </div>
+        
+
+    </div>
+
+</main>
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="main">
+
+    <div class="container">
+        <div class="news">
+            <div class="fact"> 
+                <span>89%</span> людей не проверяют информацию в интернете
+                
+            </div>
+            <div class="news-text">
+                <h1>Польская ракета-носитель взорвалась после удара о небесную твердь</h1>
+                <p> Неудачей завершился первый космический запуск польской ракеты-носителя Bursztyn (Янтарь), проходивший на космодроме в Катовице. Как передают очевидцы, аппарат вначале успешно поднялся в небо и готов был преодолеть атмосферу, но неожиданно взорвался, после этого горящие обломки упали на землю. Жертв и разрушений удалось избежать.
+                </p>
+                <p>По результатам инцидента была созвана чрезвычайная комиссия. Изучив снимки с польского спутника Titan, и осмотрев обломки космического аппарата, учёные пришли к выводу, что ракета-носитель потерпела крушение не из-за термического воздействия слоёв атмосфера, а в результате сильного удара на скорости 10 км/с «в препятствие необъяснимого происхождения», названное в официальном отчёте небесной твердью.
+                </p>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+main {
+    
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: lightgray;
+    padding: 40px 40px;
+    width: 400px;
+    margin: auto;
+}
+h1 {
+    font-size: 26px;
+}
+.news {
+    display: flex;
+    border-bottom: 1px solid gray;
+    padding: 20px 0;
+}
+.news-date {
+    font-weight: 700;
+    font-size: 15px;
+    width: 50%;
+}
+.news-text {
+    margin-left: 30px;
+    width: 400px;
+
+}
+
+.news:last-child {
+    border-bottom: 0px solid gray;
+}
+
+
+-----------------
+	1 вариант
+	@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+}
+
+.container {
+   /* width: 520px;
+   если это поставить, то получается не так, как в макете, хотя просят ширину поставить 520, не понимаю..*/
+}
+
+h1 {
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.fact {
+    margin: 0 25px;
+}
+
+.fact span {
+    color: red;
+    font-size: 40px;
+    font-weight: 800;
+}
+.news {
+    display: flex;
+    align-items: center;
+    width: 520px;
+}
+
+2 вариант 
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+}
+
+h1 {
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.fact {
+    margin: 0 25px;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.fact span {
+    color: red;
+    font-size: 40px;
+    font-weight: 800;
+}
+.news {
+    display: flex;
+    align-items: center;
+    /*width: 520px;*/
+}
+.news-text {
+    width: 520px;
+}
+
 
 
 
