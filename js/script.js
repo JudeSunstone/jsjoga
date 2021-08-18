@@ -6115,4 +6115,206 @@ https://metanit.com/web/html5/2.7.php
 https://metanit.com/web/html5/2.8.php
 
 
+футер как прибить footer sticky
+https://proweb63.ru/help/all-about-css/css-footer-pribit 
+
+
+h/w adaptive
+
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <title>DOM</title>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <main>
+      <div class="container">
+          <div class="wrapper">
+              <div class="card">
+                <img src="https://thumbs.dreamstime.com/b/coding-concept-html-code-coding-programming-concept-html-source-code-tilted-vector-illustration-155503904.jpg" 
+                alt="html studying example" class="card-pic">
+                 <div class="card-info">
+                   <h2>HTML</h2>
+                   <p>
+                    The language for building web pages.
+                   </p>
+                 </div>
+                <button class="card-button"> 
+                  Learn HTML
+                </button>
+              </div>
+
+              <div class="card">
+                <img src="https://thumbs.dreamstime.com/b/coding-concept-html-code-coding-programming-concept-html-source-code-tilted-vector-illustration-155503904.jpg" 
+                alt="html studying example" class="card-pic">
+                 <div class="card-info">
+                   <h2>HTML</h2>
+                   <p>
+                    The language for building web pages.
+                   </p>
+                 </div>
+                <button class="card-button"> 
+                  Learn HTML
+                </button>
+              </div>
+
+              <div class="card">
+                <img src="https://thumbs.dreamstime.com/b/coding-concept-html-code-coding-programming-concept-html-source-code-tilted-vector-illustration-155503904.jpg" 
+                alt="html studying example" class="card-pic">
+                 <div class="card-info">
+                   <h2>HTML</h2>
+                   <p>
+                    The language for building web pages.
+                   </p>
+                 </div>
+                <button class="card-button"> 
+                  Learn HTML
+                </button>
+              </div>
+
+          </div>
+        
+      </div>
+    </main>
+    <footer>
+          <div class="container">
+                <div class="wrapper">
+              <div class="footer-info">
+                <p>2017-2020</p>
+                <br>
+                <p>If you have any questions or suggestions, please contact us hello@algoritmika.org <br>
+      or call at +7 (495) 256-30-41
+                </p>
+              </div>
+              <div class="footer-socials">
+                <ul>
+                  <li>
+                    <a href="#">
+                      <img src="https://mars.algoritmika.org/uploads/2020/06/brands-and-logotypes_0_1592126153.png" 
+                      alt="insta logo">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="https://mars.algoritmika.org/uploads/2020/06/vk_0_1592126148.png" 
+                      alt="vk">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="https://mars.algoritmika.org/uploads/2020/06/facebook_0_1592126152.png" 
+                      alt="fb">
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              
+            </div>
+        </div>
+          
+    </footer>
+  </body>
+</html>
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  height: 100%;
+}
+body {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  /*justify-content: space-between; почему этим 
+  не прибить футер к низу страницы именно так?
+  main и футер дети body же 
+  а получается через высоту (ниже) и флекс 1 0 / 0 0 auto в main / footer*/
+  height: 100%;
+}
+main {
+  flex: 1 0 auto;
+}
+.container {
+  margin: auto;
+  max-width: 1110px;
+  margin-bottom: 50px;
+}
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.card {
+  width: 30%;
+  margin: 10px; /* в процентах задавть будет плохо?*/
+}
+.card-pic {
+  width: 100%;
+}
+h2 {
+  font-size: 12px;
+}
+p {
+  margin: 10px 0;
+  font-size: 10px;
+}
+button {
+  background-color: #ba99e4;
+  border-width: 0px;
+  border-radius: 5px;
+  width: 100%;
+  padding: 5px;
+  color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 7%; /*есть ли тут смысл проценты ставить? как понять, чем вообще пользоваться*/
+}
+footer {
+  background-color:#eee;
+  margin-bottom: 0;
+  flex: 0 0 auto;
+}
+footer p {
+  margin: 0 0 10px 0;
+}
+footer .wrapper {
+    padding: 10px;
+}
+ul {
+  list-style: none;
+  display: flex;
+}
+footer img {
+  width: 20px;
+  margin-left: 5px;
+}
+@media (max-width: 767px) {
+  main .wrapper {
+    flex-direction: column;
+  }
+  .card {
+    width: 50%;
+    margin: 40px auto;
+  }
+  footer ul {
+    flex-wrap: wrap;
+    
+  }
+}
+/*не понимаю по какой логике здесь что-то делать*/
+@media (max-width: 559px) {
+    .card {
+        width: 50%;
+        margin: 10px auto;
+  }
+}
+
+
+
+
  */
