@@ -6330,4 +6330,15 @@ console.log(fullName.indexOf(" "));
 
 
 
+let fullname = "Reiji Black";
+let initial1 = fullname[0];
+let initial2 = fullname[fullname.indexOf(" ") + 1];
+console.log(initial1 + initial2);
+/*вариант лучше*/ 
+console.log(`${fullname[0]}${fullname[fullname.indexOf(" ") + 1]}`);
+
+
+Создайте переменную fullName и запишите в неё через пробел имя и фамилию пользователя. Напишите программу, которая, используя значение переменной fullName, выводит в консоль инициалы пользователя.
+
+
  */
