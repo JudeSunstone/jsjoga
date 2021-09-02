@@ -6316,5 +6316,18 @@ footer img {
 
 
 
+let fullName = 'Alan Turing';
+console.log(fullName.length -1);
+console.log(--fullName.length);
+/*это слишком хитро*/
+
+/*вариант 2, где только имя*/
+console.log(fullName.indexOf(" "));
+
+
+В переменной fullName хранится полное имя пользователя. Выведите в консоль количество букв в имени. Пробел не является буквой.
+
+
+
 
  */
