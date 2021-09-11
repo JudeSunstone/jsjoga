@@ -6441,6 +6441,30 @@ console.log(netto);
 console.log(prompt("введите сумму вашей зарплаты")*0.87);
 
 
+Проверьте возраст пользователя.
+Запросите у пользователя его возраст. 
+Если пользователю меньше 18, то выведите браузерное оповещение с текстом «Access denied». 
+В противном случае выведите сообщение «Access granted».
+
+let age = prompt("Введите цифру своего возраста");
+
+if (age < 18) {
+    console.log("Access denied");
+} else {
+    console.log("Access granted");
+}
+
+
+Напишите 5 выражений с разными операторами сравнений.
+Напишите 5 выражений с разными операторами сравнений для переменной value, результат выполнения которых будет равен true для value = 10 и false для value = 20.
+
+let value = 20;
+console.log(value == 10);
+console.log(value <= 10);
+console.log(value < 15);
+console.log(value != 20);
+console.log(value == 10);
+
 
 
 */
