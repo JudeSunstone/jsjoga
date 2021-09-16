@@ -6610,9 +6610,57 @@ console.log(min(5, 6));
     return res;
 }
 
-console.log(calc(4, 6, '+'));  // 10
+
+function calc(a, b, c) {
+    if(typeof x == "NaN" || typeof y == "NaN"){
+        console.error("bad input");
+        return null;
+    }
+    if(c === "+") {
+        return x+y; // return прекращает действие
+    }
+    if (c === "-") {
+        return x-y; 
+    } 
+    //... здесь можно написать else 
+    //но тогда везде должно else if
+    console.error("not right parameter");
+    return null;
+}
+
+console.log(calc(4, 6, '+'));  // 10	
 		
 		
+		
+		Напишите функцию, которая проверяет, является ли билет «счастливым».
+Напишите функцию isLucky, которая получает шестизначное число и проверяет, что сумма первых трёх цифр равняется сумме вторых трёх цифр.
+Функция должна возвращать true, если билет счастливый, и false, если билет несчастливый.
+
+const isLucky = (num) => {
+    if(typeOf num == "NaN") {
+        console.error("invalid input");
+        return null;
+    }
+    num = num.toString();
+    if(num.length !=6) {
+        console.error("incorrect arg");
+        return null;
+    }
+    let a = Number(num[0])+Number(num[1])+Number(num[2]));
+    let b = Number(num[3])+Number(num[4])+Number(num[5]));
+    if(a==b) {
+        return true;
+    } else {
+        return false;
+    }
+    /*if(num[0]+num[1]+num[2] == num[3]+num[4]+num[5]) {
+        return true;
+    } else {
+        return false;
+    }*/
+};
+
+
 		
 Напишите программу для вывода среднего из трёх чисел.
 Запросите у пользователя ввод трёх двузначных чисел одним сообщением. Выведите в консоль среднее, т. е. не наибольшее и не наименьшее. Если пользователь ввёл несколько одинаковых чисел, выведите сообщение об ошибке
