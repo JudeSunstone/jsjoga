@@ -6566,8 +6566,19 @@ allSumInRub(balance1, balance2);
 
 
 
-	
+
+		Напишите функцию min(), которая получает в качестве параметров два числа и возвращает наименьшее из них.
 		
+function min(a, b) {
+    let res;
+    if (a<=b) {
+        res = a;
+    } else {
+        res = b;
+    }
+    return res;
+}
+console.log(min(5, 6));
 		
 		
 		
