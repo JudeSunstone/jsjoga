@@ -6699,6 +6699,81 @@ game();
 		чуть менее криво
 		
 	
+		Напишите программу для проверки, является ли год високосным.
+Запросите у пользователя год. Выведите в консоль сообщение, является ли введённый год високосным.
+
+let userDate = prompt("введите дату");
+
+function isLeap(year) {
+    if(year % 4 == 0 || year % 100 == 0 && year % 400 != 0) {
+        alert("Год является високосным");
+    } else {
+        alert("Год не является високосным");
+    }
+}
+
+isLeap(userDate);
+		
+		без проверок
+		
+		проверка
+	
+	if(typeof year == "NaN"){
+        alert("bad input");	
+
+		
+		
+Напишите программу, которая выводит в консоль название месяца.
+Запросите у пользователя номер месяца и выведите в консоль его название.
+
+let monthNumber = prompt("Введите номер месяца");
+
+monthNumber = monthNumber*1; // приведение и типу - number для проверки в свиче
+//console.log(typeof monthNumber, monthNumber); - проверка данных
+if (monthNumber > 0) {
+    switch(monthNumber) {
+    case 1:
+        alert('Январь');
+        break;
+    case 2:
+        alert('Ферваль');
+        break;
+    case 3:
+        alert('Март');
+        break;
+    case 4:
+        alert('Апрель');
+        break;
+     case 5:
+        alert('Май');
+        break;
+     case 6:
+        alert('Июнь');
+        break;
+     case 7:
+        alert('Июль');
+        break;
+     case 8:
+        alert('Август');
+        break;
+     case 9:
+        alert('Сентябрь');
+        break;
+     case 10:
+        alert('Октябрь');
+        break;
+     case 11:
+        alert('Ноябрь');
+        break;
+    case 12:
+        alert('Декабрь');
+        break;
+} } else {
+    alert("Введено некорректное число")
+}
+
+	
+
 		
 		
 Напишите программу для вывода среднего из трёх чисел.
