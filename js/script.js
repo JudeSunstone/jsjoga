@@ -6766,6 +6766,42 @@ if (monthNumber > 0) {
 }
 
 	
+		
+Напишите функцию isEven(), которая принимает в качестве параметра число и возвращает true, если оно чётное, или false, если оно нечётное.
+	
+ let num = prompt("введите число");
+
+ function isEven(num) {
+
+    if(isNaN(num*1)) { //проверка на число 
+        console.log("not valid argument");
+        } else if (num % 2 == 0) {
+        console.log(true);
+        //return true;
+       } else {
+        //return false;
+        console.log(false);
+       }
+    }
+
+isEven(num);	
+		
+
+		
+		Напишите функцию fourth(), которая принимает в качестве параметра число и выводит в консоль это число, возведённое в четвёртую степень.
+		
+		
+function fourth(num) {
+    if(isNaN(num*1)) { //проверка на число 
+        console.log("not valid argument");
+    } else {
+    console.log(num ** 4);
+    // Math.pow(num, 4)
+    }
+}
+    
+fourth(2);
+fourth("dsf");
 
 		
 		
