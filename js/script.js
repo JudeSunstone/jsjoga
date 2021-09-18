@@ -6803,7 +6803,54 @@ function fourth(num) {
 fourth(2);
 fourth("dsf");
 
+	Напишите функцию isValidNumber(), которая получает в качестве параметра номер телефона. Функция возвращает true, если номер телефона состоит из 11 цифр и начинается с +7.
 		
+		
+1 вариант
+
+function isValidNumber(tel) {
+    let head = tel.substr(0,2);
+    let tail = tel.substr(2); // считает до конца
+    //console.log(head, " ", tail)
+    if(
+        head != "+7" || isNaN(tail*1) || tail.length !=10
+    ) 
+    {
+        return false;
+    } 
+        return true;
+
+}
+
+console.log(isValidNumber("+75555555555")) ;
+console.log(isValidNumber("+755555555"));
+console.log(isValidNumber("+dfsdf"));
+		
+		
+	// вариант 2
+		
+
+
+
+function isValidNumber(tel) {
+    if( ! (
+    tel.length == 12 
+    && tel[0] == "+" 
+    && tel[1] == "7" 
+    && !isNaN(tel.substr(1)*1)
+    ) 
+    ){
+         return false;
+    } else {
+        return true;
+    }
+
+}
+console.log(isValidNumber("+75555555555")) ;
+console.log(isValidNumber("+755555555"));
+console.log(isValidNumber("+dfsdf"));
+
+
 		
 Напишите программу для вывода среднего из трёх чисел.
 Запросите у пользователя ввод трёх двузначных чисел одним сообщением. Выведите в консоль среднее, т. е. не наибольшее и не наименьшее. Если пользователь ввёл несколько одинаковых чисел, выведите сообщение об ошибке
