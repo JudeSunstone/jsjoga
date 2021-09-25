@@ -7057,6 +7057,38 @@ console.log(development);
 console.log(...development);
 		
 		
+Напишите программу, которая запрашивает у пользователя данные и обновляет очередь.
+		
+		   let queue = [];
 
+function program() {
+    let newsData = prompt(
+    'enter your name and surname /n',
+    '= exit /n',
+    ' ==> ok - delete first'
+   );
+   console.log(newsData);
+    if(newsData == " ") {
+        console.log(queue);
+        return null;
+    } else if(newsData == "") {
+        let deleted = queue.shift();
+        alert(deleted);
+        program();
+    } else if(newsData.split(" ").length = 2 && newsData.split('') !="") {
+        //проверяем длину, и пустые строки
+        queue.push(newsData);
+        program();
+    } else {
+        alert('incorrect entry');
+        program(); // выход из рекурсии
+    }
+}
+program();
+console.log(program);
+   
+		
+		
+		
 
 */
