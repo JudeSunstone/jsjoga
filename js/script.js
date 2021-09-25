@@ -7030,6 +7030,33 @@ for(let i = 0; i < fiveNum.length; i++){ //перебираем
 }
 console.log(arr);
 console.log(fiveNum);
+		
+		Дан массив c информацией о 10 сотрудниках компании. Создайте массив development, в котором будет храниться массив сотрудников из отдела разработки, т.е. тех сотрудников, в записи которых есть «development».
+		
+		let employees = [
+  [ 'Jaylee Macy', 'marketing' ],
+  [ 'John Smith', 'management' ],
+  [ 'Blossom Hartley', 'design' ],
+  [ 'Austin Carpenter', 'marketing' ],
+  [ 'Joan Knowles', 'development' ],
+  [ 'Sally Nunez', 'management' ],
+  [ 'Laurel Ward', 'development' ],
+  [ 'Lark Simon', 'marketing' ],
+  [ 'Jane Stone', 'management' ],
+  [ 'Courtney Olson', 'development' ]
+];
+
+let development = [];//просто пустой массив, чтобы потом вставить нужную инфу
+for(let i = 0; i < employees.length; i++) {  //просим второй эжлемент массива внутри 
+    if(employees[i][1] == 'development'){
+        development.push(employees[i]);
+    }
+}
+console.log(development);
+		
+console.log(...development);
+		
+		
 
 
 */
