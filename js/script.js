@@ -7018,6 +7018,18 @@ console.log(otherParts);
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 console.log(Math.max(...arr));
 		
-		
+	Создайте массив из 5 чисел. 
+Создайте копию исходного массива и увеличьте все элементы нового массива вдвое.
+Проверьте, что исходный массив не изменился.
+
+let arr = [1, 2, 3, 4, 5];
+let fiveNum = [...arr]; //\\ создаем копию
+
+for(let i = 0; i < fiveNum.length; i++){ //перебираем
+    fiveNum[i] = fiveNum[i]*2;
+}
+console.log(arr);
+console.log(fiveNum);
+
 
 */
