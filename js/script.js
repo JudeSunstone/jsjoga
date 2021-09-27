@@ -7099,8 +7099,25 @@ function callback(item, index) {
     }
 }
 
-arr.forEach(callback);
+
+function neg(arr) {
+    arr.forEach(callback);
+}
+
+neg();
 		
 		
+		Напишите функцию, которая получает в качестве параметра массив чисел и выводит в консоль все положительные числа из этого массива.
+Для перебора используйте анонимную функцию.
+function isPositive(arr) {
+arr.forEach((item, index) => {
+if(item>0){
+        console.log(`${item} - неотрицательное число`);
+    }
+});
+}
+isPositive([1, 5, -5]);
+
+
 
 */
