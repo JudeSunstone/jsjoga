@@ -7118,6 +7118,59 @@ if(item>0){
 }
 isPositive([1, 5, -5]);
 
+Напишите функции обратного вызова (callback) printWithDashes, printWithHearts, printWithIndex.
+Дан массив. Напишите такие три функции обратного вызова (callback): printWithDashes, printWithHearts, printWithIndex, чтобы при вызове 
+names.forEach(printWithDashes);
+names.forEach(printWithHearts);
+names.forEach(printWithIndex);
 
+в консоли печаталось:
+-------------
+Michael
+------------- 
+-------------
+Trevor
+------------- 
+-------------
+Franklin
+------------- 
+-------------
+Lamar
+------------- 
+-------------
+Jimmy
+------------- 
+<3<3<3<3 Michael <3<3<3<3 
+<3<3<3<3 Trevor <3<3<3<3 
+<3<3<3<3 Franklin <3<3<3<3 
+<3<3<3<3 Lamar <3<3<3<3 
+<3<3<3<3 Jimmy <3<3<3<3 
+0 - Michael 
+1 - Trevor 
+2 - Franklin 
+3 - Lamar 
+4 - Jimmy 
+		
+		
+const names = ["Michael", "Trevor", "Franklin", "Lamar", "Jimmy"];
+
+
+function printWithDashes(item){
+    console.log('_______');
+    console.log(item);
+    console.log('_______');
+}
+
+function printWithHearts(item){
+    console.log(`<3<3<3<3 ${item} <3<3<3<3`);
+}
+function printWithIndex(item, index) {
+    console.log(`${index} -- ${item}`);
+}
+
+names.forEach(printWithDashes);
+names.forEach(printWithHearts);
+names.forEach(printWithIndex);	
+		
 
 */
