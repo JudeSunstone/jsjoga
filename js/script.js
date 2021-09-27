@@ -7088,6 +7088,18 @@ program();
 console.log(program);
    
 		
+		Напишите функцию, которая получает в качестве параметра массив чисел и выводит в консоль все отрицательные числа из этого массива.
+		
+let arr = [5, 4, 6, -5, 10, -82];
+
+
+function callback(item, index) {
+    if(item<0){
+        console.log(`${item} - отрицательное число`);
+    }
+}
+
+arr.forEach(callback);
 		
 		
 
