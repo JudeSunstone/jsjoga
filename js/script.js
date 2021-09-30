@@ -7219,6 +7219,19 @@ function addTax(prices) {
     });
 }
 console.log(addTax(prices));
+		
+		
+Напишите функцию, которая получает в качестве параметра строку в формате kebab-case и преобразует в строку в формате UPPER_CASE.
+
+
+function kebabToUpper(str) {
+    return str.split('').map((el)=> {
+        if(el =="-") return "_";
+        return el.toUpperCase();
+    }).join("");
+}
+
+console.log(kebabToUpper('first-user'));
 
 
 		
