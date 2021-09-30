@@ -7197,5 +7197,32 @@ let result = names.filter((item, index) => {
 });
 
 console.log(result);
+		
+		
+Напишите функцию, которая получает массив цен без НДС и возвращает массив цен с НДС.
+Создайте функцию addTax(). Передайте в неё данный массив price с ценами без НДС. С помощью функции addTax() создайте массив с ценами с НДС и выведите его в консоль. НДС cоставляет 20%.
+
+let prices = ["10","15"];
+function addTax(prices) {
+    let err;
+    prices.forEach((item) => {
+        if(isNaN(item)){
+            console.log("Err!");
+            return null;
+        } 
+    });
+    if(err) {
+        return null;
+    }
+    return prices.map((item) => {
+        return item*1 + (item*0.2);
+    });
+}
+console.log(addTax(prices));
+
+
+		
+		
+
 
 */
