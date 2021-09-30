@@ -7172,5 +7172,20 @@ names.forEach(printWithDashes);
 names.forEach(printWithHearts);
 names.forEach(printWithIndex);	
 		
+		
+		Напишите функцию, которая возвращает первый элемент массива, состоящий из трёх символов.
+Напишите функцию, которая получает в качестве параметра массив строк и возвращает первый элемент массива, состоящий из трёх символов.
+
+function lel(arr) {
+    
+    let res = arr.find((el) => {
+        return el.length == 3;
+    });
+    return res;
+}   
+ 
+console.log(lel(["d", "sdf", "dd"]));
+		
+		
 
 */
