@@ -7187,5 +7187,15 @@ function lel(arr) {
 console.log(lel(["d", "sdf", "dd"]));
 		
 		
+Создайте новый массив, состоящий из элементов исходного массива, начинающихся на букву А.
+Дан массив имён. Создайте новый массив, состоящий из элементов исходного массива, начинающихся на букву А.
+
+
+let names = ['Sam', 'Alan', 'Bill', 'Adam', 'Anna', 'George'];
+let result = names.filter((item, index) => {
+    return item[0] == "A";
+});
+
+console.log(result);
 
 */
