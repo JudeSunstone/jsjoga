@@ -7253,6 +7253,69 @@ const newArr = numbers.map((item, index) => {
 console.log(newArr);
 
 		
+Создайте новый массив, состоящий из элементов исходного массива, отсортированных по убыванию алфавита.
 
+
+let names = ['Hofstadter', 'Cooper', 'Wolowitz', 'Koothrappali'];
+
+names.sort((a, b) => {
+  return a.charCodeAt() - b.charCodeAt() ;
+});
+console.log(names);
+		
+		Напишите функцию для сортировки массива строк по году рождения.
+Напишите функцию sortByBirth, которая получает в качестве параметра массив строк в формате 'имя, год рождения' и возвращает массив строк, отсортированных по году рождения.
+
+
+function sortByBirth(arr) {
+    let res = [...arr]; //чтобы массив не изменяло
+    res.sort((el1, el2) => {
+        return el2.split(", ")[1]-el1.split(', ')[1];   
+    }); 
+    return res; // надо взрвщать то, что было принято в функцию!
+    // здесь мы сделали новую пемеренную чтобы не портить изнчальный,
+    //потому возврашем именно новый
+}
+
+ console.log(sortByBirth([
+   'Nicola Tesla, 1856',
+   'Alan Turing, 1912',
+   'Ada Lovelace, 1815'
+ ])); 
+
+// ['Ada Lovelace, 1815', 'Nicola Tesla, 1856', 'Alan Turing, 1912']
+
+		Добавьте в объект возраст (age) и удалите дату рождения.
+Дан объект с информацией о пользователе. Добавьте в этот объект возраст (age) и удалите дату рождения. Выведите в консоль получившийся объект.
+
+
+const user = {
+  firstName: 'John',
+  lastName: 'Smith',
+  birthDate: '1960-05-14',
+  department: 'management',
+  isActive: true
+}
+
+user.age = "15";
+delete user.birthDate;
+
+console.log(user);
+		
+		
+		Создайте объект с информацией о товаре в магазине на основе объекта с информацией о товаре на складе.
+Задайте объект stockItem, описывающий товар на складе. Создайте на его основе другой объект shopItem, описывающий товар в магазине, имеющий информацию о цене.
+
+let stockItem = {
+    id: 25,
+    place: "up",
+    weight: 50
+}
+
+let shopItem = {...stockItem, price: 5}; //изменить можно внутри
+delete shopItem.place; // удалить только в=снаружи
+console.log(shopItem);
+
+		
 
 */
