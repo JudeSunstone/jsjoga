@@ -7327,6 +7327,34 @@ function capitalizeWords(str) {
 
 console.log(capitalizeWords('hello my name is Harry')); 
 		
+	Добавьте методы в объект.
+Дан объект. Добавьте в него следующие методы:
+  setAge — метод, изменяющий возраст пользователя.
+  getYearsBeforeRetirement — метод, возвращающий количество лет, оставшееся пользователю до пенсии.
+Вызовите эти методы.
+
+const user = {
+  firstName: 'John',
+  lastName: 'Smith',
+  age: 37,
+  department: 'management',
+  setAge(newAge) {
+    this.age = newAge; 
+    console.log(newAge);
+  },
+  getYearsBeforeRetirement() { 
+    return 64 - this.age;
+  }
+}
+
+user.setAge(20);
+console.log("до пенсии " + user.getYearsBeforeRetirement());
+console.log(user);
+
+
 		
+		
+
+
 
 */
