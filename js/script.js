@@ -7429,7 +7429,34 @@ console.log(client.getBalance());
 client.withdraw(20);
 console.log(client.getBalance());
 
+Напишите программу для вывода числа Фибоначчи.
+Запросите у пользователя ввод числа N. Выведите в консоль n-ный член последовательности Фибоначчи.
 
+let n = +prompt("enter a number");
+
+function getFib(n){
+    if(n<1 || isNaN(n)){
+        return -1;
+    }
+    if(n==1){
+        return 0;
+    }
+    if(n==2 || n==3){
+        return 1;
+    }
+    let a = 1;
+    let b = 1;
+    for(let i = 3; i<=n;i++){
+        let temp = a+b;
+        a =b;
+        b =temp;
+    }
+    return b;
+}
+getFib(n);
+
+		
+		
 
 
 
