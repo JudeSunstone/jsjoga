@@ -7457,7 +7457,25 @@ getFib(n);
 
 		
 		
+ckeepLetters('Give me $20'); // 'Giveme'
 
+
+function keepLetters(str){
+    let arr = str.split(''); //строку в массив
+    let resArr = arr.filter((el) => { // сравниваем по юнижоку и Ascii таблице 
+        if((el.charCodeAt() > 64 && el.charCodeAt() < 91 ||
+        (el.charCodeAt() > 96 && el.charCodeAt() < 123))){
+            return true;
+        }
+        return false;
+    })
+    return resArr.join(''); // массив строку
+}
+
+console.log(keepLetters('Give me $20')); // 'Giveme'
+		
+		
+		
 
 
 */
