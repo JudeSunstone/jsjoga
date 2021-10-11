@@ -7476,6 +7476,28 @@ console.log(keepLetters('Give me $20')); // 'Giveme'
 		
 		
 		
+class Person {
+  constructor(surname, name, age, gender) {
+    this.surname = surname;
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+  }
+}
 
+class Admin extends Person {
+  constructor(surname, name, age, gender, role, id) {
+    super(surname, name, age, gender);
+    this.role = role;
+    this.id = id;
+  }
+}
+
+class Player extends Person {
+  constructor(surname, name, age, gender, level) {
+    super(surname, name, age, gender);
+    this.level = level;
+  }
+}
 
 */
