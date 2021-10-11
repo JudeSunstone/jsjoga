@@ -7499,5 +7499,40 @@ class Player extends Person {
     this.level = level;
   }
 }
+		
+		
+		Дано несколько классов. Измените код так, чтобы все классы имели метод rename для изменения имени.
+		
+		
+class User {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    rename(newName) {
+    this.name = newName;
+  }
+
+}
+
+class Admin extends User {
+    constructor(name, age, id) {
+        super(name, age);
+        this.id = id;
+    }
+}
+
+class Recruit extends User {
+    constructor(name, age) {
+        super(name, age);
+    }
+    askHelp() {
+        console.log('Need help!');
+    }
+}
+
+const admin = new Admin("rei", 5, 6)
+admin.rename('red');
+console.log(admin.name);
 
 */
