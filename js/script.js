@@ -7534,5 +7534,82 @@ class Recruit extends User {
 const admin = new Admin("rei", 5, 6)
 admin.rename('red');
 console.log(admin.name);
+		
+		
+		<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+         <form action="">
+            <p>
+                <label for="login">Login</label>
+                <input type="text" name="" id="login" placeholder="Your login">
+            </p>
+            <p>
+                <label for="password">Password</label>
+                <input type="text" name="" id="password" placeholder="Password">
+
+            </p>
+            <p class="btn">
+                <butto>Вход</butto>
+            </p>
+        </form>
+    </div>
+   
+	
+</body>
+</html>
+
+		body {
+    height: 100%;
+    background-color:green;
+}
+div {
+     display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+form {
+    background-color: #fff;
+    min-width: 50%;
+   
+}
+form p {
+    display: flex;
+    flex-direction: column;
+}
+form input {
+    height: 35px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+}
+form label {
+    margin-bottom: 10px;
+}
+p.btn {
+    display: block;
+    text-align: right;
+}
+
+p.btn button {
+    background: green;
+    cursor: pointer;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+}
+		
+		
+		
+		
 
 */
