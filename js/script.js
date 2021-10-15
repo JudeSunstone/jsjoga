@@ -7610,6 +7610,139 @@ p.btn button {
 		
 		
 		
-		
+	Создайте класс User.
+Этот класс описывает сущность (объект) конкретного пользователя и методы работы с ним.
+
+Конструктор класса принимает id и имя пользователя name в качестве параметра и создаёт объект с соответствующими свойствами.
+
+Класс имеет метод rename(), который изменяет имя пользователя на указанное в параметре.
+
+
+Создайте класс UsersList.
+Этот класс описывает сущность (объект) списка пользователей и методы работы с ним.
+
+Конструктор класса создаёт объект со следующими свойствами:
+1) users — пустой массив для хранения списка пользователей;
+2) currentId — счётчик идентификаторов (id) созданных пользователей. Идентификатор может не совпадать с количеством элементов в списке пользователей: например, если создано пять пользователей с id от 0 до 4, а впоследствии пользователь с id = 3 удалён, то в списке остаётся 4 элемента, а новому пользователю будет присвоен id = 5.
+
+Класс имеет следующие методы:
+1) addUser(name) — добавление пользователя с именем name. Пользователь создаётся с помощью класса User.
+2) removeUser(id) — удаление пользователя по id.
+3) renameUser(id, name) — переименование пользователя по id. 
+4) getAllUsersString() — метод, возвращающий список пользователей одной строкой через точку с запятой.
+
+
+Создайте класс Application.
+Этот класс отвечает за запуск приложения и взаимодействие с пользователем с помощью prompt и console.log.
+
+Конструктор создаёт свойство usersList, записывая в него список пользователей, созданный с помощью класса UsersList.
+
+Класс имеет метод init(), который запускает приложение, запрашивает у пользователя команды, и обрабатывает введённые значения. 
+Пример команд, которые может ввести пользователь:
+create Tom — создание пользователя c именем Tom;
+rename 0 Sam — изменить имя пользователя с id = 0 на имя Sam;
+remove 0 — удаление пользователя с id = 0.
+
+Если пользователь вводит сообщение неверного формата, то ничего не происходит и программа запрашивает команду ещё раз.
+Приложение прекращает работу, если пользователь нажал «Отмена».
+
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// здесь будет ваш код
+
+class User {
+  constructor(id, name) {
+    this.id = id;
+    this.name = name;
+  }
+  rename(name) {
+    this.name = name;
+  }
+}
+
+
+class UsersList {
+  
+  constructor() {  
+    this.users = [];
+    this.currentId = 0;
+    }
+    addUser(name) {
+        let user = new User(name, this.curentId); // this потому что
+        //не передаем в параметры
+        this.currentId++; // прибавление
+        this.users.push(user);
+    }
+    removeUser(id) { //должен лежать измененный массив, где нет того ид что выбрали 
+        this.users = this.users.filter((el)=>{
+            return (el.id != id); //el.id надо чтобы метод вышел 
+        });
+        // второй вариант
+       // this.users = this.users.splice((this.users.indexOf(this.users.find((el)=>el.id=id)), 1)=>{
+
+    }
+    renameUser(id, name) { //
+    //найти в наших юзарах по индексу юзера и свойства имени перезаписать
+        let user = this.users.find((el)=>{
+            return el.id == id;
+        });
+        let index = this.users.indexOF(user);
+        this.users[index].name=name;
+
+// второй вариант 
+        /// this.users = this.users.map((el)=>{
+           // if(el.id == id) {
+                //return el.name=name; возврат элеиента измененного
+            //} return el;
+        //})
+        
+    }
+    getAllUsersString() {
+        //return this.users.reduce((ac, el) => {
+          // return  ac += `${el.name}, id: ${el.id};`;
+        //});
+        // второй вариант 
+        let res = '';
+        this.users.forEach((el)=>{
+            res += `${el.name}, id: ${el.id};`; // el везде можно заменить на users например
+        }) 
+        return res;
+    }
+}
+
+class Application {
+    constructor() {
+        this.UsersList = new UsersList();
+    }
+    init() {
+        let p = '';
+        while (p != null) {
+            p = prompt("enter command");
+            if(p.split(' ')[0] == "create" ) {
+                this.create(p.split(' ')[1]);
+            } else if (p.split(' ')[0] == "rename" ){
+                this.rename(p.split(' ')[1], p.split(' ')[2]);
+            } else if (p.split(' ')[0] == "remove"); {
+                this.remove(p.split(' ')[1]);
+            }
+        }
+    }
+    create(name) {
+        this.usersList.addUser(name);
+    }
+     rename(id,name) {
+        this.usersList.renameUser(id, name);
+    } 
+    remove(id) {
+        this.usersList.removeUser(id);
+    }
+}
+
+
+
+
+
+// const app = new Application();
+// app.init();
+
 
 */
