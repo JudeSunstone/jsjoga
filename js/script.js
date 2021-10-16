@@ -7744,5 +7744,36 @@ class Application {
 // const app = new Application();
 // app.init();
 
+		<h1>GeForce 20</h1>
+<ul>
+  <li>GTX 1650</li>
+  <li>GTX 1660</li>
+  <li class="primary">GTX 1660 Ti</li>
+  <li>RTX 2070</li>
+  <li>RTX 2080</li>
+  <li class="primary">RTX 2080 Ti</li>
+</ul>
+		
+		
+		
+		
+		Дан HTML-код. Измените, используя только JS-код:
+- текст заголовка на «GeForce 20 Series»;  
+- цвет фона элементов с классом primary на #ebebeb.
 
+		
+document.querySelector("h1").innerText = "GeForce 20 Series";
+
+document.querySelector(".primary").style.backgroundColor = "#ebebeb"; // это для одного
+
+// для нескольких
+// будет массив форИч будет работать и for и всё - остальное не работает
+
+
+document.querySelectorAll(".primary").forEach((el)=>{
+    el.style.backgroundColor = "#ebebeb";
+})
+
+		
+		
 */
