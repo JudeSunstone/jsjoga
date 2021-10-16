@@ -7755,6 +7755,18 @@ class Application {
 </ul>
 		
 		
+		Дан HTML-код. Внесите изменения, используя только JS-код:
+- Удалите заголовок;
+- Добавьте в конец списка новый пункт с текстом «TITAN RTX»
+
+const heading = document.querySelector("h1");
+heading.remove();
+
+let ul = document.querySelector("ul"); //надо чтобы добавить потом туда ребенка
+let newElement = document.createElement('li');
+newElement.innerText = "TITAN RTX";
+ul.append(newElement);
+		
 		
 		
 		Дан HTML-код. Измените, используя только JS-код:
