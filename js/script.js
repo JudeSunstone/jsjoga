@@ -7877,7 +7877,93 @@ document.querySelectorAll('li').forEach((el)=>{
 
 
 
+Напишите программу для добавления Ф.И.О. студента в конец списка.
+В заготовленном проекте дан список участников буткемпа. Напишите функцию addStudent(name), которая добавляет Ф.И.О. студента в конец списка.
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список участников буткемпа</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<h1>Список участников буткемпа:</h1>
+<p>Список сгенерирован случайным образом, любые совпадения - случайность.</p>
+
+<ul>
+    <li>Andrey Sitnik</li>
+    <li>Charlie Gerard</li>
+    <li>Alex Blom</li>
+    <li>Emma Brillhart</li>
+    <li>Luis Montes</li>
+    <li>Dylan Schiemann</li>
+    <li>Christian Heilmann</li>
+    <li>Jyoti Bishnoi</li>
+    <li>Paul Shannon</li>
+    <li>Liz Parody</li>
+    <li>Abdul-Majeed Ahmed</li>
+    <li>Alec Lombardo</li>
+    <li>Anna Henningsen</li>
+    <li>Daniel Khan</li>
+    <li>Frederic Harper</li>
+    <li>James Snell</li>
+    <li>Kamil Mysliwiec</li>
+    <li>April Wensel</li>
+    <li>Yan Cui</li>
+    <li>Marcus Blankenship</li>
+    <li>Tony Edwards</li>
+    <li>Emma Wedekind</li>
+    <li>Nader Dabit</li>
+    <li>Callum Macrae</li>
+    <li>Kye Hohenberger</li>
+    <li>Evan You</li>
+    <li>Sarah Dresner</li>
+    <li>Natalia Tepluhina</li>
+</ul>
+
+
+
+<script src="script.js"> </script>
+
+</body>
+</html>
+		body {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+ul{
+    list-style: none;
+    max-width: 500px;
+}
+
+li {
+    padding: 4px 10px;
+}
+
+li:nth-child(2n) {
+    background: #cbe7ff;
+}
+		
+		
+function addStudent(name) {
+    let ul = document.querySelector("ul"); //надо чтобы добавить потом туда ребенка
+    let newElement = document.createElement('li');
+    newElement.innerText = name; 
+    ul.append(newElement);
+
+}
+
+
+
+addStudent('Adam Johnson');
+addStudent('Zhang Weili');
+addStudent('Tim Cook');
+		
+		
+		
 
 
 
