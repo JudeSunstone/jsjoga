@@ -8017,7 +8017,22 @@ function convertToDec(firstArr) {
    return arr.map(el=>el).reverse().reduce((acc, el, i)=> acc+el * 2**i);
 }
 
+Добавьте классу метод celebrateBirthday, который увеличивает значение поля age на 1...
 
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    celebrateBirthday(age) { //надо сюда писать age в скобки?
+        this.age +=1;
+    }
+}
+
+const user1 = new Person('Luke Skywalker', 15);
+console.log(user1);
+user1.celebrateBirthday(); 
+console.log(user1); //16
 
 
 
