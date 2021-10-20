@@ -7965,6 +7965,29 @@ addStudent('Tim Cook');
 		
 		
 
+Создайте класс Person, который создаёт объект со свойствами surname, name, age, gender.
+Создайте три экземпляра этого класса и выведите их в консоль.
+
+
+
+class Person {
+    constructor(name, surname, age, gender) {
+        this.name = name,
+        this.surname = surname,
+        this.age = age,
+        this.gender = gender
+    }
+}
+
+const user1 = new Person("Rei", "Ji", 15, "f");
+const user2 = new Person("Rei", "Ni", 16, "f");
+const user3 = new Person("Rei", "Ki", 17, "m");
+console.log(user1);
+console.log(user2);
+console.log(user3);
+		
+		
+		
 
 
 
@@ -7973,9 +7996,26 @@ addStudent('Tim Cook');
 
 
 
+Написать функцию, которая получает массив нулей и единиц, а возвращает десятичное представление двоичного числа, записанного в массиве.
+
+console.log(convertToDec([0, 1, 0, 0, 1, 1, 0, 1])); // 77
+//для каждого жлеемнта массива cложить
+//      элемент * степень, соотвествующую индексу массива
+
+function convertToDec(firstArr) {
+   // надо перевернуть. ибо начинает отсчет с другой стороны reverse 
+    //на мсте, новый массив, но не мешает, потому писать в новую переменную не надо 
+    // но чтобы не меняеть исходный массив надо скопировать
+    let arr = [...firstArr];
+     arr.reverse().reduce((acc, el, i)=>acc + el * 2**i); //acc - куда мы складываем 
+}
+//////// почему здесь undefined??
 
 
-
+// второй вариант через map копируем - он нормально работает
+ function convertToDec(arr) {
+   return arr.map(el=>el).reverse().reduce((acc, el, i)=> acc+el * 2**i);
+}
 
 
 
