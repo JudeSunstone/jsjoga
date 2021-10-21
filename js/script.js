@@ -8035,7 +8035,42 @@ user1.celebrateBirthday();
 console.log(user1); //16
 
 
+Дана разметка для списка покупок. Добавьте обработчики событий так, чтобы при клике на элемент списка текст менял свой цвет на светло-серый.
 
+<ul class="shopping-list">
+  <li><button>Молоко</button></li>
+  <li><button>Масло</button></li>
+  <li><button>Хлеб</button></li>
+  <li><button>Сыр</button></li>
+</ul>
+
+		.shopping-list button {
+  border: none;
+  background: none;
+}
+.bg {
+    background-color: lightgray;
+}
+		
+
+	document.querySelectorAll("li").forEach((el)=>{
+ el.addEventListener('click', (event)=>{
+       event.target.classList.toggle("bg");
+    });
+})	
 		
 		
+		Дана разметка для списка покупок. Добавьте обработчики событий так, чтобы при клике на элемент списка текст был зачеркнут.
+		
+		Удалите обработчик после первого клика по элементу списка.
+		
+document.querySelectorAll("button").forEach((el)=>{
+    el.addEventListener('click', strike);
+})
+    
+function strike(event){
+        event.target.innerHTML = `<strike>${event.target.innerText}</strike>`;
+        event.target.removeEventListener('click', strike); //завершено и все, обратно никак
+    }
+
 */
