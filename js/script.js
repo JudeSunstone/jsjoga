@@ -8073,4 +8073,46 @@ function strike(event){
         event.target.removeEventListener('click', strike); //завершено и все, обратно никак
     }
 
+Напишите программу, выводящую в консоль слово «ENTER» при нажатии на клавиатуре клавиши Enter.
+		
+		<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+         <form action="">
+            <p>
+                <label for="login">Login</label>
+                <input type="text" name="" id="login" placeholder="Your login">
+            </p>
+            <p>
+                <label for="password">Password</label>
+                <input type="text" name="" id="password" placeholder="Password">
+
+            </p>
+            <p class="btn">
+                <button>Вход</button>
+            </p>
+        </form>
+    </div>
+   
+</body>
+</html>
+
+		
+let el = document.querySelector("input");
+el.addEventListener("keyup", (event) => {
+    let enter = event.key;
+    if(enter == " "){
+        console.log("ENTER");
+    }
+})
+Создайте карточку товара в интернет-магазине с названием товара, описанием и кнопкой Show details. При нажатии на кнопку, открывается дополнительная информация о товаре. При повторном нажатии, информация скрывается.
+
+
 */
