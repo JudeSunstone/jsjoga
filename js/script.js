@@ -8114,5 +8114,159 @@ el.addEventListener("keyup", (event) => {
 })
 Создайте карточку товара в интернет-магазине с названием товара, описанием и кнопкой Show details. При нажатии на кнопку, открывается дополнительная информация о товаре. При повторном нажатии, информация скрывается.
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div class="card">
+            <h1 class="card-header">Beats Studio 3 Wireless</h1>
+            <div class="card-main-info">
+                  High-performance wireless noise cancelling headphones. Compatible with iOS and Android devices. Up to 22 hours of battery life enables full-featured all-day wireless playback.
+            </div>
+            <div class="card-hidden-info">
+                    Brand: Beats <br>
+                    Connections: Bluetooth <br>
+                    Model Name: Beats Studio3 <br> 
+                    Color: Matte Black <br>
+                    Headphones Jack: 3.5 mm <br>
+            </div>
+            <button class="card-button">Show details</button>
+        </div>
+    </div>
+    <script defer src="index.js"></script>
+</body>
+</html>
 
+	.card {
+    background-color: aqua;
+    border-radius: 15px;
+    width: 45vw;
+    font-size: 20px;
+    padding: 20px 20px;
+    /*margin: 0 auto;*/
+}
+.card-hidden-info {
+    padding-top: 20px;
+    display: none;
+}
+.card-button {
+    margin-top: 20px;
+    background-color:deepskyblue;
+    color: floralwhite;
+}
+let button = document.querySelectorAll(".card-button");
+    button.forEach((element) => {  
+            element.addEventListener('click', (event) => {
+              const text = event.target.innerText;
+              if (text === 'Show details') {
+                event.target.innerText = 'Hide details';
+              } else {
+                event.target.innerText = 'Show details';
+              }
+            }); 
+})
+
+// не работает. почему? 
+function showInfo(event){
+   event.target.style.display = "block"; 
+  //const e = event.target;
+   //e.classList.add(".card-shown-info");
+}
+document.querySelector(".card-hidden-info").addEventListener('click', showInfo);
+
+
+Запрограммируйте визуальную часть регулятора уровня звука.
+
+— Ширина шкалы должна быть пропорциональна уровню громкости. Например, если уровень выставлен в 50%, то шкала должна быть закрашена наполовину.
+— При нажатии на шкалу она должна закрашиваться до того уровня, на котором пользователь щелкнул мышью.
+— При нажатии на кнопки «+» или «-» уровень звука увеличивается или уменьшается на 1%.
+
+
+
+		
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Регулятор уровня звука</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+    <div class="container">
+        <div class="volume-level-block">
+            <p>Регулятор уровня звука</p>
+
+            <div class="flex">
+                <div class="button">-</div>
+                <div class="volume-bar"> </div>
+                <div class="button">+</div>
+            </div>
+            <div class="value">100%</div>
+        </div>
+    </div>
+
+</body>
+</html>	
+		
+	body {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+ .container {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 100vh;
+}
+
+ .volume-level-block {
+     background: #fff;
+     box-shadow: 0 5px 20px #E4E4E6;
+     width: 500px;
+     padding: 40px;
+ }
+
+.volume-level-block .flex {
+    display: flex;
+
+}
+
+.volume-level-block .flex .volume-bar {
+    border: 1px solid #cccccc;
+    flex-grow: 1;
+    height: 20px;
+    cursor: pointer;
+    margin: 0 20px;
+    background: #FFA310;
+}
+
+.volume-level-block .flex .button {
+    border: 1px solid #cccccc;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.volume-level-block .flex .button:hover {
+    background: #FFA310;
+    color:white;
+}
+
+.volume-level-block .value {
+    text-align: center;
+    font-weight: bold;
+}
+		
+		
+		********** решение?
 */
