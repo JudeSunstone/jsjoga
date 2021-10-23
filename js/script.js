@@ -8473,5 +8473,49 @@ document.querySelector("#name").addEventListener("click", (e)=>{
 </html>
 
 
+Дана форма отправки комментария. Добавьте обработчик события так, чтобы при нажатии на кнопку «Отправить комментарий», информация из всех полей ввода выводилась в консоль.
 
+<div class="comment-form">
+    <label class="comment-section">
+        Имя
+        <input class="comment-input" type="text">
+    </label>
+    <label class="comment-section">
+        Комментарий
+        <textarea class="comment-input" row="5"></textarea>
+    </label>
+    <button class="comment-send">Отправить комментарий</button>
+</div>
 		
+		.comment-form {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    width: 300px;
+    padding: 10px;
+}
+
+.comment-section {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.comment-input {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border: 1px solid #acacac;
+    border-radius: 3px;
+    padding: 5px 10px;
+    margin-top: 5px;
+    resize: none;
+}
+		
+		
+	const nameInput = document.querySelector('.name-input'); // пришлось в хтмл поменять класс, ибо был одинаковый
+const commentInput = document.querySelector('.comment-input'); 
+const commentButton = document.querySelector('.comment-send');
+
+commentButton.addEventListener('click', () => {
+  console.log(nameInput.value);
+  console.log(commentInput.value);
+});	
