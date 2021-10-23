@@ -8537,3 +8537,36 @@ document.querySelector('.comment-send').addEventListener("click", (e)=>{
     let words = document.querySelectorAll('.comment-input');
     console.log(words[0.value, words[1].value);
 })
+		
+		
+		
+		Создайте класс Transaction, который создает транзакцию между двумя клиентами.
+Создайте класс, содержащий информацию о клиентах, размере транзакции и комиссии за операцию, а также метод для расчёта величины комиссии.
+
+
+
+
+Напишите метод для расчёта величины комиссии.
+Создайте метод calculateCommission, который будет производить вычисление комиссии на основе ставки, указанной в свойстве commission.
+
+class Transaction {
+    constructor(fromClient, toClient, amount) {
+        this.fromClient = fromClient,
+        this.toClient = toClient,
+        this.amount = amount,
+        this.comission = 0.5;
+        this.age = age;
+    }
+    calculateCommission(){
+        return this.amount*this.comission;
+    }
+}
+
+
+
+
+
+
+
+// const transaction = new Transaction('Christian', 'Daniel', 1000);
+// console.log(transaction.calculateCommission()); // 50
