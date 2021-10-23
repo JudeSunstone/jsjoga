@@ -8434,3 +8434,44 @@ document.querySelector("#name").addEventListener("click", (e)=>{
     render(document.querySelector("tbody"), arr);
 })
 
+Создайте форму отправки сообщения, состоящую из следующих элементов:
+- текстовое поле textarea с текстом сообщения;
+- элемент select с вариантом выбора типа сообщения: личное, публичное;
+- элемент checkbox с пометкой «Уведомить об ответе»;
+- кнопка «Отправить сообщение».
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Регулятор уровня звука</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <textarea rows="5" cols="25">
+Напишите, что думаете по этому поводу...
+    </textarea>
+    <br>
+    <label>
+    Выберите тип сообщения
+    <select>
+        <option value="public">публичное</option>
+        <option value="private">личное</option>
+    </select>
+    </label>
+    <br>
+    <label>
+        Уведомить об ответе
+        <input type="checkbox">
+    </label>
+    <br>
+    <input type="button" value="Отправить сообщение">
+
+
+<script defer src="index.js"></script>
+</body>
+</html>
+
+
+
+		
