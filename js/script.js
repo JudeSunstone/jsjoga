@@ -8161,25 +8161,37 @@ el.addEventListener("keyup", (event) => {
     background-color:deepskyblue;
     color: floralwhite;
 }
-let button = document.querySelectorAll(".card-button");
-    button.forEach((element) => {  
-            element.addEventListener('click', (event) => {
+
+ document.querySelector(".card-button").addEventListener('click', (event) => {
               const text = event.target.innerText;
               if (text === 'Show details') {
                 event.target.innerText = 'Hide details';
+                showInfo(document.querySelector(".card-hidden-info"), true)
               } else {
                 event.target.innerText = 'Show details';
+                showInfo(document.querySelector(".card-hidden-info"), false)
               }
             }); 
-})
 
-// не работает. почему? 
-function showInfo(event){
-   event.target.style.display = "block"; 
-  //const e = event.target;
-   //e.classList.add(".card-shown-info");
+
+function showInfo(el, b){ // b- переклчатель
+    let block = b ? "block" : "none";
+        el.style.display = block; //здесь не строка, а пред.блок 14 строка переменная
 }
-document.querySelector(".card-hidden-info").addEventListener('click', showInfo);
+
+это можно записать
+
+ document.querySelector(".card-button").addEventListener('click', (event) => {
+              const text = event.target.innerText;
+              if (text === 'Show details') {
+                event.target.innerText = 'Hide details';
+                showInfo(document.querySelector(".card-hidden-info").style.display="block")
+		      
+              } else {
+                event.target.innerText = 'Show details';
+                showInfo(document.querySelector(".card-hidden-info"), style.display="none")
+              }
+            }); 
 
 
 Запрограммируйте визуальную часть регулятора уровня звука.
