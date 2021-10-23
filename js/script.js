@@ -8392,7 +8392,7 @@ table.goods  tr > td:last-child, table.goods  tr > td:nth-child(3) {
 }
 
 		
-		function getElementsArr(){
+function getElementsArr(){
     let trs = document.querySelector("tbody").querySelectorAll("tr");
      //берем все строки из таблицы
     //document.querySelectorAll("tbody")[0].querySelectorAll("tr"); 
@@ -8436,7 +8436,7 @@ function render (tbody, arr) {
 document.querySelector("#name").addEventListener("click", (e)=>{
     let arr = getElementsArr(); //выносим за условие ибо понадобится
         
-    if(e.target.innerText = "Name ˅") { // мегяет стрелочку для пользователя
+    if(e.target.innerText == "Name ˅") { // мегяет стрелочку для пользователя
         e.target.innerText = "Name ^";
         sortArr(arr);
     } else {
@@ -8445,6 +8445,7 @@ document.querySelector("#name").addEventListener("click", (e)=>{
     }
     render(document.querySelector("tbody"), arr);
 })
+
 
 Создайте форму отправки сообщения, состоящую из следующих элементов:
 - текстовое поле textarea с текстом сообщения;
