@@ -8603,4 +8603,318 @@ btn.addEventListener("click", (e)=>{
 
 
 
+*****Дана таблица с котировками валют. С помощью JavaScript ячейкам с положительным и отрицательным значениями изменения установите CSS-классы .increase и .decrease соответственно. HTML-код не должен быть изменён.
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Курсы валют</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <h1>Котировки валют</h1>
+
+    <table class="currency">
+        <tr>
+            <th>Код</th>
+            <th>Единиц</th>
+            <th>Валюта</th>
+            <th>Курс ЦБ РФ</th>
+            <th>Изменение</th>
+        </tr>
+        <tr>
+            <td>USD</td>
+            <td>1</td>
+            <td>Доллар США</td>
+            <td>63.1742</td>
+            <td>-0.2600</td>
+        </tr>
+        <tr>
+            <td>EUR</td>
+            <td>1</td>
+            <td>Евро</td>
+            <td>69.7443</td>
+            <td>-0.3822</td>
+        </tr>
+        <tr>
+            <td>AUD</td>
+            <td>1</td>
+            <td>Австралийский доллар</td>
+            <td>42.6173</td>
+            <td>-0.0866</td>
+        </tr>
+        <tr>
+            <td>AZN</td>
+            <td>1</td>
+            <td>Азербайджанский манат</td>
+            <td>37.2380</td>
+            <td>-0.1532</td>
+        </tr>
+        <tr>
+            <td>AMD</td>
+            <td>100</td>
+            <td>Армянский драм</td>
+            <td>13.2025</td>
+            <td>-0.0544</td>
+        </tr>
+        <tr>
+            <td>BYN</td>
+            <td>1</td>
+            <td>Белорусский рубль</td>
+            <td>29.3342</td>
+            <td>-0.2209</td>
+        </tr>
+        <tr>
+            <td>BGN</td>
+            <td>1</td>
+            <td>Болгарский лев</td>
+            <td>35.6816</td>
+            <td>-0.1731</td>
+        </tr>
+        <tr>
+            <td>BRL</td>
+            <td>1</td>
+            <td>Бразильский реал</td>
+            <td>14.8464</td>
+            <td>-0.0863</td>
+        </tr>
+        <tr>
+            <td>HUF</td>
+            <td>100</td>
+            <td>Венгерский форинт</td>
+            <td>20.7418</td>
+            <td>-0.1055</td>
+        </tr>
+        <tr>
+            <td>KRW</td>
+            <td>1000</td>
+            <td>Вона Республики Корея</td>
+            <td>53.1304</td>
+            <td>-0.3268</td>
+        </tr>
+        <tr>
+            <td>HKD</td>
+            <td>10</td>
+            <td>Гонконгский доллар</td>
+            <td>81.3608</td>
+            <td>-0.2949</td>
+        </tr>
+        <tr>
+            <td>DKK</td>
+            <td>10</td>
+            <td>Датская крона</td>
+            <td>93.3853</td>
+            <td>-0.4606</td>
+        </tr>
+        <tr>
+            <td>INR</td>
+            <td>100</td>
+            <td>Индийская рупия</td>
+            <td>88.6948</td>
+            <td>-0.4671</td>
+        </tr>
+        <tr>
+            <td>KZT</td>
+            <td>100</td>
+            <td>Казахстанский тенге</td>
+            <td>16.6588</td>
+            <td>-0.0619</td>
+        </tr>
+        <tr>
+            <td>CAD</td>
+            <td>1</td>
+            <td>Канадский доллар</td>
+            <td>47.5351</td>
+            <td>-0.2532</td>
+        </tr>
+        <tr>
+            <td>KGS</td>
+            <td>100</td>
+            <td>Киргизский сом</td>
+            <td>90.4075</td>
+            <td>-0.3720</td>
+        </tr>
+        <tr>
+            <td>CNY</td>
+            <td>10</td>
+            <td>Китайский юань</td>
+            <td>90.2489</td>
+            <td>-0.4958</td>
+        </tr>
+        <tr>
+            <td>MDL</td>
+            <td>10</td>
+            <td>Молдавский лей</td>
+            <td>36.3383</td>
+            <td>-0.1391</td>
+        </tr>
+        <tr>
+            <td>RON</td>
+            <td>1</td>
+            <td>Новый румынский лей</td>
+            <td>14.6088</td>
+            <td>-0.0696</td>
+        </tr>
+        <tr>
+            <td>TMT</td>
+            <td>1</td>
+            <td>Новый туркменский манат</td>
+            <td>18.0756</td>
+            <td>-0.0744</td>
+        </tr>
+        <tr>
+            <td>NOK</td>
+            <td>10</td>
+            <td>Норвежская крона</td>
+            <td>68.3718</td>
+            <td>-0.1324</td>
+        </tr>
+        <tr>
+            <td>PLN</td>
+            <td>1</td>
+            <td>Польский злотый</td>
+            <td>16.3444</td>
+            <td>0.0030</td>
+        </tr>
+        <tr>
+            <td>XDR</td>
+            <td>1</td>
+            <td>СДР (специальные права заимствования)</td>
+            <td>86.9498</td>
+            <td>-0.4061</td>
+        </tr>
+        <tr>
+            <td>SGD</td>
+            <td>1</td>
+            <td>Сингапурский доллар</td>
+            <td>45.7618</td>
+            <td>-0.5270</td>
+        </tr>
+        <tr>
+            <td>TJS</td>
+            <td>10</td>
+            <td>Таджикский сомони</td>
+            <td>65.1428</td>
+            <td>-0.2870</td>
+        </tr>
+        <tr>
+            <td>TRY</td>
+            <td>1</td>
+            <td>Турецкая лира</td>
+            <td>10.5563</td>
+            <td>-0.0504</td>
+        </tr>
+        <tr>
+            <td>UZS</td>
+            <td>10000</td>
+            <td>Узбекский сум</td>
+            <td>66.1856</td>
+            <td>-0.3701</td>
+        </tr>
+        <tr>
+            <td>UAH</td>
+            <td>10</td>
+            <td>Украинская гривна</td>
+            <td>25.4145</td>
+            <td>-0.1026</td>
+        </tr>
+        <tr>
+            <td>GBP</td>
+            <td>1</td>
+            <td>Фунт стерлингов Соединенного королевства</td>
+            <td>82.4297</td>
+            <td>0.1619</td>
+        </tr>
+        <tr>
+            <td>CZK</td>
+            <td>10</td>
+            <td>Чешская крона</td>
+            <td>27.8276</td>
+            <td>-0.0629</td>
+        </tr>
+        <tr>
+            <td>SEK</td>
+            <td>10</td>
+            <td>Шведская крона</td>
+            <td>66.0479</td>
+            <td>0.2120</td>
+        </tr>
+        <tr>
+            <td>CHF</td>
+            <td>1</td>
+            <td>Швейцарский франк</td>
+            <td>65.2356</td>
+            <td>-0.2010</td>
+        </tr>
+        <tr>
+            <td>ZAR</td>
+            <td>10</td>
+            <td>Южноафриканский рэнд</td>
+            <td>42.6959</td>
+            <td>-0.2381</td>
+        </tr>
+        <tr>
+            <td>JPY</td>
+            <td>100</td>
+            <td>Японская иена</td>
+            <td>57.7329</td>
+            <td>-0.4396</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
+		
+		
+		body {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+table.currency {
+    border-collapse: collapse;
+}
+
+table.currency tr {
+    border-bottom: 1px solid #ece6e6;
+}
+
+
+table.currency  th {
+    background: #eff1f5;
+    padding: 10px;
+    text-align: center;
+}
+
+table.currency td {
+    padding: 4px;
+    text-align: center;
+}
+
+table.currency td:nth-child(3) {
+    text-align: left;
+}
+
+td.increase {
+    color:green;
+}
+
+td.decrease {
+    color:red;
+}
+		
+document.querySelectorAll('td:last-child').forEach((el)=>{ // находим послуднюю ячейку
+     if(el.innerText < 0) {
+            el.classList.add('decrease');
+        } else {
+            el.classList.add('increase');
+        }
+}) 
+
 
