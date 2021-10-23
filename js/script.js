@@ -8270,3 +8270,167 @@ document.querySelector(".card-hidden-info").addEventListener('click', showInfo);
 		
 		********** решение?
 */
+		
+		
+		
+		Реализуйте функционал сортировки таблицы.
+Дана таблица со списком товаров, содержащая следующую информацию: название товара, цена, количество товара на складе. Добавьте возможность с помощью нажатия на заголовок «Название товара» сортировать товары по названию.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Item list</title>
+    <link rel="stylesheet" href="index.css"/>
+</head>
+<body>
+    <table class="goods">
+    <thead>
+        <tr>
+            <th>Name ˅</th>
+            <th>Price, $</th>
+            <th>Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Apple AirPods</td>
+            <td>169.00</td>
+            <td>57</td>
+        </tr>
+        <tr>
+            <td>Sony WH1000XM3</td>
+            <td>278.00</td>
+            <td>24</td>
+        </tr>
+        <tr>
+            <td>Sony WF-1000XM3</td>
+            <td>228.00</td>
+            <td>11</td>
+        </tr>
+        <tr>
+            <td>Samsung Galaxy Buds</td>
+            <td>140</td>
+            <td>22</td>
+        </tr>
+        <tr>
+            <td>Sennheiser HD 450BT</td>
+            <td>199.95</td>
+            <td>30</td>
+        </tr>
+        <tr>
+            <td>JBL Reflect Flow</td>
+            <td>149.95</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>Sony WH-XB900N</td>
+            <td>189.95</td>
+            <td>30</td>
+        </tr>
+        <tr>
+            <td>Apple AirPods Pro</td>
+            <td>249</td>
+            <td>15</td>
+        </tr>
+        <tr>
+            <td>Beats Solo Pro</td>
+            <td>269.95</td>
+            <td>15</td>   
+        </tr>
+    </tbody>
+    </table>
+</body>
+</html>
+		
+		@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;600&display=swap');
+ 
+body {
+    font-family: Roboto, Verdana, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+table.goods {
+    border-collapse: collapse;
+}
+
+table.goods tr {
+    border-bottom: 1px solid #ece6e6;
+}
+
+table.goods th {
+    background: #fffeea;
+    padding: 10px;
+    text-align: center;
+}
+
+table.goods  th:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+table.goods  td {
+    padding: 8px 40px;
+}
+
+table.goods  tr > td:last-child, table.goods  tr > td:nth-child(3) {
+    text-align: center;
+}
+
+		
+		function getElementsArr(){
+    let trs = document.querySelector("tbody").querySelectorAll("tr");
+     //берем все строки из таблицы
+    //document.querySelectorAll("tbody")[0].querySelectorAll("tr"); 
+    let arr = [];
+    //пустой массив, чтобы поместить в него данные строк
+    for(let i = 0; i < trs.length; i++) {
+        //преобразуем нодлист в массив
+        arr.push(trs[i]);
+    } 
+   // то же самое 
+   // trs.forEach((el)=>{
+        //arr.push(trs[i]);
+   // })
+    return arr;
+}
+
+function sortArr(arr, n){
+    if(!n)  n  = 1; // n для того, чтобы и обратно сортировалось, если отрицательно, то в обратную сторону
+    //если аргумента н нет, то пусть единица, чтобы не было ошибки, потому можно либо массив сортировать и отдать массив и -1 чтобы по убыванию сортировать
+    //!n в булеане фолс, потому присваиваем 1 чтобы было как надо 
+    arr.sort((a, b)=>{
+        //1-поменяется местами, если -1 то не поменяется
+        if(a.querySelector("td").innerText > b.querySelector("td").innerText) return n;
+        return -n;
+        //a - это tr
+        //мы получили жлементы, потому идем внутрь текста 
+        //сортирует строку!! т.к. нам ее целиком надо
+    })
+}
+
+//tr.querySelector("td").innerText;
+
+function render (tbody, arr) {
+    tbody.innerHTML = ""; // очищаем строки
+    arr.forEach((el)=>{ //бежим по массиву и добвляем каждый элемент в тело таблицы
+        tbody.append(el);
+    })
+}
+//прописали в нужном месте id="name"
+
+document.querySelector("#name").addEventListener("click", (e)=>{
+    let arr = getElementsArr(); //выносим за условие ибо понадобится
+        
+    if(e.target.innerText = "Name ˅") { // мегяет стрелочку для пользователя
+        e.target.innerText = "Name ^";
+        sortArr(arr);
+    } else {
+        e.target.innerText = "Name ˅";
+        sortArr(arr, -1);
+    }
+    render(document.querySelector("tbody"), arr);
+})
+
