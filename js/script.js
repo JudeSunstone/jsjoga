@@ -7955,8 +7955,14 @@ function addStudent(name) {
     ul.append(newElement);
 
 }
-
-
+//бонус, делаем из этих данных массив
+function array() {
+    [].slice.map.call(document.querySelector("li"), el=>innerText);
+}
+//создаем [] как пустой массив, куда всё класть
+//мэп возвращается массив
+// call - даем возможность коллекции узлов стать как массив
+// в элемент кладем текстовое значение тэга
 
 addStudent('Adam Johnson');
 addStudent('Zhang Weili');
