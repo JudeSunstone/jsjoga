@@ -8519,3 +8519,9 @@ commentButton.addEventListener('click', () => {
   console.log(nameInput.value);
   console.log(commentInput.value);
 });	
+
+//второй вариант
+document.querySelector('.comment-send').addEventListener("click", (e)=>{
+    let words = document.querySelectorAll('.comment-input');
+    console.log(words[0.value, words[1].value);
+})
