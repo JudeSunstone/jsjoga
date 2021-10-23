@@ -8562,12 +8562,45 @@ class Transaction {
         return this.amount*this.comission;
     }
 }
-
-
-
-
-
-
-
 // const transaction = new Transaction('Christian', 'Daniel', 1000);
 // console.log(transaction.calculateCommission()); // 50
+
+
+// кривое решение
+		Создайте приложение «Конвертер валют».
+Конвертер имеет данные о курсах нескольких валют (минимум две) к рублю. На странице создайте форму, позволяющую пользователю:
+— Выбрать валюту из списка;
+— Указать сумму, которую нужно конвертировать.
+При щелчке по кнопке «Рассчитать» производится перерасчёт введённой суммы в национальную валюту. Результат расчёта должен быть выведен на экран.
+Визуальное оформление проекта продумайте самостоятельно.
+
+
+btn.addEventListener("click", (e)=>{
+    let cofficient = currency.value === "dollar" ? 1/70 : 
+                    currency.value === "euro" 1/110 : null;
+    let num = sumnum.value;
+    if(!cofficient || !num*1) throw new Error("wrong input");
+    response.innerHTML += `<p>${num*cofficient}${curency.value}</p>`
+})
+		
+		<div id="form">
+    <p>Конвертер валют</p>
+    <label class="sum">
+        Сумма в рублях
+        <input id="sumnum" type="number">
+    </label>
+    <br>
+    <select id="currency">
+        <option value="dollar">Доллар</option>
+        <option value="euro">Евро</option>
+    </select>
+    <br>
+    <button class="button">Рассчитать</button>
+
+    //здесь надо сделать 
+<div id="response"></div>
+</div>
+
+
+
+
