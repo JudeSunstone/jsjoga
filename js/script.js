@@ -9179,20 +9179,24 @@ userForm.addEventListener('submit', (event) => {
 });
 		
 	//можно через data.get("***")	
-		form {
+form {
     width: 300px;
 }
 form label {
     display: block;
     margin-bottom: 10px;
 }
-input, textarea, select {
+input,  textarea, select {
     background-color: bisque;
     display: block;
     padding:  5px;
     width: 300px;
     border-radius: 5px;
     margin-top: 5px;
+}
+.revisit {
+    display: inline-block;
+    width: auto;
 }
 button {
     background-color: tan;
@@ -9205,7 +9209,4 @@ button {
 }
 textarea {
     resize: none;
-}
-.revisit {
-    display: inline-block;
 }
