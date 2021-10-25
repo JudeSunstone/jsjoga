@@ -9071,3 +9071,39 @@ makeTable();
 		
 		
 
+Создайте форму с полем ввода возраста, E-mail и пароля.
+Добавьте проверку при отправке формы: если длина пароля больше 5 символов, вывести в консоль сообщение «Доступ разрешён». В противном случае - вывести «Доступ запрещён».
+
+<form class="user-form">
+  <label>  
+    Возраст
+    <input class="age" type="number" placeholder="Введите ваш возраст">
+  </label>
+  <br>
+  <label>
+    email
+    <input class="email" type="email" placeholder="Введите email">
+  </label>
+<br>
+  <label>
+      password
+      <input class="password" type="password" placeholder="Введите пароль" name="password">
+  </label>
+  <br>
+  <button type="submit">Send me</button>
+</form>
+
+const userForm = document.querySelector('.user-form');
+
+userForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+    const data = new FormData(event.target);
+    const password = data.get('password');
+console.log(password);
+    if(password.length > 5 ){
+        console.log("Доступ разрешён");
+    }else {
+        console.log("Доступ запрещён");
+    }
+});		
+		
