@@ -9106,4 +9106,106 @@ console.log(password);
         console.log("Доступ запрещён");
     }
 });		
+Создайте форму регистрации пациента в больнице.
+
+Создайте форму, содержащую следующие данные:
+— Ф.И.О. пациента (обязательное);
+— Серия и номер паспорта (обязательное);
+— Пол;
+— Возраст;
+— Адрес эл. почты;
+— Номер телефона;
+— Описание симптомов (текстовое поле);
+— Чекбокс «Повторный приём».
+
+Запрограммируйте вывод карточки пациента.
+Запрограммируйте появление карточки пациента, так, чтобы:
+- При успешной отправке формы карточка пациента добавляется внизу страницы. 
+- Возраст пациента в карточке склоняется в зависимости от числительного, например: 10 лет, 22 года.
+- Имя пациента является ссылкой на E-mail.
+
+Визуальное оформление продумайте самостоятельно.
+<form class="user-form">
+  <label>  
+    Ф.И.О. пациента 
+    <input name="fullname" class="fullname" type="text"  required>
+  </label>
+  <label>
+    Серия и номер паспорта
+    <input name="passnumber" class="passnumber" type="text"  required>
+  </label>
+  <label>
+    Пол
+    <select name="gender" class="gender">
+      <option value="male">Мужской</option>
+      <option value="female">Женский</option>
+    </select>
+  </label>
+  <label>  
+    Возраст
+    <input name="age" class="age" type="number">
+  </label>
+   <label>
+    Email
+    <input name="email" class="email" type="email">
+  </label>
+    <label>  
+    Номер телефора
+    <input name="phonenumber" class="age" type="tel">
+  </label>
+  <label>
+      Описание симптомов 
+    <textarea name="symptoms" rows="3" cols="25">
+    </textarea>
+  </label>
+  <label class="revisit">
+        Повторный приём
+        <input type="checkbox" class="revisit">
+    </label>
+  <button type="submit" name="revisit">Send me</button>
+</form>
+
+
 		
+const userForm = document.querySelector('.user-form');
+
+userForm.addEventListener('submit', (event) => {
+    event.preventDefault(); 
+   console.log("Карточка зарегистрирована");
+    const data = new FormData(event.target);
+    for(let arr of data){
+        console.log(arr[0], arr[1])
+    }
+});
+		
+	//можно через data.get("***")	
+		form {
+    width: 300px;
+}
+form label {
+    display: block;
+    margin-bottom: 10px;
+}
+input, textarea, select {
+    background-color: bisque;
+    display: block;
+    padding:  5px;
+    width: 300px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+button {
+    background-color: tan;
+    padding:  10px;
+    width: 310px;
+    display: block;
+}
+.gender {
+    width: 315px;
+}
+textarea {
+    resize: none;
+}
+.revisit {
+    display: inline-block;
+}
