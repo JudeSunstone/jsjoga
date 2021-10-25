@@ -9098,7 +9098,7 @@ const userForm = document.querySelector('.user-form');
 userForm.addEventListener('submit', (event) => {
   event.preventDefault();
     const data = new FormData(event.target);
-    const password = data.get('password');
+    const password = data.get('password'); //это можно не писать, а сраз в условие перенести это
 console.log(password);
     if(password.length > 5 ){
         console.log("Доступ разрешён");
