@@ -9237,3 +9237,37 @@ function getFib(n){
 }
 getFib(n);
 console.log(getFib(n));
+		
+		Напишите программу, определяющую наименьшее число в последовательности.
+Напишите программу, которая запрашивает  у пользователя ввод пяти числовых элементов, записывает их в массив и выводит в консоль наименьшее из чисел.
+
+
+ let numbers = prompt("insert 5 numbers, use commas pls /n example 1, 2, 3");//делаем, чтобы с проверкой
+function getArrFromUser() {
+    const arr = numbers.split(", "); // режем
+// в скобках запятая и пробел, чтобы слово не начиналось с пробела, если он есть, конечно
+    if(arr.length<5) {
+        alert('not 5 numbers');
+        return null;
+    }
+    for(let i = 0; i < arr.length; i++) {
+        if(isNaN(arr[i])) {
+            alert('not a number', arr[i]); // вторая часть как пример
+            return null;
+        }
+}
+    return arr;
+}
+//если массив пришел без проблем, то продолжаем
+function minInArr(arr) {
+    let min = arr[0]; //сравниваем первый жлемент число со вторым и так по очереди, потом видим результат
+    for(let i = 1; i < arr.length; i++) {
+        if(min>arr[i]) {
+            min = arr[i];
+        }
+    }
+    return min;
+}
+
+let arr = getArrFromUser();
+console.log(minInArr(arr));
