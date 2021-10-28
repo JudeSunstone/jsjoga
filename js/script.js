@@ -9317,3 +9317,91 @@ function callback(item) {
 }
 
 arr.forEach(callback);
+
+		Напишите программу для анализа зарплат сотрудников отдела.
+В отделе 10 человек с разной зарплатой. Напишите программу, для анализа зарплат сотрудников отдела.
+
+let salary = [
+    [60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60],
+    [75, 75, 75, 75, 75, 75, 70, 77, 75, 75, 70, 75],
+    [150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 180],
+    [65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65],
+    [80, 80, 80, 80, 80, 80, 80, 105, 105, 105, 105, 105],
+    [65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65],
+    [80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 120],
+    [65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65],
+    [80, 80, 80, 80, 80, 80, 80, 90, 90, 90, 90, 90],
+    [75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 70, 75]
+];
+
+function getAnnualSalary(arr) {
+    let sum = 0;
+    for(let i = 0; i < arr.length; i++) {
+        for(let a = 0; a < arr[i].length; a++) { 
+            //второй цикл - идем внутрь к числам
+            sum = sum + arr[i][a];
+        }
+    }
+    return sum;
+}
+console.log(getAnnualSalary(salary));
+
+function getMonthlySalary(arr, month) {
+    const arr2 = [1, 2, 4, 5, 6, 7, 8, 9]; //сотрудники
+    for(let i = 0; i < arr.length; i++) {
+        arr2[i] = arr[i][month];
+    }
+    return arr2;
+}
+console.log(getMonthlySalary(salary, 2));
+
+function getQuarterSalary(arr, quarter) {
+    let sum = 0;
+    for(let i = 0; i < arr.length; i++) {
+
+            if (quarter == 1) {
+                sum = sum + arr[i][0]+arr[i][1]+arr[i][2];
+            } 
+             if (quarter == 2) {
+                sum = sum + arr[i][3]+arr[i][4]+arr[i][5];
+            } 
+             if (quarter == 3) {
+                sum = sum + arr[i][6]+arr[i][7]+arr[i][8];
+            } 
+             if (quarter == 4) {
+                sum = sum + arr[i][9]+arr[i][10]+arr[i][11];
+            }    
+        
+    }
+    return sum;
+}
+
+/* покороче
+    
+//вынос общей функции и дальше ее использование везде
+
+function getSalaryOf(start, end) {
+    let temp = 0;
+    for(i = 0; i < salary.length; i++){
+        for(j = 0; j < salary.length; j++){
+            temp += salary[i][j];
+         }
+    }
+    return temp;
+}
+
+function getAnnualSalary() {
+    return getSalaryOf(0, 12);
+}
+
+function getMonthlySalary( month) {
+   return getSalaryOf(month-1, month);
+}
+function getQuarterSalary(q) {
+   return getSalaryOf((q-1)*3, q*3);
+}*/
+
+console.log(getQuarterSalary(salary, 1));
+console.log(getQuarterSalary(salary, 2));
+console.log(getQuarterSalary(salary, 3));
+console.log(getQuarterSalary(salary, 4));
