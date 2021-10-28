@@ -9358,7 +9358,7 @@ console.log(getMonthlySalary(salary, 2));
 function getQuarterSalary(arr, quarter) {
     let sum = 0;
     for(let i = 0; i < arr.length; i++) {
-
+//не надо здесь второго цикла
             if (quarter == 1) {
                 sum = sum + arr[i][0]+arr[i][1]+arr[i][2];
             } 
