@@ -9461,3 +9461,26 @@ for (let i = n; i > 1; i--) {
     }
     if(flag) console.log(i);  // вынести за цикл!
 }
+
+		
+		Увеличьте значения ловкости и интеллекта персонажей.
+Дана информация о персонажах в виде строк в формате JSON. 
+Преобразуйте их в объект.
+Увеличьте значения ловкости (agility) и интеллекта (intelligence) на 20 пунктов. 
+Преобразуйте объекты с обновлёнными значениями в формат JSON и выведите их в консоль.
+
+
+const character1 = '{"agility": 15, "intelligence": 15, "strength": 150, "magicPower": 5500, "magicResist": 2000, "armor": true}';
+const character2 = '{"agility": 20, "intelligence": 10, "strength": 150, "magicPower": 5000, "magicResist": 2500, "armor": true}';
+
+let both = [character1, character2].map((el, i) =>{
+    let obj = JSON.parse(el);
+    obj.agility += 20;
+    obj.intelligence += 20;
+    let newObj = JSON.stringify(obj);
+    return newObj;
+});
+let [newCharacter1, newCharacter2] = [...both];
+
+console.log(newCharacter1);
+console.log(newCharacter2);
