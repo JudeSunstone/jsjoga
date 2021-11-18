@@ -9536,9 +9536,12 @@ https://randomuser.me/api/
         console.log(data.results[0].name.last);
         console.log(data.results[0].email); //обращаемся именно к первому в массиве, чтобы получить значение
         console.log(data.results[0].picture.medium);
+        console.log(data.results[0].dob.age);
+        console.log(data.results[0].location.country);
 
     })
     .catch(error => {
         console.log(`Произошла ошибка: ${error.message}`);
     });
+
 
