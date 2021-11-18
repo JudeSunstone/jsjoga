@@ -9484,3 +9484,41 @@ let [newCharacter1, newCharacter2] = [...both];
 
 console.log(newCharacter1);
 console.log(newCharacter2);
+
+		
+		Создайте программу «Генератор шуток».
+Добавьте на страницу кнопку «Получить шутку». При нажатии на кнопку на странице должна появляться случайная шутка.
+Для получения шуток используйте генератор шуток — https://api.chucknorris.io/jokes/random
+		
+		<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Р!</title>
+</head>
+<body>
+<button>Получить шутку</button>
+<div></div>
+</body>
+</html>
+		
+		let btn = document.querySelector('button');
+let div = document.querySelector('div');
+console.log(btn);
+console.log(div);
+
+btn.addEventListener('click', ()=>{
+    fetch('https://api.chucknorris.io/jokes/random')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data.value);
+        div.innerText=data.value;
+
+    })
+    .catch(error => {
+        console.log(`Произошла ошибка: ${error.message}`);
+    });
+})
+
+
+		
