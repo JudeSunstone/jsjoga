@@ -9521,4 +9521,24 @@ btn.addEventListener('click', ()=>{
 })
 
 
-		
+		Напишите приложение, выводящее информацию о пользователе.
+Для получения информации о пользователе используйте API
+https://randomuser.me/api/
+Запросите у сервера информацию о рандомном пользователе и выведите её.
+Выведите имя, фамилия, E-mail, возраст, страну и фотографию пользователя.
+
+
+    fetch('https://randomuser.me/api/')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        console.log(data.results[0].name.first);
+        console.log(data.results[0].name.last);
+        console.log(data.results[0].email); //обращаемся именно к первому в массиве, чтобы получить значение
+        console.log(data.results[0].picture.medium);
+
+    })
+    .catch(error => {
+        console.log(`Произошла ошибка: ${error.message}`);
+    });
+
