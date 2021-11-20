@@ -9568,3 +9568,20 @@ const getIt = function getTransactions() {
         });
 }();
 
+Создайте новую транзакцию.
+Создайте новую транзакцию, используя Transaction API https://acb-api.algoritmika.org/api/transaction.
+		
+		const info = {
+  from: 'Regina',
+  to: 'Hey',
+  amount: 200
+}
+fetch('https://acb-api.algoritmika.org/api/transaction', {
+  method: 'POST',
+  headers: {
+    'Content-type': 'application/json'
+  },
+  body: JSON.stringify(info)
+});
+		
+		
