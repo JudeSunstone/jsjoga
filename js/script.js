@@ -9599,4 +9599,8 @@ fetch('https://acb-api.algoritmika.org/api/transaction/136', {
   body: JSON.stringify(info)
 });
 		
+		Создайте новую транзакцию, а затем удалите её.
 		
+		fetch('https://acb-api.algoritmika.org/api/transaction/136', {
+  method: 'DELETE'
+});
