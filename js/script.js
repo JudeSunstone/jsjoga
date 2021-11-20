@@ -9604,3 +9604,39 @@ fetch('https://acb-api.algoritmika.org/api/transaction/136', {
 		fetch('https://acb-api.algoritmika.org/api/transaction/136', {
   method: 'DELETE'
 });
+
+		
+		Получите с сервера список платежей от пользователя John Smith.
+Получите с сервера https://acb-api.algoritmika.org/api/transaction список платежей, которые получил пользователь John Smith и выведите их на экран.
+		
+		function createDiv(transaction) {
+    let div = document.createElement('div');
+    div.innerHTML = `<div>${transaction.to} __ </div>`;
+    trans.append(div);
+}
+const getIt = function (from) {
+    //fetch('https://acb-api.algoritmika.org/api/transaction?from=John%20Smith')
+     fetch(`https://acb-api.algoritmika.org/api/transaction?from=${from}`)
+        .then(data => data.json())
+        .then(data => {
+            console.log(data);
+            data.forEach(el => createDiv(el));
+        })
+        .catch(error => {
+            console.log(`Произошла ошибка: ${error.message}`);
+        });
+}('Sam%20Stone');
+
+		
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Р!</title>
+</head>
+<body>
+<div id='trans'>Все транзакции</div>
+</body>
+</html>
+		
