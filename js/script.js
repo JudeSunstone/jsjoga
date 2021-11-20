@@ -9584,4 +9584,19 @@ fetch('https://acb-api.algoritmika.org/api/transaction', {
   body: JSON.stringify(info)
 });
 		
+		Создайте новую транзакцию, а затем измените её сумму на 9999.
+		
+		const info = {
+  from: 'OMG who is this',
+  to: 'Hey Hey',
+  amount: 9999
+}
+fetch('https://acb-api.algoritmika.org/api/transaction/136', {
+  method: 'PUT',
+  headers: {
+    'Content-type': 'application/json'
+  },
+  body: JSON.stringify(info)
+});
+		
 		
