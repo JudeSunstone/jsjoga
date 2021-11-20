@@ -9544,4 +9544,27 @@ https://randomuser.me/api/
         console.log(`Произошла ошибка: ${error.message}`);
     });
 
+Получите список транзакций.
+Получите с сервера https://acb-api.algoritmika.org/api/transaction список транзакций и выведите их на экран в виде текстовых блоков формата «А перевёл Б платёж ХХХ руб.».
+		
+		
+
+
+function createDiv(transaction) {
+    let div = document.createElement('div');
+    div.innerHTML = `<div>${transaction.from} перевёл ${transaction.to}  платёж ${transaction.amount} руб</div>`;
+    trans.append(div);
+}
+const getIt = function getTransactions() {
+    fetch('https://acb-api.algoritmika.org/api/transaction')
+        .then(data => data.json())
+        .then(data => {
+            //console.log(data);
+            //console.log(data[2].from + ' перевёл ' + data[2].to  + ' платёж ' + data[2].amount+' руб.')
+            data.forEach(el => createDiv(el));
+        })
+        .catch(error => {
+            console.log(`Произошла ошибка: ${error.message}`);
+        });
+}();
 
