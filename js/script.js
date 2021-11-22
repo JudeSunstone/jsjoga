@@ -9686,3 +9686,93 @@ getCharacterData(1).then(console.log).catch()
 const print = async function(){
     console.log(await getCharacterData(2))
 }(); // 2 варант вывдения тоже асинк и распаковываем авайтом
+
+		
+		Проверь сам
+Напишите приложение для определения выходных и праздничных дней.
+Напишите приложение, которое запрашивает у пользователя дату и определяет, является ли указанный день выходным или праздничным.
+
+
+
+/*let userDate = prompt('Введите дату в формате YYYYMMDD или YYYY-MM-DD');
+console.log(userDate);
+
+function createDiv(res) {
+    let div = document.createElement('div');
+        div.innerHTML = `<div>Сегодня ${res}</div>`;
+        trans.append(div);
+}
+
+
+const isIt = function () {
+     fetch(`https://isdayoff.ru/${userDate}`)
+        .then(data => data.json())
+        .then(data => {
+            console.log(data);
+            let res = '';
+            if(data == 0) {
+                console.log('это рабочий день')
+                res = "рабочий день";
+            } else if (data == 100) {
+                 console.log('ошибка в дате')
+            } else {
+                console.log('Ура! Выходной')
+                res = "рабочий день";
+            }
+            
+        })
+        .catch(error => {
+            console.log(`Произошла ошибка: ${error.message}`);
+        });
+}();
+*/
+
+
+async function click(e){
+    try {
+        console.log("!");
+        let date = input.value.split('.');
+        if(!(date[0].length == 2 
+            && 
+            date[1].length == 2 
+            && 
+            !isNaN(date[0])
+            && 
+            !isNaN(date[1])
+            && 
+            !isNaN(date[2])
+            ))
+            //преобразовывем в нужный нам формат
+            {
+                throw new Error ("incorrect input");
+            }
+            date[2] = date[2].length == 4? date[2] : 
+                    date[2].length == 2?'20'+ date[2] : 0;
+            if(!date[2])  throw new Error ("incorrect input");
+            let resp = await fetch('https://isdayoff.ru/' + date[2] + date[1] + date[0]);
+            output.innerText = !! await resp.json() ? "free day" : "werk werk!"
+            //!! - првращение в boolean чтобы 1 или 0 получить
+    } catch (err) {
+         output.innerText = "incorrect input, try ";
+    }
+}
+    
+btn.addEventListener('click', click);
+		
+		
+		
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Р!</title>
+</head>
+<body>
+<input type="input" id="input">
+    <input type="button" id="btn" value="Is it day off?">
+    <span id='output'>
+    </span>
+</body>
+</html>
+		
+		
