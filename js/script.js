@@ -9776,3 +9776,50 @@ btn.addEventListener('click', click);
 </html>
 		
 		
+Получите список новостей с сайта Guardian и выведите их на страницу.
+Получите токен.
+Получите список новостей с сайта Guardian и выведите их на страницу.
+
+
+const url = 'https://content.guardianapis.com/search';
+const apiKey = '341972a0-849d-43d9-adbb-192f54da56ce';
+const div = document.querySelector('div');
+
+
+function showNews(news) {
+    let str = news.reduce((ac, el) => {
+        return ac +`<div class="news">${el.webTitle}</div>`
+    }, "");
+    trans.innerHTML = str;
+}
+const getIt = function() {
+    fetch(`${url}?api-key=${apiKey}`) 
+        .then(data => data.json())
+        .then(data => {
+            console.log(data.response.results);
+            showNews(data.response.results);
+        })
+        .catch(error => {
+            console.log(`Произошла ошибка: ${error.message}`);
+        });
+}();
+
+
+		
+		
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Р!</title>
+</head>
+<body>
+<div id='trans'>Новости</div>
+</body>
+</html>
+		
+	.news {
+    margin: 20px 40px;
+}
+		
+		
