@@ -9666,3 +9666,24 @@ getRnMCharacter(1) // если здесь вывести только это, т
 .then((res)=> res.json()) // получаем json
 .then(console.log) // выводим
 .catch(console.error) //выводим ошибку, если есть
+
+		Напишите async-функцию getCharacterData.
+Напишите async-функцию getCharacterData, которая принимает id персонажа сериала Rick and Morty и возвращает промис с информацией о нём. 
+Для получения информации о персонаже используйте API https://rickandmortyapi.com/api/character/.
+		**sytnax sugar
+		
+		async function getCharacterData(id) {  
+    if (id === 0) {
+    return Promise.reject('Invalid id');
+  }
+
+  return fetch(`https://rickandmortyapi.com/api/character/${id}`)
+};
+console.log(getCharacterData(1)); // promise pending
+getCharacterData(1) // если здесь вывести только это, то получим промис, чтобы его реализовать надо сделать зены, это же сам по себе Prmose
+.then((res)=> res.json()) // получаем json
+.then(console.log) // выводим 
+//выводим ошибку, если есть
+.catch(console.error)
+
+		
