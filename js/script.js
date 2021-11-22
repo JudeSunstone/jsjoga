@@ -9640,3 +9640,13 @@ const getIt = function (from) {
 </body>
 </html>
 		
+Реализуйте секундомер, показывающий на странице количество секунд, прошедшее с запуска программы.
+
+let time = 0;
+
+setInterval(() => {
+  time += 1;
+  console.log(`Прошло ${time} сек.`);
+}, 1000);
+		
+		// sec.innerText = sec.innerText *1 + 1 // если сделать div с id sec и добавить туда секунду 
