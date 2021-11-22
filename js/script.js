@@ -9672,18 +9672,17 @@ getRnMCharacter(1) // если здесь вывести только это, т
 Для получения информации о персонаже используйте API https://rickandmortyapi.com/api/character/.
 		**sytnax sugar
 		
-		async function getCharacterData(id) {  
+async function getCharacterData(id) {  
     if (id === 0) {
     return Promise.reject('Invalid id');
   }
-
-  return fetch(`https://rickandmortyapi.com/api/character/${id}`)
+  let resp = await fetch(`https://rickandmortyapi.com/api/character/${id}`);
+  let json = await resp.json(); //распаковываем промис
+  return json;  // если не вернуть, то будет undefined
 };
-console.log(getCharacterData(1)); // promise pending
-getCharacterData(1) // если здесь вывести только это, то получим промис, чтобы его реализовать надо сделать зены, это же сам по себе Prmose
-.then((res)=> res.json()) // получаем json
-.then(console.log) // выводим 
-//выводим ошибку, если есть
-.catch(console.error)
+console.log(getCharacterData(1));
+getCharacterData(1).then(console.log).catch()
 
-		
+const print = async function(){
+    console.log(await getCharacterData(2))
+}(); // 2 варант вывдения тоже асинк и распаковываем авайтом
