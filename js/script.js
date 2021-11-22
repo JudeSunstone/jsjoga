@@ -9650,3 +9650,19 @@ setInterval(() => {
 }, 1000);
 		
 		// sec.innerText = sec.innerText *1 + 1 // если сделать div с id sec и добавить туда секунду 
+
+		Напишите функцию getRnMCharacter.
+RickAndMortyAPI предоставляет информацию о героях сериала Rick and Morty по запросу к https://rickandmortyapi.com/api/character/.
+Напишите функцию getRnMCharacter, которая получает в качестве параметра id персонажа и возвращает Promise с данными. Если id равен 0, то Promise должен сразу переходить в состояние rejected.
+
+function getRnMCharacter(id) {  
+    if (id === 0) {
+    return Promise.reject('Invalid id');
+  }
+
+  return fetch(`https://rickandmortyapi.com/api/character/${id}`)
+};
+getRnMCharacter(1) // если здесь вывести только это, то получим промис, чтобы его реализовать надо сделать зены
+.then((res)=> res.json()) // получаем json
+.then(console.log) // выводим
+.catch(console.error) //выводим ошибку, если есть
