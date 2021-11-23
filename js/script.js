@@ -9823,3 +9823,37 @@ const getIt = function() {
 }
 		
 		
+Запросите через RickAndMortyAPI данные о персонажах с id 1, 2 и 3.
+Запросите через RickAndMortyAPI данные о персонажах с id 1, 2 и 3. Выведите имена персонажей в консоль.
+https://rickandmortyapi.com/api/character/.
+
+async function getCharacterData(id) {  
+    if (id === 0) {
+    return Promise.reject('Invalid id');
+  }
+  let resp = await fetch(`https://rickandmortyapi.com/api/character/${id}`);
+  let json = await resp.json(); 
+  return json;  
+};
+console.log(getCharacterData(1));
+getCharacterData(1).then(d=>d.name).then(console.log).catch(console.error)
+getCharacterData(2).then(d=>d.name).then(console.log).catch(console.error)
+getCharacterData(3).then(d=>d.name).then(console.log).catch(console.error)
+//просто в консоль вывести нельзя, потому что принимает в себя callback
+
+//or 
+Promise.all([
+  getCharacterData(1),
+  getCharacterData(2),
+  getCharacterData(3)
+])
+.then(responses => {
+  console.log(responses);
+  responses.forEach((el)=> {
+  console.log(el.name);
+});
+
+})
+.catch(error => {
+  console.log(error);
+});
