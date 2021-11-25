@@ -9857,3 +9857,36 @@ Promise.all([
 .catch(error => {
   console.log(error);
 });
+
+		
+		Используя API газеты The Guardian, напишите приложения для поиска новостей.
+Используя API газеты The Guardian, напишите приложение для поиска новостей. Документация: https://open-platform.theguardian.com/documentation
+		
+		const url = 'https://content.guardianapis.com/search';
+const apiKey = '341972a0-849d-43d9-adbb-192f54da56ce';
+
+
+async function go() {
+    renderNews(await getNews(inp.value), trans);
+}
+
+async function getNews(query) {
+  let data = await fetch(`${url}?q=${query}&api-key=${apiKey}`) 
+  data = await data.json();
+  console.log(data);
+  return data.response.results.map(el=>({title: el.webTitle, url: el.webUrl}));
+}
+
+function renderNews(data, id) {
+    id.innerHTML = data.reduce((ac, el)=>{
+        return ac+`
+        <div style="margin: 20px 16px">
+        <h5 style="margin-bottom: 0;">${el.title}</h5>
+        <a href='${el.url}'>link</a>
+        </div>
+        `
+    }, '');
+}
+
+go();
+btn.addEventListener('click', go);
