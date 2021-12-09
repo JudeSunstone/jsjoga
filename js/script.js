@@ -9901,9 +9901,9 @@ app.get('/', (request, res) => {
     res.send('Welllcccoome');
 });
 
-app.get('/', (request, res) => {
+/*app.get('/', (request, res) => {
     res.send('Regina');
-});
+}); ВТОРОЕ НЕЛЬЗЯ, СРАБОТАЕТ ТОЛЬКО ПЕРВОЕ*/
 
 app.get('/card', function (req, res) {
     res.send('Этот роут отвечает за карты');
