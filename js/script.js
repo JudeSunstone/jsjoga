@@ -9890,3 +9890,62 @@ function renderNews(data, id) {
 
 go();
 btn.addEventListener('click', go);
+		
+		
+		РАБОТА С СЕВРЕВРОМ NODE.JS / EXPRESS
+		
+const express = require('express');
+const app = express();
+
+app.get('/', (request, res) => {
+    res.send('Welllcccoome');
+});
+
+app.get('/', (request, res) => {
+    res.send('Regina');
+});
+
+app.get('/card', function (req, res) {
+    res.send('Этот роут отвечает за карты');
+  });
+app.get('/client', function (req, res) {
+    res.send('Этот роут отвечает за клиентов');
+  });
+
+app.listen(3000, () => {
+    console.log("!!");
+});
+		
+		
+		LOCALHOST:3000 / CARD ** / CLIENT
+	
+		
+		
+		Создайте JSON-файл со списком пользователей.
+Напишите в отдельном файле скрипт, получающий данные из JSON-файла и определяющий средний возраст пользователя.
+Дополнительно: Запишите результат в файл result.txt
+
+		
+		
+		
+const fs = require('fs');
+
+fs.readFile('data.json', 'utf-8', (err, data) => {
+    if (!err) {
+        const obj = JSON.parse(data);
+        const result = obj.map(obj => obj.age);
+        const allAges = result.reduce((acc, item) => {
+            return acc + item;
+          });
+          // const users = JSON.parse(data);
+          // const ageSum = users.reduce((prev, current) => { return prev + current.age}, 0);}
+        const midAge = allAges/obj.length; // obj.length = 3
+        console.log(midAge);
+        
+        fs.writeFile('result.txt', midAge.toString(), (err, data) => {});
+  /* должна быть вместе, внутри этого метода, не снаружи, иначе асинхронность не позволит выполниться этой строке  */
+      } else {
+        console.error(err);
+      }
+});
+
