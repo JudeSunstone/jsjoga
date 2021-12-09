@@ -9942,7 +9942,7 @@ fs.readFile('data.json', 'utf-8', (err, data) => {
         const midAge = allAges/obj.length; // obj.length = 3
         console.log(midAge);
         
-        fs.writeFile('result.txt', midAge.toString(), (err, data) => {});
+        fs.writeFile('result.txt', midAge.toString(), (err) => {});
   /* должна быть вместе, внутри этого метода, не снаружи, иначе асинхронность не позволит выполниться этой строке  */
       } else {
         console.error(err);
