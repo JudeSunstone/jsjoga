@@ -9949,3 +9949,26 @@ fs.readFile('data.json', 'utf-8', (err, data) => {
       }
 });
 
+Создайте сервер с помощью Express.
+Cоздайте массив card, который содержит информацию минимум о 5 банковских картах (номер карты и id).
+Напишите обработчик для /card/:id, который выводит номер карты по идентификатору.
+
+const express = require('express');
+const app = express();
+
+const cards = [
+  {"id": 1, "num": 555},
+  {"id": 2, "num": 777}, //именно здесь кавычки не обязательно. в json точно надо 
+  {"id": 3, "num": 888},
+  {"id": 4, "num": 999},
+  {"id": 5, "num": 666},
+];
+
+app.get('/card/:id', (req, res) => {
+  const card = cards.find(card => card.id == +req.params.id); //+ чтобы точно число
+  if (card) {
+      res.send(card); //(number)
+      } else {
+        res.send('Error');
+      }
+});
