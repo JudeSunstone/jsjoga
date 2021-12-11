@@ -9997,4 +9997,53 @@ app.get('/card/:id', (req, res) => {
       }
 });
     
-		
+		Создайте сервер для хранения информации о списке товаров в магазине
+		Создайте массив товаров
+Укажите произвольно не менее 10 товаров. Свойства одного товара: название, цена, количество, id.
+
+Создайте сервер для хранения информации о списке товаров в магазине. 
+Напишите обработчик GET-запроса, который будет возвращать весь массив
+Проверьте, как работает обработчик, отправив запрос из браузера.
+Добавьте возможность получения отдельного товара по id
+Реализуйте пагинацию с помощью параметров count и offset
+
+const express = require('express');
+const app = express();
+
+const cards = [
+  {id: 1, name: "blabla1", price: "1$", amount: 1},
+  {id: 2, name: "blabla2", price: "2$", amount: 2},
+  {id: 3, name: "blabla3", price: "3$", amount: 3},
+  {id: 4, name: "blabla4", price: "4$", amount: 4},
+  {id: 5, name: "blabla5", price: "5$", amount: 5},
+  {id: 6, name: "blabla6", price: "6$", amount: 6},
+  {id: 7, name: "blabla7", price: "7$", amount: 7},
+  {id: 8, name: "blabla8", price: "8$", amount: 8},
+  {id: 9, name: "blabla9", price: "9$", amount: 9},
+  {id: 10, name: "blabla10", price: "10$", amount: 10}
+];
+app.get('/', (request, res) => {
+  res.send(cards);
+});
+
+app.get('/card/:id', (req, res) => {
+  const card = cards.find(card => card.id == +req.params.id);
+  if (card) {
+      res.status(200).json(card);
+      } else {
+        res.status(404).send("Not found");
+      }
+});
+    
+app.get('/card', function (req, res) {
+  const count = parseInt(req.query.count);
+  const offset = parseInt(req.query.offset);
+  res.send({ cards: cards.slice(offset, offset + count), count: cards.length }); 
+  //console.log(req.query); http://localhost:3000/card?count=3&offset=2 - выводит 3 карточки начинает с id 3 (потому что в массиве это 2)
+});
+
+
+app.listen(3000, () => {
+    console.log("server works!");
+});
+
