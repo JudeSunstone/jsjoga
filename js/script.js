@@ -9972,3 +9972,29 @@ app.get('/card/:id', (req, res) => {
         res.send('Error');
       }
 });
+
+		В сервере, созданном в предыдущем упражнении, при запросе на route /card возвращайте в формате JSON массив номеров карт.
+При запросе на route /card/:id возвращайте JSON, который содержит id и поле number.
+При запросе к несуществующему номеру, возвращайте код 404.
+
+		const express = require('express');
+const app = express();
+
+const cards = [
+  {"id": 1, "num": 555},
+  {"id": 2, "num": 777},
+  {"id": 3, "num": 888},
+  {"id": 4, "num": 999},
+  {"id": 5, "num": 666},
+];
+
+app.get('/card/:id', (req, res) => {
+  const card = cards.find(card => card.id == +req.params.id);
+  if (card) {
+      res.status(200).json(card);
+      } else {
+        res.status(404).send("Not found");
+      }
+});
+    
+		
