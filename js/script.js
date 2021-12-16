@@ -10074,5 +10074,62 @@ app.listen(3000, () =>
 
 
 
+Создайте сервер для хранения списка пользователей.
+Создайте массив и запишите в него информацию о трёх пользователях. Для каждого пользователя храните id, имя и должность.
+Реализуйте обработку PUT-запроса для изменения информации о пользователе. При запросе изменяйте запись на сервере и верните из обработчика обновлённые данные.
+Если записи с таким id нет, верните код 404.
 
+		
+		const users = [
+  { id: 1, name: "Sam", profession: "coockie the cook" },
+  { id: 2, name: "Tom", age: "woofie the woof" },
+  { id: 3, name: "Bill", age: "meowy the meow" }
+];
+const express = require('express');
+const app = express();
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.put("/users/:id", function (req, res) {
+  const idOfUser = parseInt(req.params.id);
+  const userIdx = users.findIndex((user) => user.id === idOfUser);
+
+  if (userIdx !== -1) {
+    const oldUser = users[userIdx];
+    users[userIdx] = { ...oldUser, ...req.body };
+    res.json(users[userIdx]);
+  } else {
+    res.status(404).json();
+  }
+});
+
+app.listen(3000, () =>
+  console.log(`App listening at port 3000`)
+);
+		
+		
+		Реализуйте обработку DELETE-запроса для для удаления пользователя с сервера. При запросе удалите запись на сервере по id. 
+		
+
+let users = [
+  { id: 1, name: "Sam", profession: "coockie the cook" },
+  { id: 2, name: "Tom", age: "woofie the woof" },
+  { id: 3, name: "Bill", age: "meowy the meow" }
+];
+const express = require('express');
+const app = express();
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.delete('/users/:id', function (req, res) {
+  const idOfUser = parseInt(req.params.id);
+  users = users.filter((user) => user.id !== idOfUser);
+  res.json(users);
+});
+
+app.listen(3000, () =>
+  console.log(`App listening at port 3000`)
+);
 		
