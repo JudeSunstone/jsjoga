@@ -10046,4 +10046,33 @@ app.get('/card', function (req, res) {
 app.listen(3000, () => {
     console.log("server works!");
 });
+		
+		
+		
+		
 
+		const numbers = [];
+const express = require('express');
+const app = express();
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.post('/phonebook', function (req, res) {
+  numbers.push(req.body);
+  res.json(req.body);
+});
+app.get('/phonebook', function (req, res) {
+ res.json(numbers);
+});
+app.listen(3000, () =>
+  console.log(`App listening at port 3000`)
+);Реализуйте POST и GET-запросы для пути /phonebook. Сохраняйте созданные записи телефонной книги на сервере и отдавайте их по GET-запросу. 
+Создайте в Postman и отправьте POST-запрос на указанный путь. 
+С помощью GET-запроса убедитесь, что запись добавляется.
+
+
+
+
+
+		
