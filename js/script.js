@@ -10153,3 +10153,8 @@ VALUES
   ('SForrest Gump', 1994, 'Земекис'),
   ('The godfather', 1972, 'Коппола'),
   ('Cast away', 2000, 'Земекис');
+		
+		
+		show tables - все таблицы
+select * from movies;
+select title from movies where filmyear = 2000;
