@@ -10133,3 +10133,23 @@ app.listen(3000, () =>
   console.log(`App listening at port 3000`)
 );
 		
+Создайте базу данных archive. Создайте 
+и заполните таблицу movies 
+в соответствии с указанными значениями.
+
+
+create database archive;
+use archive;
+CREATE TABLE movies  (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  title VARCHAR(200) NOT NULL,
+  filmyear year NOT NULL,
+  director VARCHAR(200) NOT NULL
+);
+INSERT INTO movies
+  (title, filmyear, director)
+VALUES
+  ('the matrix', 1999, 'Вачовски'),
+  ('SForrest Gump', 1994, 'Земекис'),
+  ('The godfather', 1972, 'Коппола'),
+  ('Cast away', 2000, 'Земекис');
