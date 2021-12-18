@@ -10158,3 +10158,11 @@ VALUES
 		show tables - все таблицы
 select * from movies;
 select title from movies where filmyear = 2000;
+		
+		
+		UPDATE movies
+SET director = 'Лана и Лили Вачовски'
+WHERE id = 1;
+delete from movies
+where filmyear < 2000 and director = 'Земекис';
+select * from movies;
