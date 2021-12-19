@@ -10166,3 +10166,47 @@ WHERE id = 1;
 delete from movies
 where filmyear < 2000 and director = 'Земекис';
 select * from movies;
+		
+		
+		Создайте таблицы albums и bands в соответствии с данными на скриншоте.
+Напишите запрос для получения списка альбомов, содержащего название альбома, название группы и год выпуска.
+
+
+create database music;
+use music;
+CREATE TABLE albums (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  album VARCHAR(100) not null,
+  albumyear year,
+  band_id int not null
+);
+
+CREATE TABLE bands (
+   id INT PRIMARY KEY AUTO_INCREMENT,
+   band VARCHAR(100) not null
+);
+INSERT INTO albums
+  (album, albumyear, band_id)
+VALUES
+  ('St Anger', 2003, 1),
+  ('iowa', 1999, 2),
+  ('Master of Puppies xD', 1986, 1),
+  ('Laskovaja moja..', 2002, 3),
+  ('We are enot', 2019, 2);
+
+INSERT INTO bands
+  (id, band)
+VALUES
+  (1, 'Митооооллика'),
+  (2, 'Спикнот'),
+  (3, 'Чай вдвоём');
+  
+  
+SELECT albums.album, bands.band
+FROM albums
+JOIN bands
+ON albums.band_id = bands.id;
+
+  select * from music;
+
+
