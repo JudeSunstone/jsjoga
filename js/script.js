@@ -10209,4 +10209,136 @@ ON albums.band_id = bands.id;
 
   select * from music;
 
+		
+		Создайте базу данных и с помощью MySQL Workbench добавьте в неё таблицу со списком задач.
+Заполните таблицу этими значениями.
+Создайте сервер, который при запросе к роуту /task будет отдавать все записи из таблицы.
+При запросе к роуту /task/:id возвращайте задачу с данным id
 
+
+
+
+В проекте, созданном в предыдущем упражнении, для всех задач с неизвестной (IS NULL) датой планового выполнения, назначьте плановую дату на сегодня.
+Все задачи без исполнителя назначьте на сотрудника “John”.
+Для всех задач сотрудника “John” установите дату фактического выполнения задачи равной дате планового окончания.
+
+
+В проекте, созданном в предыдущем упражнении, удалите все задачи, которые были выполнены позже плановой даты
+
+use bootcamp;
+ CREATE TABLE tasks (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  task VARCHAR(100),
+  due_date DATE,
+  employee VARCHAR(100),
+  finished_date DATE 
+);
+
+		
+use bootcamp;
+select * from tasks;
+
+		get http://localhost:3000/
+		
+const express = require('express');
+const app = express();
+const fs = require('fs');
+const mysql = require('mysql');
+
+const connection = mysql.createConnection({
+  host: 'localhost',
+  port: 3306,
+  user: 'root',
+  password: 'root',
+  database: 'bootcamp'
+});
+const duties = [
+  {"id":1, "description":"create ER-diagram", "due":"2020-05-20", "employee":"Alex", "finished":"2019-05-20"},
+  {"id":2, "description":"connect node.js to mysql", "due":"2013-05-20", "employee":"John", "finished":"2017-05-20"},
+  {"id":3, "description":"create get-request handler /task", "employee":"Alex", "finished":"2015-04-20"},
+  {"id":4, "description":"create post-request handler /task", "due":"2005-04-20", "employee":"Donald"},
+  {"id":5, "description":"create sql-query for get tasks", "employee":"John"},
+  {"id":6, "description":"create sql-query for add task", "due":"2004-03-20", "employee":"Martin", "finished":"2004-03-20"},
+  {"id":7, "description":"configure server to auto deploy", "due":"2012-03-20"}
+  ];
+
+connection.connect((err) => {
+  if (!err) { 
+    console.log("SUCCESS");
+  }
+});
+
+app.get('/', (req, res) => {
+  /*duties.forEach(item => {
+    item.description = item.description ? item.description : null;
+    item.due = item.due ? item.due : '2021-01-01';
+    item.employee = item.employee ? item.employee : null;
+    item.finished = item.finished ? item.finished : '2021-01-01';
+    connection.query(`INSERT INTO tasks (task, due_date, employee, finished_date) VALUES 
+    ('${item.description}', '${item.due}', '${item.employee}', '${item.finished}')`);
+  });*/
+ /* const today = new Date();
+
+  duties.forEach(item => {
+    connection.query(`UPDATE tasks 
+    /////SET employee = 'Johny' WHERE employee = 'null'
+    ////// const today = new Date().toISOtring().split('T')[0]; - приводим к строке, чтобы поделить дату до Т и взять первую часть - будет нужная дата
+    SET due_date = '${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()}' 
+    WHERE employee = 'John'`, 
+    (err, data) => {
+      if (!err) {
+        console.log(data);
+      }
+    });
+  });*/
+   /*fs.readFile('data.json', 'utf-8', (err, data) => {
+      const fileData = JSON.parse(data);
+            fileData.forEach(item => {
+              /////connetion.query("SELECT * from tasks WHERE employee = 'John'", (err, data) => {
+                data.forEach(item => {
+                  //почему-то день мину с mySQL 
+                  connetion.query('update tasks SET finished = `${item.due.toISOString().split('T')[0]` WHERE id = ${item.id}//&& employee = 'Jonh')
+                })
+              });
+              /*item.description = item.description ? item.description : null;
+              item.due = item.due ? item.due : '2021-01-01';
+              item.employee = item.employee ? item.employee : null;
+              item.finished = item.finished ? item.finished : '2021-01-01';
+              if(item.employee == 'John' && item.due) {
+                connection.query(`UPDATE tasks 
+              SET finished_date = '${item.due}' 
+              WHERE employee = 'John'`, 
+              (err, data) => {
+                  if (!err) {
+                    console.log(data);
+                  }
+                });
+              }
+            });
+    })*/
+    connection.query('SELECT * FROM tasks', (err, data) => {
+      data.forEach(element) => {
+        if(element.finished.getTime()>element.due.getTime()) {
+          connection.query("DELETE from tasks WHERE id =${element.id}")
+        }
+      }
+    })
+    //нерабочее! удаляет все без условия про id - сам это понимает в цикле
+    fs.readFile('data.json', 'utf-8', (err, data) => {
+      const fileData = JSON.parse(data);
+    
+      fileData.forEach(item => {
+        if(item.finished > item.due) {
+          connection.query(`DELETE FROM tasks`, 
+            (err, data) => {
+              if (!err) {
+                console.log(data);
+              }
+            });
+        }
+      });
+    });
+      
+ });
+
+app.listen(3000, () => {});
