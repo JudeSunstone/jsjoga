@@ -10342,3 +10342,52 @@ app.get('/', (req, res) => {
  });
 
 app.listen(3000, () => {});
+		
+		
+		В файле index.js создайте компонент App, содержащий элемент <h3> с вашим именем и элемент <p> с текстом 
+«Now I can create component».
+Выведите компонент на страницу.
+
+
+В проекте, созданном в предыдущем упражнении, стилизуйте страницу:
+шрифт текста sans-serif;
+задайте произвольный цвет фона карточки товара;
+задайте произвольный цвет текста
+
+import React, { Component } from 'react';
+import ReactDOM from "react-dom";
+import './index.css'
+class App extends Component {
+  render() {
+    return (
+      <div className="app"> 
+        <h3>R. R</h3>
+        <p>Now I can create component</p>
+      </div>
+    );
+  }
+}
+
+const rootElement = document.querySelector("#root");
+ReactDOM.render(<App />, rootElement);
+
+		
+		body {
+  font-family: Arial, Helvetica, sans-serif;
+  body: 0;
+ }
+ 
+ h3 {
+  text-transform: uppercase;
+  color: azure;
+ }
+ 
+ .app {
+  padding: 20px;
+  text-align: center;
+  background-color: firebrick;
+ }
+ 
+		
+		
+
