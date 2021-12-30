@@ -10388,6 +10388,52 @@ ReactDOM.render(<App />, rootElement);
   background-color: firebrick;
  }
  
-		
+	Создайте компонент Wine, выводящий информацию о вине.
+Передайте в него параметры props: title, description, rating.
+Выведите компонент Wine несколько раз с разными значениями свойств.
+
+
+import React, { Component } from "react";
+
+class Wine extends Component {
+  render() {
+    console.log(this.props);
+    return (
+      <div className="product">
+        <h3>{this.props.title}</h3>
+        <p>{this.props.price}</p>
+      </div>
+    );
+  }
+}
+export default Wine;
+
+import "./styles.css";
+import Wine from "./Wine";
+
+export default function App() {
+  return (
+    <div className="products">
+         <Wine
+           title="Красное"                    
+           price={25 + ` eur`}
+         />
+         <Wine
+            title="Белое" 
+            price="30 евро"
+         />
+       </div>
+  );
+}
+
+
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+
+const root = document.getElementById("root");
+
+ReactDOM.render(<App />, root);
+
 		
 
