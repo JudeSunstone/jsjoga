@@ -10436,4 +10436,46 @@ const root = document.getElementById("root");
 ReactDOM.render(<App />, root);
 
 		
+Обновите компонент Wine, сделав свойство rating числовым.
+Добавьте новое свойство like — true/false. Если оно есть, выведите в карточке эмоджи ♥️
+
+import React, { Component } from "react";
+
+class Wine extends Component {
+  render() {
+    let price = this.props.price + ' eur';
+    const {like, title} = this.props;
+
+    return (
+      <div className="product">
+        
+        <h3>{title}</h3>
+        <p>{price}</p>{like ? 
+        <div>&#9829;</div> : null}
+      </div>
+    );
+  }
+}
+export default Wine;
+
+import "./styles.css";
+import Wine from "./Wine";
+
+export default function App() {
+  return (
+    <div className="products">
+         <Wine
+           title="Красное"                    
+           price={25}
+           like
+         />
+         <Wine
+            title="Белое" 
+            price={30}
+            like={false}
+         />
+       </div>
+  );
+}
+
 
