@@ -10479,3 +10479,109 @@ export default function App() {
 }
 
 
+
+ПРОФИЛЬ ПОЛЬЗОВАТЕЛЯ
+
+import React, { Component } from "react";
+
+export default class Email extends Component {
+  render() {
+    return (
+      <div className="email">
+        <p>{this.props.email}</p>
+      </div>
+    
+    );
+  }
+}
+
+
+import React, { Component } from "react";
+
+export default class Name extends Component {
+  render() {
+    return (
+      <div className="personal">
+        <p>{this.props.name}</p>
+      </div>
+    
+    );
+  }
+}
+
+
+import React, { Component } from "react";
+
+export default class PersonalInfo extends Component {
+  render() {
+    return (
+      <div className="info">
+        <p>{this.props.age}</p>
+        <p>{this.props.city}</p>
+      </div>
+    
+    );
+  }
+}
+
+
+import React, { Component } from "react";
+import PersonalInfo from "./PersonalInfo";
+import Name from "./Name";
+import Email from "./Email";
+
+export default class Profile extends Component {
+  render() {
+    const {userName, email, personalInfo} = this.props;
+    console.log(personalInfo);
+    const {age, city} = personalInfo; 
+    return (
+      <div className="profile">
+          <Name 
+        name={userName}
+        />
+        <Email 
+        email={email}
+        />
+        <PersonalInfo 
+         age = {age}
+         city = {city}
+        />
+      </div>
+    
+    );
+  }
+}
+
+import "./styles.css";
+import Profile from "./Profile";
+
+export default function App() {
+  const person1 = {
+    age: 25,
+    city: "Tartu"
+  };
+  return (
+    <div className="profile">
+         <Profile
+           userName="Rei"                    
+           email="@"
+           personalInfo={person1}
+         />
+         <Profile
+            userName="Ji"                    
+            email="@"
+            personalInfo={person1}
+         />
+       </div>
+  );
+}
+
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+
+const root = document.getElementById("root");
+
+ReactDOM.render(<App />, root);
+
