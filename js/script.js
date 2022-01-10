@@ -10577,6 +10577,8 @@ export default function App() {
   );
 }
 
+в App.js // в проекте React через create-react-app
+
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
@@ -10585,3 +10587,30 @@ const root = document.getElementById("root");
 
 ReactDOM.render(<App />, root);
 
+Изменение кнопки ткст и стиля в setState и обработчик функции
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.subscribe-button {
+  color: wheat;
+  font-size: 5em;
+  display: flex;
+  margin: 0 auto;
+}
+.subscribe-button_red {
+  background-color:firebrick;
+}
+.subscribe-button_blue {
+background-color: navy;
+}
