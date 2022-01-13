@@ -10614,3 +10614,51 @@ code {
 .subscribe-button_blue {
 background-color: navy;
 }
+Получите с сервера информацию о транзакциях 
+и для первой из них выведите на экран 
+данные:
+отправитель;
+получатель;
+сумма.
+Для получения данных о транзакциях
+используйте URL:
+https://acb-api.algoritmika.org/api/transaction 
+
+
+
+import React from 'react';
+import './index.css';
+
+export default class App extends React.Component {
+
+    state = {
+      data: []
+    };
+
+    getData = () => {
+      fetch("https://acb-api.algoritmika.org/api/transaction")
+      .then(res => res.json())
+      .then(data => { 
+        this.setState({ data: data }) 
+      });
+    };
+
+    componentDidMount() {
+      this.getData();
+    }
+  
+   render() { 
+    const { data } = this.state;
+    console.log(data);
+    if(data.length) {
+      return (
+      <p>Отправитель: {data[0].from} Получатель: {data[0].to} Сумма: {data[0].amount}</p>
+      )
+    } else { //без элсе не работает, можно прелоадер ставить 
+      return (
+        <p>No data</p>
+      )
+    }
+  }
+}
+
