@@ -10661,4 +10661,59 @@ export default class App extends React.Component {
     }
   }
 }
+app js
 
+
+
+Создайте компонент, цвет фона которого можно менять с помощью клавиш клавиатуры.
+Подпишитесь на событие keypress с помощью метода componentDidMount.
+Нажатие на клавишу 1 устанавливает цвет фона компонента красным, нажатие на клавишу 2 — синим.
+
+
+import React from 'react';
+import './index.css';
+
+export default class App extends React.Component {
+  state = { 
+    lastKey: null
+  };
+  onKeypress = (event) => {
+    this.setState({ lastKey: event.key });
+  }
+  componentDidMount() {
+    window.addEventListener("keypress", this.onKeypress);
+  }
+
+ render() {
+  let className = "";
+  if(this.state.lastKey === '1'){
+    className = "first";
+  } 
+  if (this.state.lastKey === '2') {
+    className = "second";
+  }
+  
+  return (
+     <p className={className}>Last pressed key: {this.state.lastKey}</p>
+    );
+  }
+   
+}
+
+
+css
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.first {
+  background: red;
+}
+.second {
+  background: blue;
+}
