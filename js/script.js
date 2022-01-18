@@ -10815,4 +10815,108 @@ export default App;
 
 https://codesandbox.io/s/clientcardfetch-template-for-lesson-47-uk40j?file=/src/App.js:0-644
 
+В проекте, созданном в предыдущем упражнении, измените код так, чтобы:
+если имя не указано, выводится Anonimous.
+Если телефон не указан, ничего не выводится. Используйте оператор &&.
+Если номер карты не указан, выводится 
+Card is not specified.
 
+app
+import React from "react";
+import "./styles.css";
+import { ClientCard } from "./ClientCard";
+import { fetchClients } from "./fetchClients";
+
+class App extends React.Component {
+    state = {
+      client: null,
+    }
+
+  componentDidMount = () => {
+    fetchClients().then((client) => {
+      this.setState({
+        client
+      });
+    });
+  };
+
+  render() {
+    // выведите компонент ClientCard 
+    //после того, как придут данные с сервера 
+
+    const {client} = this.state;
+    if (client === null) {
+      return null;
+    }
+    return (
+      <div>
+        <ClientCard  
+        
+        name={this.state.client.name || 'Anonimous' }
+        phone={this.state.client.phone}
+        card={this.state.client.card || 'Card is not specified'}
+        
+        />
+
+      </div>
+    )
+  }
+}
+
+export default App;
+
+
+import React from "react";
+
+export class ClientCard extends React.Component {
+  render() {
+    const { name, phone, card } = this.props;
+    return (
+      <div className="card" style={{ width: "18rem" }}>
+        <div className="card-body">
+          <h5 className="card-title">Имя клиента: {name}</h5>
+          {phone && <h6>Телефон {phone}</h6>}
+          <p className="card-text">Номер карты: {card}</p>
+        </div>
+      </div>
+    );
+  }
+}
+
+
+clientCard
+
+fetchClients
+const clients = [
+  { name: "Alice", phone: "+7 579 872 69 53", card: "8363 8453 9654 0263" },
+  { name: "Tom", phone: "+7 839 784 02 73", card: "" },
+  { name: "", phone: "+7 932 875 64 74", card: "9651 8632 9632 0763" },
+  { name: "Kate", phone: "", card: "0765 4567 9234 9222" },
+  { name: "", phone: "+7 974 973 17 83", card: "0742 7541 8765 6622" },
+  { name: "Nik", phone: "+7 792 074 812 03", card: "0711 2239 9763 6263" },
+  { name: "Sam", phone: "", card: "0711 2279 6389 6376" },
+  { name: "Max", phone: "+7 456 433 34 67", card: "" },
+  { name: "Bill", phone: "+7 753 832 32 42", card: "" },
+  { name: "Helen", phone: "", card: "9653 7820 9765 7543" }
+];
+export const fetchClients = () =>
+  new Promise(resolve =>
+    setTimeout(() => {
+      resolve(clients[Math.floor(Math.random() * clients.length)]);
+    }, Math.random() * 2500)
+  );
+
+ndex
+
+import ReactDOM from "react-dom";
+
+import App from "./App";
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(
+    <App />,
+  rootElement
+);
+
+
+ctyles
