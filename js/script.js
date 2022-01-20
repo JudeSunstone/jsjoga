@@ -10920,3 +10920,63 @@ ReactDOM.render(
 
 
 ctyles
+
+
+
+Создайте новый компонент Employees
+Заведите для него state с массивом объектов. Объекты можно скопировать по ссылке
+Выведите на экран содержимое массива любым из предложенных способов
+
+
+employees.js
+import React from "react";
+
+export default class Employees extends React.Component {
+  render() {
+    const { id, name, department, role } = this.props;
+    return (
+      <div>
+        <div>
+          <div>{id}</div>
+          <div>{name}</div>
+          <div>{department}</div>
+          <div>{role}</div>
+        </div>
+      </div>
+    );
+  }
+}
+
+
+
+app.js
+import "./styles.css";
+import React from "react";
+import Employees from "./Employees.js";
+
+class App extends React.Component {
+  state = {
+    employees: [
+      {id: 1, name: 'Frodo Baggins', department: 'Management', role: 'CEO'}
+  ]
+  };
+ 
+  render() {
+    return (
+      <div>
+      { this.state.employees.map((user) => (
+        <Employees 
+           id={user.id}
+           name={user.name}
+           department={user.department}
+           role={user.role}
+        />
+      )) 
+      }
+    </div>
+
+    );
+  }
+}
+
+export default App;
