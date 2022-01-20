@@ -10980,3 +10980,54 @@ class App extends React.Component {
 }
 
 export default App;
+
+Как известно, не все сотрудника Братства кольца выбрались из приключения живыми
+
+Добавьте сотрудникам новое поле alive
+Реализуйте фильтрацию сотрудников по этому полю
+все сотрудники
+только alive === true
+только alive === false
+
+
+import "./styles.css";
+import React from "react";
+import Employees from "./Employees.js";
+
+class App extends React.Component {
+  state = {
+    employees: [
+      {id: 1, name: 'Frodo Baggins', department: 'Management', role: 'CEO', alive: true},
+      {id: 2, name: '23', department: '33', role: '66', alive: false},
+  ],
+    alive: false
+  };
+
+  handleChange = () => {
+   this.setState({ alive: !this.state.alive });
+ }
+
+  render() {
+    return (
+      <div>
+        <input
+           type="checkbox"
+           name='alive'
+           checked={this.state.alive}
+           onChange={this.handleChange}
+         />
+        {this.state.employees
+         .filter((user) => user.alive === this.state.alive)
+         .map((user) => (
+             <Employees name={user.name} key={user.id} {...user} />
+         ))}
+     </div>
+
+
+    );
+  }
+}
+
+export default App;
+
+
