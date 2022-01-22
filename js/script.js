@@ -11048,17 +11048,28 @@ export default class App extends React.Component {
       ]
     };
   }
-  handleCloseCard = (idx) => {
-    const clone = [...this.state.cards].splice(idx, 1);
+ handleCloseCard = (idx) => {
+    const clone = this.state.cards.splice(idx, 1);
     this.setState({ card: clone });
+
   };
 
 
-  handleOpenCard = (card) => {
-    // YOUR CODE HERE 2
+
+handleOpenCard = (card) => {
+    
+      const array = this.state.cards;
+   
+      const newArray = [
+        ...array.slice(0, card.number),
+        {number: Math.random()*100, balance: 555},
+        ...array.slice(card.number)
+      ];
+   
+      this.setState({ cards: newArray });
+   
     console.log(card);
   };
-
   render() {
     return (
       <div className="app">
@@ -11095,4 +11106,65 @@ export default class App extends React.Component {
 Вам предоставлен компонент, который хранит и отрисовывает список банковских карт
 Реализуйте функционал закрытия карты
 
+
+СЧЕТЧИК
+Создайте react-приложение и реализуйте счётчик:
+Создать компонент Counter, состоящий из значения и кнопок для его уменьшения или увеличения.
+При клике на кнопки увеличивать или уменьшать значение на 1.
+Добавить ограничения: значение не может быть меньше -10 или больше 10.
+Стилизовать компоненты.
+
+Counter js
+
+import React from 'react';
+import './index.css';
+
+export default class Counter extends React.Component {
+  state = { 
+    number: 0
+  }
+
+  decrNumber = (event) => {
+    if(this.state.number >=-9) {
+        this.setState({number: this.state.number - 1})
+    }  
+  }
+
+  incrNumber = () => {
+    if(this.state.number <=9) {
+        this.setState({number: this.state.number + 1})
+    }  
+  }
+
+ render() {
+  return (
+    <div className="counter">
+         <button onClick={this.decrNumber} className='button' >-</button>
+         <div className='number'>{this.state.number}</div>
+         <button onClick={this.incrNumber} className='button' >+</button>
+    </div>
+    );
+ }
+}
+
+
+
+App
+
+import React from 'react';
+import './index.css';
+import Counter from './Counter';
+
+class App extends  React.Component {
+    render() {
+      return (
+        <div>
+          <Counter /> 
+          </div> 
+        );
+    }
+}
+
+export default App;
+ 
 
