@@ -11251,3 +11251,76 @@ export default class App extends React.Component {
 }
 
 
+КУБИК
+на пробел меняются все, на клик - один
+
+Dice.js
+import React from "react";
+
+export default class Dice extends React.Component {
+  state = {
+    keyPressed: null,
+    number: 0
+  };
+  onKeypress = (event) => {
+    this.setState({ keyPressed: event.code });
+    if (this.state.keyPressed === "Space") {
+      this.setState({ number: Math.floor(Math.random() * 6) + 1 });
+    }
+  };
+
+  onMouseClick = (event) => {
+    const id = this.props.data.id;
+    if(id) {
+      this.setState({ keyPressed: event.code });
+      this.setState({ number: Math.floor(Math.random() * 6) + 1 });
+    }
+    //из пропсов вытащить данные о кубике. ид. номер и в шаблон, в 30 строке
+    //по клике на кубик передать айди и в род.комп этот клик отслеживать и в соотв с айдишникм устновить число
+  
+  };
+
+  componentDidMount() {
+    window.addEventListener("keypress", this.onKeypress);
+  }
+
+  render() {
+    return (
+      <div className="dice" onClick={this.onMouseClick}>
+        <div>{this.state.number}</div>
+      </div>
+    );
+  }
+}
+
+
+app.js
+
+import "./styles.css";
+import React from "react";
+import Dice from "./Dice.js";
+
+class App extends React.Component  {
+  state = {
+    dices: [
+      {id: 1, number: 0},
+      {id: 2, number: 0},
+      {id: 3, number: 0},
+    ]
+  }
+  render() {
+    if(this.state.dices && this.state.dices.length) {
+      const dices = this.state.dices;
+    return (
+         <div>
+           <Dice data={dices[0]}/>
+           <Dice data={dices[1]}/>
+           <Dice data={dices[2]}/>
+        </div>
+    );
+    } 
+    
+  }
+}
+export default App;
+
