@@ -11168,3 +11168,86 @@ class App extends  React.Component {
 export default App;
  
 
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.counter {
+  display: flex;
+  justify-content: space-around;
+  width: 300px;
+  margin: auto;
+  margin-top: 100px;
+  align-items: center;
+}
+
+.button {
+  padding: 15px;
+  font-size: 30px;
+  width: 80px;
+  border: 1px black solid;
+  background-color: transparent;
+  cursor: pointer;
+  height: 80px;
+}
+
+.number {
+  font-size: 30px; 
+  text-align: center;
+  padding-top: 15px;
+  width: 80px;
+  height: 80px;
+}
+
+
+
+
+показать пароль тексто при нажатии чекбокса
+
+import React from 'react';
+import './index.css';
+
+export default class App extends React.Component {
+  state = { 
+    password: '',
+    isActive: false
+  }
+
+  showPassword = (event) => {
+    this.setState({isActive: !this.state.isActive});
+  }
+
+  eraseUserPassword = () => {
+    this.setState({password:''});
+  }
+
+ render() {
+  return (
+    <div>
+      <label htmlFor="password">password:
+         <input 
+            //value={this.state.password} 
+            type={this.state.isActive ? "text" : "password"} 
+            id="password" 
+            name="password" 
+            onChange={this.getUserPassword}
+         />
+         Показать пароль 
+         <input 
+            type="checkbox" 
+            checked={this.state.isActive}
+            onClick={this.showPassword}/>
+         <button onClick={this.eraseUserPassword}>удалить содержимое</button>
+      </label>
+    </div>
+    
+    );
+ }
+}
+
+
