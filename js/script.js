@@ -11324,3 +11324,116 @@ class App extends React.Component  {
 }
 export default App;
 
+Компонент Form 
+без валидации 
+
+import React from "react";
+
+export default class Dice extends React.Component {
+
+  handleSubmit  = (event) => {
+    event.preventDefault();
+    alert("Success!"); //как иначе оборажать? 
+  }
+
+  componentDidMount() {
+    window.addEventListener("click", this.onMouseClick);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("click", this.onMouseClick);
+  }
+
+  render() {
+    return (
+      <div>
+       <p>
+       Валидируйте поля формы</p>
+        <form onSubmit={this.handleSubmit}>
+          <label htmlFor="name">Name:
+            <input type="text" id="name" name="name"/>
+          </label> <br/>
+          <label htmlFor="surname">Surname:
+            <input type="text" id="surname" name="surname"/> 
+          </label> <br/> 
+          <label htmlFor="phone">Phone:
+            <input type="phone" id="phone" name="phone"/>
+          </label> <br/> 
+          <label htmlFor="email">Email:
+            <input type="email" id="email" name="email"/>
+          </label> <br/> 
+          <label htmlFor="comment">Comment:
+            <input type="comment" id="comment" name="comment"/>
+          </label> <br/> 
+           <button type="submit">Submit</button>
+      </form>
+      
+      </div>//нарисовать блок через условный рендеринг, через условия
+      //надо jnChange для каждого интпута и проврить содеражимое инпута, value
+      //если пустая строка, можно забизейблить кнопку отправки 
+      
+    );
+  }
+}
+
+
+App.js
+import "./styles.css";
+import React from "react";
+import Employees from "./Employees.js";
+
+class App extends React.Component {
+  state = {
+    employees: [
+      {id:1, name: 'Frodo Baggins', department: 'Management', role: 'CEO'},
+      {id:2, name:'Samwise Gamgee',department:"Management",role:"CTO"},
+      {id:3, name:'Gandalf the Gray',department:"Recruitment",role: 'Lead-recruiter'},
+      {id:4, name:'Aragorn',department:"Security",role:"Security office"},
+      {id:5, name:'Legolas',department:"Management",role:"Office manager"}
+  ],
+  name: ''
+  };
+
+  handleChange = (evt) => {
+   this.setState({ name: evt.target.value });
+ }
+
+  render() {
+    return (
+      <div>
+        <input
+           type="text"
+           onChange={this.handleChange}
+         />
+        {this.state.employees
+         .filter((user) => user.name === this.state.name) //если это закомментить, выдает все результаты? с этим выдает по имени поиск
+         .map((user) => (
+             <Employees name={user.name} key={user.id} {...user} />
+         ))}
+     </div>
+
+
+    );
+  }
+}
+
+export default App;
+
+Employees.js
+import React from "react";
+
+export default class Employees extends React.Component {
+  render() {
+    const { id, name, department, role } = this.props;
+    return (
+      <div>
+        <div>
+          <div>{id}</div>
+          <div>{name}</div>
+          <div>{department}</div>
+          <div>{role}</div>
+        </div>
+      </div>
+    );
+  }
+}
