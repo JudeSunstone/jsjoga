@@ -11522,7 +11522,67 @@ export default function Modal ({hideModal})  {
 }
 
 
+////
+function App() {
+  
+  const [isVisible, setVisible] = useState(false);
+
+
+  const showModal = () => {
+    setVisible(true); 
+  }
+  const hideModal = () => {
+    setVisible(false); 
+  }
+    return (
+      <div className="app">
+        <div className="modal-dialog">
+        
+          <div className="modal-content">
+            <Button showModal={showModal}
+            />
+          </div>
+    </div>
+       { isVisible ? 
+        <Modal hideModal={hideModal}/>
+        :
+          null
+        }
+      </div>
+    );
+  }
+
+
+export default App;
+
+
 
 modal js
 
+export default function Modal ({hideModal})  {
 
+  return (
+    <div className="modal-dialog">
+      <div className="modal-content">
+        <div className="modal-header">
+          <h5 className="modal-title">Заказ 18020642-0063 доставлен</h5>
+        </div>
+        <div className="modal-body">
+          <p>
+            Заберите его в пункте выдачи до 15 апреля включительно, потом
+            заказ придется отменить.
+            <br />
+            Вход в пункт выдачи только в маске и перчатках.
+          </p>
+        </div>
+        <div className="modal-footer">
+          <button type="button" 
+          className="btn btn-secondary"
+          onClick={hideModal}>
+            Закрыть
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
