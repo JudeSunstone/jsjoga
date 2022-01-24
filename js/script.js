@@ -11437,3 +11437,92 @@ export default class Employees extends React.Component {
     );
   }
 }
+
+Сделайте компонент Modal функциональным
+Вынесите кнопку “Уведомления” в новый функциональный компонент и перенесите все компоненты в отдельные файлы
+При клике на кнопку “Уведомления” показывайте Modal. При клике на кнопку “Закрыть” скрывайте Modal
+
+
+app ja
+import React from "react";
+import Button from './Button';
+import Modal from './Modal'
+
+class App extends React.PureComponent {
+  state={
+    isVisible: false
+  }
+  showModal = () => {
+   this.setState({isVisible: true}); 
+  }
+  hideModal = () => {
+    this.setState({isVisible: false});
+  }
+  render() {
+    return (
+      <div className="app">
+        <div className="modal-dialog">
+        
+          <div className="modal-content">
+            <Button showModal={this.showModal}
+            />
+          </div>
+    </div>
+       { this.state.isVisible ? 
+        <Modal hideModal={this.hideModal}/>:
+          null
+        }
+      </div>
+    );
+  }
+}
+
+export default App;
+
+
+button js
+export default function Button({showModal}) {
+  return  (  
+      <button 
+      type="button" 
+      className="btn btn-primary"
+      onClick={showModal}>
+              Уведомления
+            </button>
+        )
+}
+
+
+export default function Modal ({hideModal})  {
+
+  return (
+    <div className="modal-dialog">
+      <div className="modal-content">
+        <div className="modal-header">
+          <h5 className="modal-title">Заказ 18020642-0063 доставлен</h5>
+        </div>
+        <div className="modal-body">
+          <p>
+            Заберите его в пункте выдачи до 15 апреля включительно, потом
+            заказ придется отменить.
+            <br />
+            Вход в пункт выдачи только в маске и перчатках.
+          </p>
+        </div>
+        <div className="modal-footer">
+          <button type="button" 
+          className="btn btn-secondary"
+          onClick={hideModal}>
+            Закрыть
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+
+
+modal js
+
+
