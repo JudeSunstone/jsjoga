@@ -11586,3 +11586,91 @@ export default function Modal ({hideModal})  {
     </div>
   );
 }
+
+
+Напишите компонент CustomButton
+Напишите компонент CustomButton, который представляет собой кнопку и принимает следующие свойства:
+text — текст внутри кнопки.
+warnMessage — текст предупреждения при нажатии кнопки.
+hint — текст всплывающего сообщение при наведении.
+
+app
+import React from "react";
+import "./styles.css";
+import CustomButton from "./CustomButton";
+
+class App extends React.Component {
+  state = {
+    text: 'button',
+    warnMessage: 'you clicked the button',
+    hint: 'Click me!'
+  };
+
+  render() {
+    return (
+      <div>
+        <CustomButton
+          text={this.state.text}
+          warnMessage={this.state.warnMessage}
+          hint={this.state.hint}
+        />
+        <CustomButton
+          text={this.state.text}
+          warnMessage={this.state.warnMessage}
+          hint={this.state.hint}
+        />
+        <CustomButton
+          text={this.state.text}
+          warnMessage={this.state.warnMessage}
+          hint={this.state.hint}
+        />
+      </div>
+    );
+  }
+}
+
+export default App;
+
+CustomButton
+import React from "react";
+
+export default class ClientCard extends React.Component {
+  state = {
+    showWarn: false,
+    showHint: false
+  }
+  showWarn = () => {
+    this.setState({showWarn: true});
+  }
+  showHint = () => {
+    this.setState({showHint: true});
+  }
+  render() {
+    return (
+      <div>
+          <button 
+          type="button" 
+          onClick={this.showWarn}
+          onMouseOver={this.showHint}
+          className={!this.state.showWarn || "warn"}>{this.props.text}</button> 
+          {this.state.showWarn ? <p>{this.props.warnMessage}</p> : null}
+          {this.state.showHint ? <p className="hint">{this.props.hint}</p> : null}
+      </div>
+    );
+  }
+}
+styles
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.warn {
+  border: 1px solid red;
+}
+
+.hint {
+  font-style: italic;
+}
+
