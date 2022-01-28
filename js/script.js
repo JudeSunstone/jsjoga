@@ -11674,3 +11674,150 @@ styles
   font-style: italic;
 }
 
+
+
+Рутинг
+app
+
+import React from "react";
+import { BrowserRouter, Route, Link } from "react-router-dom";
+import "./styles.css";
+import AboutPage from "./AboutPage";
+import ContactsPage from "./ContactsPage";
+import Team from "./Team";
+
+export default class App extends React.Component {
+  render() {
+    return (
+      <BrowserRouter>
+        <div>
+          <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <Link className="navbar-brand"  to="#">
+              Пингвины
+            </Link>
+            <button
+              className="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span className="navbar-toggler-icon" />
+            </button>
+            <div className="collapse navbar-collapse" id="navbarNav">
+              <ul className="navbar-nav">
+                <li className="nav-item">
+                  <Link className="nav-link" to="about">
+                    О нас
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="contacts">
+                    Контакты
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="team">
+                    Наша команда
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <Route path="/about">
+            <AboutPage />
+          </Route>
+          <Route path="/contacts">
+            <ContactsPage />
+          </Route>
+          <Route path="/team">
+            <Team />
+          </Route>
+        </div>
+      </BrowserRouter>
+    );
+  }
+}
+
+constact // 
+import React from "react";
+
+export default () => {
+  return (
+    <div className="jumbotron">
+      <h1 className="display-4">Контакты!</h1>
+      <p className="lead">Наши контакты: Северный полюс, льдина № 8</p>
+      <hr className="my-4" />
+      <p>Спросить пингвина Кирилл!</p>
+    </div>
+  );
+};
+
+
+рендомное число на кнопке
+import { useEffect, useState } from "react";
+import React from "react";
+
+function Randomizer({ number }) {
+  return <div className="alert alert-primary text-center">{number}</div>;
+}
+
+function Button({ onClick, text }) {
+  return (
+    <div className="modal-dialog">
+      <div className="modal-content">
+        <button type="button" className="btn btn-primary" onClick={onClick}>
+          {text}
+        </button>
+      </div>
+    </div>
+  );
+}
+
+function App() {
+  const [number, setNumber] = useState(0);
+  const [start, setStart] = useState(false);
+
+  const onClick = () => {
+    // setNumber(Math.random());
+    setStart(!start);
+  };
+
+  useEffect(() => {
+    console.log("side effect", number);
+
+    return () => {
+      console.log("clean up", number);
+    };
+  });
+
+  useEffect(() => {
+    if (!start) {
+      return;
+    }
+
+    const interval = setInterval(() => {
+      setNumber(Math.random());
+    }, 100);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [start]);
+
+  return (
+    <div className="app">
+      <Button onClick={onClick} text={start ? "Остановить" : "Запустить"} />
+      <Randomizer number={number} />
+    </div>
+  );
+}
+
+export default App;
+
+https://codesandbox.io/s/huki-primer-dlya-lekcii-useeffect-77cb9?file=/src/App.js:0-1184
+
+
+
